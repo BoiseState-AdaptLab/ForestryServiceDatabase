@@ -26,3 +26,13 @@ To contribute to the node application, reference the following example:
 * From the root directory, run the following command:
 	* `docker-compose up --build`
 
+
+
+# Troubleshooting
+
+### Docker
+* Ensure that Docker is installed on your machine
+* Ensure that docker-compose is installed on your machine
+* Clone the git repo https://github.com/alexsimons/ForestryServiceDatabase.git
+* From the root directory, run the following command:
+	* `docker-compose up --build`
