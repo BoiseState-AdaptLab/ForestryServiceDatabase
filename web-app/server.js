@@ -14,23 +14,36 @@ app.get('/hello', (req, res) => {
 });
 
 app.get('/', function (req, res) {
-   
-  var mysql      = require('mysql');
-  var connection = mysql.createConnection({
-    host     : 'mysql-database',
-    user     : 'root',
-    password : 'password',
-    database : 'forestdb'
-  });
-  
-  connection.connect();
-  
-  // connection.query('select * from forests', function (error, results, fields) {
-  //   if (error) throw error;
-  //   console.log('The solution is: ', results[0].solution);
+
+  const pg = require('pg');
+  const pool = new pg.Pool({
+    user: 'user',
+  host: 'postgres',
+  database: 'db',
+  password: 'pass',
+  port: '5432'});
+
+  pool.connect()
+      .then(client => {
+        return client.query("SELECT * FROM forests")
+            .then(res => {
+              client.release();
+              console.log(res.rows[0]);
+              
+            })
+            .catch(e => {
+              client.release();
+              console.log(e.stack);
+            })
+      }).finally(() => pool.end());
+
+
+  // pool.query("SELECT NOW()", (err, res) => {
+  //   console.log(err, res);
+  //   pool.end();
   // });
   
-  connection.end();
+
 
 });
 
