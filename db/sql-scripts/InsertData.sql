@@ -108,3 +108,24 @@ INSERT INTO `Vegetation` (`TransectID`,`Type`,`Species`,`Plot1`,`Plot2`,`Plot3`,
 INSERT INTO `Vegetation` (`TransectID`,`Type`,`Species`,`Plot1`,`Plot2`,`Plot3`,`Plot4`,`Plot5`,`Plot6`,`Plot7`,`Plot8`,`Plot9`,`Plot10`,`GramsUsed`,`PercUtil`,`DryWeight`,`ProdDryWeight`,`PercComposition`,`DesirabilityD`,`DesirabilityI`,`DesirabilityL`) VALUES (13,"tellus","Sheep ",4,8,6,9,9,3,2,6,7,4,6,5,6,5,8,10,2,2);
 INSERT INTO `Vegetation` (`TransectID`,`Type`,`Species`,`Plot1`,`Plot2`,`Plot3`,`Plot4`,`Plot5`,`Plot6`,`Plot7`,`Plot8`,`Plot9`,`Plot10`,`GramsUsed`,`PercUtil`,`DryWeight`,`ProdDryWeight`,`PercComposition`,`DesirabilityD`,`DesirabilityI`,`DesirabilityL`) VALUES (5,"Cras"," Cattle",9,4,6,5,9,4,6,1,7,1,10,6,7,4,1,6,9,3);
 
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("J-3","eu turpis.");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("U-9","justo. Praesent");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("E-4","nulla. Integer");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("P-1","blandit mattis.");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("E-6","eget laoreet");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("W-5","mi");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("Y-6","ac");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("D-8","molestie orci");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("F-6","lectus rutrum");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("E-3","auctor vitae,");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("U-3","magna.");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("E-7","Donec tempus,");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("L-9","Nunc mauris");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("S-7","amet luctus");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("R-1","faucibus");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("M-6","erat,");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("Z-5","feugiat metus");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("W-7","pharetra. Quisque");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("U-6","a feugiat");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("N-8","non, hendrerit");
+INSERT INTO `ranger_districts` (`range_district_name`,`ranger_district_description`) VALUES ("B-5","ante");
