@@ -1,13 +1,5 @@
-DROP DATABASE IF EXISTS ForestServiceDB;
-CREATE DATABASE ForestServiceDB;
 
-
-
-use ForestServiceDB;
-
-
-
-CREATE TABLE Allotments {
+CREATE TABLE Allotments (
 
 	AllotmentID varchar(255) NOT NULL,
 
@@ -17,17 +9,19 @@ CREATE TABLE Allotments {
 
 	PlotSize int,
 
-	PlotInterval int, 
+	PlotInterval varchar(255),
 
 	ReportID varchar(255)
-};
+);
 
 
 
 
-CREATE TABLE Reports {
+CREATE TABLE Reports (
 
 	ReportID int NOT NULL,
+
+	avgproddrywtd int,
 
 	AllotmentID varchar(255),
 
@@ -90,11 +84,11 @@ CREATE TABLE Reports {
 	Condition varchar(255),
 
 	Trend varchar(255)
-};
+);
 
 
 
-CREATE TABLE Transects {
+CREATE TABLE Transects (
 
 	TransectID int NOT NULL,
 
@@ -110,7 +104,7 @@ CREATE TABLE Transects {
 
 	TypeDesignation varchar(255),
 
-	Aspect char,
+	Aspect varchar(255),
 
 	PercDesirable int,
 
@@ -135,11 +129,11 @@ CREATE TABLE Transects {
 	Condition varchar(255),
 
 	Trend varchar(255)
-};
+);
 
 
 
-CREATE TABLE Soil {
+CREATE TABLE Soil (
 
 	ReportID int NOT NULL,
 
@@ -147,13 +141,13 @@ CREATE TABLE Soil {
 
 	SurfTextThickness int,
 
-	SurfTextPH double,
+	SurfTextPH decimal,
 
 	SubsoilTexture varchar(255),
 
 	SubTextThickness int,
 
-	SubTextPH double,
+	SubTextPH decimal,
 
 	SubstratumMat varchar(255),
 
@@ -161,13 +155,13 @@ CREATE TABLE Soil {
 
 	GeneralRemarks varchar(255),
 
-	AvgSurfaceLoss double,
+	AvgSurfaceLoss decimal,
 
 	LossOverArea int,
 
-	GulliesTotalL double,
+	GulliesTotalL decimal,
 
-	GulliesTotalD double,
+	GulliesTotalD decimal,
 
 	ErosionRemarks varchar(255),
 
@@ -175,11 +169,11 @@ CREATE TABLE Soil {
 
 	RockCoverage int,
 
-	AdjDetachability douuble,
+	AdjDetachability decimal,
 
 	Permeability int,
 
-	ErodIndex double,
+	ErodIndex decimal,
 
 	ErodIndexClass varchar(255),
 
@@ -196,11 +190,11 @@ CREATE TABLE Soil {
 	PotentialProduct int,
 
 	SuitReasons varchar(255)
-};
+);
 
 
 
-CREATE TABLE Vegetation {
+CREATE TABLE Vegetation (
 
 	TransectID int NOT NULL,
 
@@ -245,4 +239,4 @@ CREATE TABLE Vegetation {
 	DesirabilityI int,
 
 	DesirabilityL int
-};
+);

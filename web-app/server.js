@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
   const pool = new pg.Pool({
     user: 'user',
   host: 'postgres',
-  database: 'db',
+  database: 'ForestServiceDB',
   password: 'pass',
   port: '5432'});
 
