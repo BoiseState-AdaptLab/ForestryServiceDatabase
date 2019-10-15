@@ -4,7 +4,7 @@ services:
     restart: always
     build: ./web-app
     ports:
-        - "3000:3000"
+        - "8081:3000"
   postgres:
     build: ./db
     ports:
