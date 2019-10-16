@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  web:
+    restart: always
+    build: ./web-app
+    ports:
+        - "8081:3000"
+  postgres:
+    build: ./db
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: db
+
+# Names our volume
+volumes:
+  my-db:

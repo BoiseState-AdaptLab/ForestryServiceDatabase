@@ -1,7 +1,4 @@
-INSERT INTO forests (forest_name, forest_description) 
-VALUES ('Sawtooth', 'Sawtooth forest'),
-        ('Boise', 'Boise forest'),
-        ('Payette', 'Payette forest');
+
 
 INSERT INTO Allotments (AllotmentID,Forest,RangerDistrict,PlotSize,PlotInterval,ReportID) VALUES (100,'Payette','M-3',0,2,12);
 
