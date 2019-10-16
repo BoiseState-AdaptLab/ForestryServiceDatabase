@@ -5,15 +5,6 @@ services:
     build: ./web-app
     ports:
         - "8081:3000"
-  postgres:
-    build: ./db
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: ForestServiceDB
-
 # Names our volume
 volumes:
   my-db:

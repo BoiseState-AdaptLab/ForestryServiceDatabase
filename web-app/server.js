@@ -15,34 +15,22 @@ app.get('/hello', (req, res) => {
 
 app.get('/', function (req, res) {
 
-  const pg = require('pg');
-  const pool = new pg.Pool({
-    user: 'user',
-  host: 'postgres',
-  database: 'ForestServiceDB',
-  password: 'pass',
-  port: '5432'});
+const { Client } = require('pg');
 
-  pool.connect()
-      .then(client => {
-        return client.query("SELECT * FROM forests")
-            .then(res => {
-              client.release();
-              console.log(res.rows[0]);
-              
-            })
-            .catch(e => {
-              client.release();
-              console.log(e.stack);
-            })
-      }).finally(() => pool.end());
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
 
+client.connect();
 
-  // pool.query("SELECT NOW()", (err, res) => {
-  //   console.log(err, res);
-  //   pool.end();
-  // });
-  
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
 
 
 });
