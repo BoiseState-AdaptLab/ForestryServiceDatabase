@@ -1,5 +1,4 @@
 
-
 INSERT INTO Allotments (AllotmentID,Forest,RangerDistrict,PlotSize,PlotInterval,ReportID) VALUES (100,'Payette','M-3',0,2,12);
 
 INSERT INTO Reports (ReportID,AllotmentID,WriteupNo,PhotoNo,Examiner,TransectNo,Slope,Aspect,ElevationMIN,ElevationMAX,Location,Livestock,TypeDesignation,TypeDesTrend,Date,AvgProdDryWtD,AvgDesirabilityI,AvgDesirabilityL,DandI,PercDesirable,PercIntermediate,PercLeastDesir,CondRating,CompRating,ProdRating,ForCondRating,GroundCvrIndex,ErosionIndex,SoilRating,Condition,Trend) VALUES (1,5,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','sheep ','G-8','B-4','030919',10,5,6,5,7,8,4,6,8,7,2,2,6,9,' bad ','R');
