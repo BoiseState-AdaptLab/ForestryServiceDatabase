@@ -1,95 +1,98 @@
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (1,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030967');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (1,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-0667');
 
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (2,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030968');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (2, 'A-13', 'ESH-3-195', 'D Aslefft', '1-3, 2-3, 3-3', 43, 's-w-w', 6800, 7000, 'Sawtooth', 'D-5', 'Blue Ridge', 'East and West of sprout creek', 'sheep', 'S5', 's5/s5', '1968-07-06')
 
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (3,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030969');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (2,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (4,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030970');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (3,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (5,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030971');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (4,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (6,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030972');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (5,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (7,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030973');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (6,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (8,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030974');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (7,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district_district,allotment,location,livestock,type_designation,type_des_trend,date)
-VALUES (10,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','030975');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (8,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
+
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (10,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
 VALUES (1, 1, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (2, 2, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (2, 2, 1, 'Mountain brush', 6800, 45, 'S-5', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (3, 3, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (3, 3, 3, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (4, 4, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (4, 4, 2, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (5, 5, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (5, 5, 3, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (6, 6, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (6, 6, 2, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (7, 7, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (7, 7, 1, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (8, 8, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (8, 8, 2, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (9, 9, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (9, 9, 3, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (10, 10, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+VALUES (10, 10, 2, 'Bonnyrigg', 20, 20, 'X-4', 'S');
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (1, 1, 40);
+VALUES (1, 1, 1);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (2, 2, 40);
+VALUES (2, 2, 2);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (3, 3, 40);
+VALUES (3, 3, 3);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (4, 4, 40);
+VALUES (4, 4, 4);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (5, 5, 40);
+VALUES (5, 5, 5);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (6, 6, 40);
+VALUES (6, 6, 6);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (7, 7, 40);
+VALUES (7, 7, 7);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (8, 8, 40);
+VALUES (8, 8, 8);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (9, 9, 40);
+VALUES (9, 9, 9);
 
 INSERT INTO plot(p_id, t_id, plot_number)
-VALUES (10, 10, 40);
+VALUES (10, 10, 10);
 
 INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
 VALUES(1, 1, 'Browse', 'AGSPI', 45);
 
 INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
-VALUES(2, 2, 'Forbes', 'AGSPI', 50);
+VALUES(2, 2, 'Grass', 'AGSPI', 2);
 
 INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
 VALUES(3, 3, 'Grass', 'AGSPI', 80);
