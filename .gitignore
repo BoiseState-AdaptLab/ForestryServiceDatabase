@@ -3,3 +3,5 @@ web-app/.idea
 web-app/package-lock.json
 docker-compose-seema-working-copy
 web-app/node_modules/
+db/.DS_Store
+.DS_Store
