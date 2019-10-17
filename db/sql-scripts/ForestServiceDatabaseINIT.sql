@@ -122,7 +122,7 @@ CREATE TABLE soil_summary {
   erod_index_class varchar(255),
   slope int,
   eros_haz_class varchar(255),
-  coompaction varchar(255),
+  compaction varchar(255),
   displacement varchar(255),
   cover_dispersion varchar(255),
   potential_product int,
