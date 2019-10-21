@@ -1,12 +1,365 @@
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (1,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-0667');
 
-INSERT INTO Allotments (AllotmentID,Forest,RangerDistrict,PlotSize,PlotInterval,ReportID) VALUES (100,'Payette','M-3',0,2,12);
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (2, 'A-13', 'ESH-3-195', 'D Aslefft', '1-3, 2-3, 3-3', 43, 's-w-w', 6800, 7000, 'Sawtooth', 'D-5', 'Blue Ridge', 'East and West of sprout creek', 'sheep', 'S5', 's5/s5', '1968-07-06')
 
-INSERT INTO Reports (ReportID,AllotmentID,WriteupNo,PhotoNo,Examiner,TransectNo,Slope,Aspect,ElevationMIN,ElevationMAX,Location,Livestock,TypeDesignation,TypeDesTrend,Date,AvgProdDryWtD,AvgDesirabilityI,AvgDesirabilityL,DandI,PercDesirable,PercIntermediate,PercLeastDesir,CondRating,CompRating,ProdRating,ForCondRating,GroundCvrIndex,ErosionIndex,SoilRating,Condition,Trend) VALUES (1,5,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','sheep ','G-8','B-4','030919',10,5,6,5,7,8,4,6,8,7,2,2,6,9,' bad ','R');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (2,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO Transects (TransectID,ReportID,TransectNO,Location,Elevation,Slope,TypeDesignation,Aspect,PercDesirable,PercIntermediate,PercLeastDesir,CondRating,CompRating,ProdRating,ForCondRating,GroundCvrIndex,ErosionIndex,SoilRating,Condition,Trend) VALUES (1,17,19,'Ajmer',10,2,'B-4','T-Z-X',8,6,10,8,5,7,3,5,4,3,'good ','H');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (3,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO Soil (ReportID,SurfaceTexture,SurfTextThickness,SurfTextPH,SubsoilTexture,SubTextThickness,SubTextPH,SubstratumMat,EffRootingDepth,GeneralRemarks,AvgSurfaceLoss,LossOverArea,GulliesTotalL,GulliesTotalD,ErosionRemarks,Detachability,RockCoverage,AdjDetachability,Permeability,ErodIndex,ErodIndexClass,Slope,ErosHazClass,Coompaction,Displacement,CoverDispersion,PotentialProduct,SuitReasons) VALUES (4,'eu arcu. Morbi',3,1,'vitae',6,3,'sapien,','at','egestas.',4,1,4,10,'dui',10,2,6,7,8,'erat',1,'nec','aliquet.','Maecenas','convallis,',10,'Curabitur');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (4,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
-INSERT INTO Vegetation (TransectID,Type,Species,Plot1,Plot2,Plot3,Plot4,Plot5,Plot6,Plot7,Plot8,Plot9,Plot10,GramsUsed,PercUtil,DryWeight,ProdDryWeight,PercComposition,DesirabilityD,DesirabilityI,DesirabilityL) VALUES (8,'nibh','Sheep ',10,2,3,10,8,7,5,9,7,10,4,9,10,1,4,5,3,7);
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (5,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
 
--- INSERT INTO ranger_districts (range_district_name,ranger_district_description) VALUES ('J-3','eu turpis.');
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (6,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
+
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (7,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
+
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (8,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
+
+INSERT INTO report (r_id,writeup_no,photo_no,examiner,transect_no,slope,aspect,elevation_min,elevation_max,forest,ranger_district,allotment,location,livestock,type_designation,type_des_trend,date)
+VALUES (10,'G-7','NBV-6-701','H Hess','7-8, 1-5, 8-4',64,'F-W-V',2,9,'Bonnyrigg','X-4','X-4','loc','sheep','typeDes','typeDes2','1968-07-06');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (1, 1, 6, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (2, 2, 1, 'Mountain brush', 6800, 45, 'S-5', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (3, 3, 3, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (4, 4, 2, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (5, 5, 3, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (6, 6, 2, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (7, 7, 1, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (8, 8, 2, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (9, 9, 3, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
+VALUES (10, 10, 2, 'Bonnyrigg', 20, 20, 'X-4', 'S');
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (1, 1, 1);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (2, 2, 2);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (3, 3, 3);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (4, 4, 4);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (5, 5, 5);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (6, 6, 6);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (7, 7, 7);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (8, 8, 8);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (9, 9, 9);
+
+INSERT INTO plot(p_id, t_id, plot_number)
+VALUES (10, 10, 10);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(1, 1, 'Browse', 'AGSPI', 45);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(2, 2, 'Grass', 'AGSPI', 2);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(3, 3, 'Grass', 'AGSPI', 80);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(4, 4, 'Browse', 'AGSPI', 20);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(5, 5, 'Forbes', 'AGSPI', 66);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(6, 6, 'Grass', 'AGSPI', 89);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(7, 7, 'Grass', 'AGSPI', 94);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(8, 8, 'Forbes', 'AGSPI', 32);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(9, 9, 'Grass', 'AGSPI', 16);
+
+INSERT INTO vegetation(v_id, p_id, type, species, green_weight)
+VALUES(10, 10, 'Browse', 'AGSPI', 9);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(1, 1, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(2, 2, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(3, 3, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(4, 4, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(5, 5, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(6, 6, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(7, 7, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(8, 8, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(9, 9, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO vegetation_summary(v_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
+VALUES(10, 10, AGSPI, 49, 75, 45, 160, 592, 164, 34, 30, 4, 1);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(1, 1, 'Forbs', 5);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(2, 2, 'Browse', 15);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(3, 3, 'Forbs', 5);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(4, 4, 'Grass', 25);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(5, 5, 'Forbs', 5);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(6, 6, 'Browse', 5);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(7, 7, 'Forbs', 5);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(8, 8, 'Forbs', 5);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(9, 9, 'Grass', 5);
+
+INSERT INTO biomass(b_id, p_id, type, value)
+VALUES(10, 10, 'Forbs', 5);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(1, 1, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(2, 2, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(3, 3, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(4, 4, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(5, 5, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(6, 6, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(7, 7, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(8, 8, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(9, 9, 'Browse', 478);
+
+INSERT INTO biomass_summary(b_id, r_id, type, total, average)
+VALUES(10, 10, 'Browse', 478);
+
+INSERT INTO soil_summary(s_id, r_id, surface_texture, surf_text_thick, surf_text_ph,
+subsoil_texture, sub_text_thick, sub_text_ph, substratum_mat, eff_root_depth,
+general_remarks, avg_surface_loss, loss_over_area, gullies_length, gullies_depth,
+erosion_remarks, detachability, rock_coverage, adj_detachability, permeability,
+erod_index, erod_index_class, slope, eros_haz_class, compaction,
+displacement, cover_dispersion, potential_product, suit_reasons)
+VALUES(1, 1, 'Gravely sand loom', 12, 3.4,
+       'Gravely loam', 10, 6.0, 'Gravely', 'effrd',
+       'genRem', 8.0, 6, 6.0, 12.4,
+       'erosRem', 32, 23, 5.6, 2,
+       4.2, 'erod_ind_cl', 34, 'eros class', 'coom',
+       'dis1', 'covdis1', 3, 'sure');
+    
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (2,2,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (3,3,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (4,4,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (5,5,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (6,6,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (7,7,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (8,8,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (9,9,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO soil_summary (s_id,r_id,surface_texture,surf_text_thick,surf_text_ph,subsoil_texture,sub_text_thick,sub_text_ph,substratum_mat,eff_root_depth,general_remarks,avg_surface_loss,loss_over_area,gullies_length,gullies_depth,erosion_remarks,detachability,rock_coverage,adj_detachability,permeability,erod_index,erod_index_class,slope,eros_haz_class,compaction,displacement,cover_dispersion,potential_product,suit_reasons) 
+VALUES (10,10,'malesuada',13,2.0,
+'Etiam',3,1.7,'augue','nascetur',
+'Vivamus',2.1,4,9.1,4.2,
+'erat',82,56,5.1,51,
+1.0,'magna,',51,'dictum','vulputate',
+'justo','non',40,'vulputate');
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(1, 1, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(2, 2, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(3, 3, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(4, 4, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(5, 5, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(6, 6, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(7, 7, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(8, 7, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(9, 9, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')
+
+INSERT INTO metadata(m_id, r_id, total_grass, total_forb, total_browse,
+desirable, intermediate, least_desirable, composition, production, 
+forage_condition,ground_cover, erosion, soil_condition, browse_condition, trend)
+VALUES(10, 10, 170, 36, 253,
+      30, 22, 2, 12, 21,
+      21, 12, 32, 32, 'good', 'right')

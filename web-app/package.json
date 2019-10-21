@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "express": "^4.16.1",
-    "mysql": "2.17.1"
+    "mysql": "2.17.1",
+    "pg": "^7.12.1",
+    "winston": "latest"
   }
 }

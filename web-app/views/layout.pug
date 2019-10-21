@@ -1,0 +1,25 @@
+doctype html
+
+block variables
+
+html
+    head
+        title=title
+        link(rel='icon' type='image/png' href='../public/images/favicon-32x32.png' sizes='32X32')
+        link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Carter+One|Iceland|Orbitron|Quantico')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        body(class='body')
+            div(id='wrapper')
+                div(class='banner')
+                    div(class='logo')
+                        a(href='/')
+                            img(class='logo' src='../public/images/buster.png')
+                    ol(class='nav-bar')
+                        li
+                            a(href='/report-summary') Report Summary
+                        li
+                            a(href='/transect') Transect
+                        li(id='nav-bar-end')
+                            a(href='/full-report') Full Report
+            block content

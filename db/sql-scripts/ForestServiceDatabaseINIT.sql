@@ -1,242 +1,144 @@
 
-CREATE TABLE Allotments (
 
-	AllotmentID varchar(255) NOT NULL,
-
-	Forest varchar(255), 
-
-	RangerDistrict varchar(255), 
-
-	PlotSize int,
-
-	PlotInterval varchar(255),
-
-	ReportID varchar(255)
+CREATE TABLE report (
+  r_id int NOT NULL PRIMARY KEY,
+  writeup_no varchar(255),
+  photo_no varchar(255),
+  examiner varchar(255),
+  transect_no varchar(255),
+  slope int,
+  aspect varchar(255),
+  elevation_min int,
+  elevation_max int,
+  forest varchar(255),
+  ranger_district varchar(255),
+  allotment varchar(255),
+  location varchar(255),
+  livestock varchar(255),
+  type_designation varchar(255),
+  type_des_trend varchar(255),
+  date timestamp
 );
 
 
 
-
-CREATE TABLE Reports (
-
-	ReportID int NOT NULL,
-
-	avgproddrywtd int,
-
-	AllotmentID varchar(255),
-
-	WriteupNo varchar(255),
-
-	PhotoNo varchar(255),
-
-	Examiner varchar(255),
-
-	TransectNo varchar(255),
-
-	Slope int,
-
-	Aspect varchar(255),
-
-	ElevationMIN int,
-
-	ElevationMAX int,
-
-	Location varchar(255),
-
-	Livestock varchar(255),
-
-	TypeDesignation varchar(255),
-
-	TypeDesTrend varchar(255),
-
-	Date timestamp,
-
-	AvgProdDryWt int,
-
-	AvgDesirabilityD int,
-
-	AvgDesirabilityI int,
-
-	AvgDesirabilityL int,
-
-	DandI int,
-
-	PercDesirable int,
-
-	PercIntermediate int,
-
-	PercLeastDesir int,
-
-	CondRating int,
-
-	CompRating int,
-
-	ProdRating int,
-
-	ForCondRating int,
-
-	GroundCvrIndex int,
-
-	ErosionIndex int,
-
-	SoilRating int,
-
-	Condition varchar(255),
-
-	Trend varchar(255)
+CREATE TABLE transect (
+  t_id int NOT NULL PRIMARY KEY,
+  r_id int NOT NULL,
+  transect_no int,
+  location varchar(255),
+  elevation int,
+  slope int,
+  type_designation varchar(255),
+  aspect char
 );
 
 
 
-CREATE TABLE Transects (
-
-	TransectID int NOT NULL,
-
-	ReportID int NOT NULL,
-
-	TransectNO int,
-
-	Location varchar(255),
-
-	Elevation int,
-
-	Slope int,
-
-	TypeDesignation varchar(255),
-
-	Aspect varchar(255),
-
-	PercDesirable int,
-
-	PercIntermediate int,
-
-	PercLeastDesir int,
-
-	CondRating int,
-
-	CompRating int,
-
-	ProdRating int,
-
-	ForCondRating int,
-
-	GroundCvrIndex int,
-
-	ErosionIndex int,
-
-	SoilRating int,
-
-	Condition varchar(255),
-
-	Trend varchar(255)
+CREATE TABLE plot (
+  p_id int NOT NULL PRIMARY KEY,
+  t_id int NOT NULL,
+  plot_number int 
 );
 
 
 
-CREATE TABLE Soil (
-
-	ReportID int NOT NULL,
-
-	SurfaceTexture varchar(255),
-
-	SurfTextThickness int,
-
-	SurfTextPH decimal,
-
-	SubsoilTexture varchar(255),
-
-	SubTextThickness int,
-
-	SubTextPH decimal,
-
-	SubstratumMat varchar(255),
-
-	EffRootingDepth varchar(255),
-
-	GeneralRemarks varchar(255),
-
-	AvgSurfaceLoss decimal,
-
-	LossOverArea int,
-
-	GulliesTotalL decimal,
-
-	GulliesTotalD decimal,
-
-	ErosionRemarks varchar(255),
-
-	Detachability int,
-
-	RockCoverage int,
-
-	AdjDetachability decimal,
-
-	Permeability int,
-
-	ErodIndex decimal,
-
-	ErodIndexClass varchar(255),
-
-	Slope int,
-
-	ErosHazClass varchar(255),
-
-	Coompaction varchar(255),
-
-	Displacement varchar(255),
-
-	CoverDispersion varchar(255),
-
-	PotentialProduct int,
-
-	SuitReasons varchar(255)
+CREATE TABLE vegetation (
+  v_id int NOT NULL PRIMARY KEY,
+  p_id int NOT NULL,
+  type varchar(255),
+  species varchar(255),
+  green_weight int 
 );
 
 
 
-CREATE TABLE Vegetation (
+CREATE TABLE vegetation_summary (
+  v_id int NOT NULL PRIMARY KEY,
+  r_id int NOT NULL,
+  species varchar(255),
+  trans1 int,
+  trans2 int,
+  trans3 int,
+  total int,
+  dry_weight int, 
+  prod_dry_weight int, 
+  composition int,
+  desirability_D int, 
+  desirability_I int,
+  desirability_L int 
+);
 
-	TransectID int NOT NULL,
 
-	Type varchar(255),
 
-	Species varchar(255),
+CREATE TABLE biomass (
+  b_id int NOT NULL PRIMARY KEY,
+  p_id int NOT NULL,
+  type varchar(255),
+  value int 
+);
 
-	Plot1 int,
 
-	Plot2 int,
 
-	Plot3 int,
+CREATE TABLE biomass_summary (
+  b_id int NOT NULL PRIMARY KEY,
+  r_id int NOT NULL,
+  type varchar(255),
+  total int,
+  average int
+);
 
-	Plot4 int,
 
-	Plot5 int,
 
-	Plot6 int,
+CREATE TABLE soil_summary (
+  s_id int NOT NULL PRIMARY KEY,
+  r_id int NOT NULL,
+  surface_texture varchar(255),
+  surf_text_thick int,
+  surf_text_ph float,
+  subsoil_texture varchar(255),
+  sub_text_thick int,
+  sub_text_ph float,
+  substratum_mat varchar(255),
+  eff_root_depth varchar(255),
+  general_remarks varchar(255),
+  avg_surface_loss float,
+  loss_over_area int,
+  gullies_length float,
+  gullies_depth float,
+  erosion_remarks varchar(255),
+  detachability int,
+  rock_coverage int,
+  adj_detachability float,
+  permeability int,
+  erod_index float,
+  erod_index_class varchar(255),
+  slope int,
+  eros_haz_class varchar(255),
+  compaction varchar(255),
+  displacement varchar(255),
+  cover_dispersion varchar(255),
+  potential_product int,
+  suit_reasons varchar(255)
+);
 
-	Plot7 int,
 
-	Plot8 int,
 
-	Plot9 int,
-
-	Plot10 int,
-
-	PlotTotal int,
-
-	GramsUsed int,
-
-	PercUtil int,
-
-	DryWeight int,
-
-	ProdDryWeight int,
-
-	PercComposition int,
-
-	DesirabilityD int,
-
-	DesirabilityI int,
-
-	DesirabilityL int
+CREATE TABLE metadata (
+  m_id int NOT NULL PRIMARY KEY,
+  r_id int NOT NULL,
+  total_grass int,
+  total_forb int,
+  total_browse int,
+  desirable int,
+  intermediate int,
+  least_desirable int,
+  composition int,
+  production int,
+  forage_condition int,
+  ground_cover int,
+  erosion int,
+  soil_condition int,
+  browse_condition varchar(255),
+  trend varchar(255)
 );

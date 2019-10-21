@@ -1,0 +1,36 @@
+extends layout
+
+block variables
+
+block content
+    div(class='header')
+        h1=title
+    div(class='body')
+        form(action='/report-summary' method='post')
+
+            //Metadata filters
+            label(for='r-dist') Ranger District
+            input(type='text' id='r-dist' name='r-dist')
+            label(for='allotment') Allotment
+            input(type='text' id='allotment' name='allotment')
+            label(for='examiner') Examiner
+            input(type='text' id='examiner' name='examiner')
+            label(for='s-date') Start Date
+            input(type='text' id='s-date' name='s-date')
+            label(for='e-date') End Date
+            input(type='text' id='e-date' name='e-date')
+            label(for='writeup') Writeup No.
+            input(type='text' id='writeup' name='writeup')
+            label(for='photo') Photo No.
+            input(type='text' id='photo' name='photo')
+            label(for='elevation-min') Elevation Min
+            input(type='int' id='elevation-min' name='elevation-min')
+            label(for='elevation-max') Elevation Max
+            input(type='int' id='elevation-max' name='elevation-max')
+            label(for='location') Location
+            input(type='text' id='location' name='location')
+
+            //Vegetation Summary Filters
+            //Soil Summary Filters
+            //Biomass Summary Filters
+            button(type='submit' value='submit') Submit Query
