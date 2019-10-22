@@ -19,7 +19,7 @@ namespace ForestryServiceDatabase
 
 				// Display all Reports from the database
 				var query = from r in db.Reports
-							orderby b.ReportID
+							orderby query.ReportID
 							select r;
 
 				Console.WriteLine("All reports in the database:");
