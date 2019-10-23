@@ -14,12 +14,14 @@ const pool = new Pool({
     port: '5432'});
 
 // ----------------------- Constants ----------------------- //
+//const PORT = 8081;
+const HOST = '127.0.0.1';
 const PORT = 3000;
-const HOST = '0.0.0.0';
 
 // ----------------------- App Configuration ----------------------- //
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ----------------------- Routes ----------------------- //
 
@@ -87,5 +89,9 @@ app.get('/data', function (req, res) {
   // });
 });
 
-app.listen(PORT, HOST);
-logger.log.info(`Running on http://${HOST}:${PORT}`);
+
+app.listen(PORT,HOST, () => {
+    logger.log.info(`Server running at http://${HOST}:${PORT}`);
+});
+//app.listen(PORT);
+

@@ -9,6 +9,11 @@ block content
         form(action='/report-summary' method='post')
 
             //Metadata filters
+            label(for='') True
+            input(type='radio' name=val id=dyn_name value='true')
+            label(for='no') False
+            input(type='radio' name=val id=dyn_name value='false')
+
             label(for='r-dist') Ranger District
             input(type='text' id='r-dist' name='r-dist')
             label(for='allotment') Allotment
