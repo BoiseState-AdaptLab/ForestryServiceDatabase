@@ -1,7 +1,5 @@
 extends layout
 
-block variables
-
 block content
     div(class='header')
         h1=title
@@ -9,31 +7,73 @@ block content
         form(action='/report-summary' method='post')
 
             //Metadata filters
-            label(for='') True
-            input(type='radio' name=val id=dyn_name value='true')
-            label(for='no') False
-            input(type='radio' name=val id=dyn_name value='false')
+            div(class='button-container first-button-container')
+                p(class='metric-label') Include Soil Data?
+                label(for='soil-yes') Yes
+                input(type='radio' name='include-soil' id='soil-yes' value='true')
+                label(for='soil-no') No
+                input(type='radio' name='include-soil' id='soil-no' value='false')
 
-            label(for='r-dist') Ranger District
-            input(type='text' id='r-dist' name='r-dist')
-            label(for='allotment') Allotment
-            input(type='text' id='allotment' name='allotment')
-            label(for='examiner') Examiner
-            input(type='text' id='examiner' name='examiner')
-            label(for='s-date') Start Date
-            input(type='text' id='s-date' name='s-date')
-            label(for='e-date') End Date
-            input(type='text' id='e-date' name='e-date')
-            label(for='writeup') Writeup No.
-            input(type='text' id='writeup' name='writeup')
-            label(for='photo') Photo No.
-            input(type='text' id='photo' name='photo')
-            label(for='elevation-min') Elevation Min
-            input(type='int' id='elevation-min' name='elevation-min')
-            label(for='elevation-max') Elevation Max
-            input(type='int' id='elevation-max' name='elevation-max')
-            label(for='location') Location
-            input(type='text' id='location' name='location')
+                p(class='metric-label') Include Meta Data?
+                label(for='soil-yes') Yes
+                input(type='radio' name='include-meta' id='meta-yes' value='true')
+                label(for='soil-no') No
+                input(type='radio' name='include-meta' id='meta-no' value='false')
+
+                p(class='metric-label') Include Biomass Data?
+                label(for='biomass-yes') Yes
+                input(type='radio' name='include-biomass' id='biomass-yes' value='true')
+                label(for='biomass-no') No
+                input(type='radio' name='include-biomass' id='biomass-no' value='false')
+
+                p(class='metric-label') Include Vegetation Data?
+                label(for='veg-yes') Yes
+                input(type='radio' name='include-veg' id='veg-yes' value='true')
+                label(for='veg-no') No
+                input(type='radio' name='include-veg' id='veg-no' value='false')
+
+            //Report Filters
+            div(class='button-container')
+                label(for='forest') Forest
+                input(type='text' id='forest' name='forest')
+                label(for='r_dist') Ranger District
+                input(type='text' id='r_dist' name='r_dist')
+                label(for='allotment') Allotment
+                input(type='text' id='allotment' name='allotment')
+                label(for='location') Location
+                input(type='text' id='location' name='location')
+            div(class='button-container')
+                label(for='livestock') Livestock Type
+                select(id='livestock' name='livestock')
+                    option(value='sheep') Sheep
+                    option(value='cows') Cows
+                label(for='writeup') Writeup No.
+                input(type='text' id='writeup' name='writeup')
+                label(for='photo') Photo No.
+                input(type='text' id='photo' name='photo')
+                label(for='examiner') Examiner
+                input(type='text' id='examiner' name='examiner')
+            div(class='button-container')
+                label(for='elevation_min') Elevation Min
+                input(type='int' id='elevation_min' name='elevation_min')
+                label(for='elevation_max') Elevation Max
+                input(type='int' id='elevation_max' name='elevation_max')
+                label(for='s_date') Start Date
+                input(type='text' id='s_date' name='s_date')
+                label(for='e_date') End Date
+                input(type='text' id='e_date' name='e_date')
+            div(class='button-container last-button-container')
+                label(for='slope') Slope
+                input(type='int' id='slope' name='slope')
+                label(for='aspect') Aspect
+                input(type='int' id='aspect' name='aspect')
+                label(for='type_des') Type Designation
+                input(type='text' id='type_des' name='type_des')
+                label(for='type_des_trend') Type Designation Trend
+                select(id='type_des_trend' name='type_des_trend')
+                    option(value='rising') Rising
+                    option(value='falling') Falling
+                    option(value='stable') Stable
 
             //Vegetation Summary Filters
             //Soil Summary Filters
