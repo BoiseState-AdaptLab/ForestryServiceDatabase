@@ -5,13 +5,18 @@
   "author": "First Last <first.last@example.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha"
   },
   "dependencies": {
     "express": "^4.16.1",
     "mysql": "2.17.1",
     "pg": "^7.12.1",
     "winston": "latest",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^2.0.0-rc.2",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "nock": "^9.0.13",
+    "request": "^2.88.0"
   }
 }

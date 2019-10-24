@@ -18,3 +18,4 @@ RUN npm install pg
 COPY . .
 
 CMD [ "node", "server.js" ]
+
