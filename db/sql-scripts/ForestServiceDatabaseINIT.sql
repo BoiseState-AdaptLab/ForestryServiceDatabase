@@ -17,7 +17,7 @@ CREATE TABLE report (
   livestock varchar(255),
   type_designation varchar(255),
   type_des_trend varchar(255),
-  date timestamp,
+  date date,
   total_grass int,
   total_forb int,
   total_browse int,
