@@ -17,7 +17,22 @@ CREATE TABLE report (
   livestock varchar(255),
   type_designation varchar(255),
   type_des_trend varchar(255),
-  date timestamp
+  date timestamp,
+  total_grass int,
+  total_forb int,
+  total_browse int,
+  desirable int,
+  intermediate int,
+  least_desirable int,
+  composition int,
+  production int,
+  forage_condition int,
+  ground_cover int,
+  erosion int,
+  soil_condition int,
+  browse_condition varchar(255),
+  trend varchar(255),
+  notes varchar(510)
 );
 
 
@@ -43,7 +58,7 @@ CREATE TABLE plot (
 
 
 
-CREATE TABLE vegetation (
+CREATE TABLE biomass (
   v_id int NOT NULL PRIMARY KEY,
   p_id int NOT NULL,
   type varchar(255),
@@ -53,7 +68,7 @@ CREATE TABLE vegetation (
 
 
 
-CREATE TABLE vegetation_summary (
+CREATE TABLE biomass_summary (
   v_id int NOT NULL PRIMARY KEY,
   r_id int NOT NULL,
   species varchar(255),
@@ -71,7 +86,7 @@ CREATE TABLE vegetation_summary (
 
 
 
-CREATE TABLE biomass (
+CREATE TABLE cover (
   b_id int NOT NULL PRIMARY KEY,
   p_id int NOT NULL,
   type varchar(255),
@@ -80,7 +95,7 @@ CREATE TABLE biomass (
 
 
 
-CREATE TABLE biomass_summary (
+CREATE TABLE cover_summary (
   b_id int NOT NULL PRIMARY KEY,
   r_id int NOT NULL,
   type varchar(255),
@@ -120,25 +135,4 @@ CREATE TABLE soil_summary (
   cover_dispersion varchar(255),
   potential_product int,
   suit_reasons varchar(255)
-);
-
-
-
-CREATE TABLE metadata (
-  m_id int NOT NULL PRIMARY KEY,
-  r_id int NOT NULL,
-  total_grass int,
-  total_forb int,
-  total_browse int,
-  desirable int,
-  intermediate int,
-  least_desirable int,
-  composition int,
-  production int,
-  forage_condition int,
-  ground_cover int,
-  erosion int,
-  soil_condition int,
-  browse_condition varchar(255),
-  trend varchar(255)
 );
