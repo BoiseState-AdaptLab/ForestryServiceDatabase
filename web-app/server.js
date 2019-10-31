@@ -16,8 +16,6 @@ const pool = new Pool({
 // ----------------------- Constants ----------------------- //
 const PORT = 8081;
 const HOST = '0.0.0.0';
-//const HOST = '127.0.0.1';
-//const PORT = 3000;
 
 // ----------------------- App Configuration ----------------------- //
 app.set('views', path.join(__dirname, 'views'));
@@ -38,47 +36,47 @@ app.get('/report-summary', (req, res) => {
 
 app.post('/report-summary', (req, res) => {
     logger.log.debug('report summary query posted');
-    //TODO: handle query parameters run query on database, store results in CSV
+    //TODO: handle query parameters run query on database (Brenna and Seema)
+    // TODO: store results in CSV (Peter)
     res.render('results', {title: 'Report Summary Data Retrieved'});
 });
 
-//Transect
-app.get('/transect', (req, res) => {
+// Transect
+app.get('/report-transects', (req, res) => {
     res.render('index', {title: 'Transect Query Builder'});
 });
 
-app.post('/transect', (req, res) => {
+app.post('/report-transects', (req, res) => {
     logger.log.debug('transect query posted');
-    //TODO: handle query parameters run query on database, store results in CSV
+    //TODO: handle query parameters run query on database (Brenna and Seema)
+    // TODO: store results in CSV (Peter)
     res.render('results', {title: 'Transect Data Retrieved'});
 });
 
-//Full report
+//Full report (report summary data AND transect data)
 app.get('/full-report', (req, res) => {
     res.render('index', {title: 'Full Report'});
 });
 
 app.post('/full-report', (req, res) => {
     logger.log.debug('full report query posted');
-    //TODO: handle query parameters run query on database, store results in CSV
+    //TODO: handle query parameters run query on database (Brenna and Seema)
+    // TODO: store results in CSV (Peter)
     res.render('results', {title: 'Full Report Data Retrieved'});
 });
 
-app.get('/hello', (req,res) => {
-    res.send('Hello!');
-});
 
-//Full report
+//Importing datasheets
 app.get('/import-datasheet', (req, res) => {
     res.render('import-datasheet', {title: 'Import Datasheet'});
 });
 
 app.post('/import-datasheet', (req, res) => {
     logger.log.debug('import datasheet posted');
-    //TODO: handle query parameters run query on database, store results in CSV
+    //TODO: handle query parameters run query on database (Brenna and Seema)
+    // TODO: store results in CSV (Peter)
     res.render('results', {title: 'Datasheet processed'});
 });
-
 
 
 //EX running query on PostGres DB
@@ -103,9 +101,7 @@ app.get('/data', function (req, res) {
   // });
 });
 
-
 app.listen(PORT,HOST, () => {
     logger.log.info(`Server running at http://${HOST}:${PORT}`);
 });
-//app.listen(PORT);
 
