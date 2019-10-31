@@ -1,5 +1,3 @@
---return everything--
-
 SELECT *
 WHERE report.date >= Convert(datetime, '1968-07-06');
 
