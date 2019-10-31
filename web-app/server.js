@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Homepage
 app.get('/', (req, res) => {
-    res.render('index', {title: 'Forestry Service Database'});
+    res.render('index', {title: 'Forest Service Database'});
 });
 
 // Report summary
@@ -67,6 +67,19 @@ app.post('/full-report', (req, res) => {
 app.get('/hello', (req,res) => {
     res.send('Hello!');
 });
+
+//Full report
+app.get('/import-datasheet', (req, res) => {
+    res.render('import-datasheet', {title: 'Import Datasheet'});
+});
+
+app.post('/import-datasheet', (req, res) => {
+    logger.log.debug('import datasheet posted');
+    //TODO: handle query parameters run query on database, store results in CSV
+    res.render('results', {title: 'Datasheet processed'});
+});
+
+
 
 //EX running query on PostGres DB
 app.get('/data', function (req, res) {

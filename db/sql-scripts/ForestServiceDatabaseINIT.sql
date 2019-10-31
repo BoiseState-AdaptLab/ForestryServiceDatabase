@@ -1,5 +1,3 @@
-
-
 CREATE TABLE report (
   r_id int NOT NULL PRIMARY KEY,
   writeup_no varchar(255),
@@ -36,7 +34,6 @@ CREATE TABLE report (
 );
 
 
-
 CREATE TABLE transect (
   t_id int NOT NULL PRIMARY KEY,
   r_id int NOT NULL,
@@ -49,6 +46,11 @@ CREATE TABLE transect (
 );
 
 
+ALTER TABLE transect 
+ADD CONSTRAINT FK_parent_report_t
+FOREIGN KEY (r_id) 
+REFERENCES report(r_id); 
+
 
 CREATE TABLE plot (
   p_id int NOT NULL PRIMARY KEY,
@@ -56,6 +58,11 @@ CREATE TABLE plot (
   plot_number int 
 );
 
+
+ALTER TABLE plot 
+ADD CONSTRAINT FK_parent_transect_p
+FOREIGN KEY (t_id) 
+REFERENCES transect(t_id); 
 
 
 CREATE TABLE biomass (
@@ -66,6 +73,11 @@ CREATE TABLE biomass (
   green_weight int 
 );
 
+
+ALTER TABLE biomass 
+ADD CONSTRAINT FK_parent_plot_b
+FOREIGN KEY (p_id) 
+REFERENCES plot(p_id); 
 
 
 CREATE TABLE biomass_summary (
@@ -85,6 +97,11 @@ CREATE TABLE biomass_summary (
 );
 
 
+ALTER TABLE biomass_summary 
+ADD CONSTRAINT FK_parent_report_b
+FOREIGN KEY (r_id) 
+REFERENCES report(r_id); 
+
 
 CREATE TABLE cover (
   b_id int NOT NULL PRIMARY KEY,
@@ -93,6 +110,11 @@ CREATE TABLE cover (
   value int 
 );
 
+
+ALTER TABLE cover 
+ADD CONSTRAINT FK_parent_plot_c
+FOREIGN KEY (p_id) 
+REFERENCES plot(p_id); 
 
 
 CREATE TABLE cover_summary (
@@ -103,6 +125,11 @@ CREATE TABLE cover_summary (
   average int
 );
 
+
+ALTER TABLE cover_summary 
+ADD CONSTRAINT FK_parent_report_c
+FOREIGN KEY (r_id) 
+REFERENCES report(r_id); 
 
 
 CREATE TABLE soil_summary (
@@ -136,3 +163,11 @@ CREATE TABLE soil_summary (
   potential_product int,
   suit_reasons varchar(255)
 );
+
+
+ALTER TABLE soil_summary 
+ADD CONSTRAINT FK_parent_report_s
+FOREIGN KEY (r_id) 
+REFERENCES report(r_id); 
+
+

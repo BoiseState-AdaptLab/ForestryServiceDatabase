@@ -1,0 +1,202 @@
+extends layout
+
+block content
+    div(class='header')
+        h1=title
+    div(class='body')
+        form(action='/import-datasheet' method='post')
+
+            //Report data
+            div(class='button-container first-button-container')
+
+                h2 Report Data
+
+                label(for='writeup_no') Writeup Number
+                input(type='text' id='writeup_no' name='writeup_no')
+
+                label(for='photo_no') Photo Number
+                input(type='text' id='photo_no' name='photo_no')
+
+                label(for='examiner') Examiner
+                input(type='text' id='examiner' name='examiner')
+
+                label(for='transect_nos') Transect Numbers
+                input(type='text' id='transect_nos' name='transect_nos')
+
+                label(for='slope') Slope
+                input(type='int' id='slope' name='slope')
+
+                label(for='aspect') Aspect
+                input(type='text' id='aspect' name='aspect')
+
+                label(for='elevation_min') Elevation Min
+                input(type='int' id='elevation_min' name='elevation_min')
+
+                label(for='elevation_max') Elevation Max
+                input(type='int' id='elevation_max' name='elevation_max')
+
+                label(for='forest') Forest
+                select(id='forest' name='forest')
+                    option(value='sawtooth') Sawtooth
+                    //add more options as necessary
+
+                label(for='ranger_dist') Ranger District
+                select(id='ranger_dist' name='ranger_dist')
+                    option(value='sawtooth') Sawtooth
+                    //add more options as necessary
+
+                label(for='allotment') Allotment
+                input(type='text' id='allotment' name='allotment')
+
+                label(for='location') Location
+                input(type='text' id='location' name='location')
+
+                label(for='livestock') Livestock Type
+                select(id='livestock' name='livestock')
+                    option(value='sheep') Sheep
+                    option(value='cows') Cows
+                    //add more options as necessary
+
+                label(for='type_des') Type Designation
+                input(type='text' id='type_des' name='type_des')
+
+                label(for='type_des_trend') Type Designation Trend
+                select(id='type_des_trend' name='type_des_trend')
+                    option(value='rising') Rising
+                    option(value='falling') Falling
+                    option(value='stable') Stable
+
+
+            //Coverage Summary data
+            div(class='button-container first-button-container')
+
+                h2 Coverage Summary Data
+
+            //Biomass Summary data
+            div(class='button-container first-button-container')
+
+                h2 Biomass Summary Data
+
+            //Soil Summary data
+            div(class='button-container first-button-container')
+
+                h2 Soil Summary Data
+                //TODO: change ints to numbers with min of 0
+                //TODO: update css to align inputs instead of floating (i.e. 4 per container or something)
+                p(class='metric-label') Soil:
+                label(for='surf_texture') Surface Texture
+                input(type='text' id='surf_texture' name='surf_texture')
+
+                label(for='surf_thick') Surface Texture Thickness
+                input(type='number' id='surf_thick' name='surf_thick')
+
+                label(for='surf_ph') Surface Texture pH
+                input(type='number' id='surf_ph' name='surf_ph' step=0.1 min=0 max=14)
+
+                label(for='subsoil_texture') Subsoil Texture
+                    input(type='text' id='subsoil_texture' name='subsoil_texture')
+
+                label(for='subsoil_thick') Subsoil Texture Thickness
+                    input(type='number' id='subsoil_thick' name='subsoil_thick')
+
+                label(for='subsoil_ph') Subsoil Texture pH
+                    input(type='number' id='subsoil_ph' name='subsoil_ph' step=0.1 min=0 max=14)
+
+                label(for='substrat_mat') Substratum Material
+                    input(type='text' id='substrat_mat' name='substrat_mat')
+
+                label(for='eff_root_depth') Effective Rooting Depth
+                    input(type='text' id='eff_root_depth' name='eff_root_depth')
+
+                label(for='soil_remarks') Soil Remarks
+                    input(type='text' id='soil_remarks' name='soil_remarks')
+
+                p(class='metric-label') Erosion Pattern:
+                label(for='avg_surf_loss') Average Surface Loss
+                    input(type='number' id='avg_surf_loss' name='avg_surf_loss' step=0.01 min=0)
+
+                label(for='area_surf_loss') Surface Loss Over Area (Percentage)
+                    input(type='number' id='area_surf_loss' name='area_surf_loss' min=0 max=1000 step=1)
+
+                label(for='gull_len') Gullies Length
+                    input(type='number' id='gull_len' name='gull_len' step=0.01 min=0)
+
+                label(for='gull_depth') Gullies Depth
+                    input(type='number' id='gull_depth' name='gull_depth' step=0.01 min=0)
+
+                label(for='erosion_remarks') Erosion Remarks
+                    input(type='text' id='erosion_remarks' name='erosion_remarks')
+
+                p(class='metric-label') Inherent Erosion Hazard:
+                label(for='detach') Detachability
+                    input(type='int' id='detach' name='detach')
+
+                label(for='rock_coverage') Rock Coverage
+                    input(type='int' id='rock_coverage' name='rock_coverage')
+
+                label(for='adj_detach') Adjusted Detachability Rating
+                    input(type='number' id='adj_detach' name='adj_detach' step=0.01 min=0)
+
+                label(for='perm') Permeability
+                    input(type='int' id='perm' name='perm')
+
+                label(for='erod_index') Erodibility Index
+                    input(type='number' id='erod_index' name='erod_index' step=0.01 min=0)
+
+                label(for='erod_ind_class') Erodibility Index Class
+                    input(type='text' id='erod_ind_class' name='erod_ind_class')
+
+                label(for='erod_slope') Slope
+                    input(type='int' id='erod_slope' name='erod_slope')
+
+                label(for='erod_haz_class') Erosion Hazard Class
+                    input(type='text' id='erod_haz_class' name='erod_haz_class')
+
+                p(class='metric-label') Soil Disturbance:
+                label(for='compaction') Compaction
+                    input(type='text' id='compaction' name='compaction')
+
+                label(for='displacement') Displacement
+                    input(type='text' id='displacement' name='displacement')
+
+                p(class='metric-label') Cover Dispersion:
+                label(for='cov_disp') Cover Dispersion
+                select(id='cov_disp' name='cov_disp')
+                    option(value='uniform') Uniform
+                    option(value='fairly_uniform') Fairly Uniform
+                    option(value='variable') Variable
+                    option(value='highly_variable') Highly Variable
+
+                label(for='potential_prod') Potential Product
+                    input(type='int' id='potential_prod' name='potential_prod')
+
+                label(for='sust_reasons') Suitability Reasons
+                    input(type='text' id='sust_reasons' name='sust_reasons')
+
+
+
+
+
+
+
+            //Transect data
+            div(class='button-container first-button-container')
+
+                h2 Transect Data
+
+            //Plot data
+            div(class='button-container first-button-container')
+
+                h2 Plot Data
+
+            //Biomass data
+            div(class='button-container first-button-container')
+
+                h2 Biomass Data
+
+            //Coverage data
+            div(class='button-container first-button-container')
+
+                h2 Coverage Data
+
+            button(type='submit' value='submit') Submit Datasheet
