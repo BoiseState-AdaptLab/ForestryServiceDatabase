@@ -1,11 +1,40 @@
 extends layout
 
+mixin transect(transect_no)
+
+    label(for='transect_no') Transect Number
+    input(type='number' id='transect_no' name='transect_no' min=1 max=3 step=1 value=transect_no readonly)
+
+    label(for='location') Location
+    input(type='text' id='location' name='location')
+
+    label(for='elevation') Elevation
+    input(type='number' id='elevation' name='elevation' min=0 step=1)
+
+    label(for='slope') Slope
+    input(type='text' id='slope' name='slope')
+
+    label(for='type_des') Type Designation
+    input(type='text' id='type_des' name='type_des')
+
+    label(for='aspect') Aspect
+    input(type='text' id='aspect' name='aspect')
+
+
+block variables
+    script.
+        transect1 = "#{transect1}";
+        transect2 = "#{transect2}";
+        transect3 = "#{transect3}";
+        numSpecies = "#{numSpecies}";
+
+
 block content
     div(class='header')
         h1=title
     div(class='body')
         form(action='/import-datasheet' method='post')
-
+            //TODO: enforce required fields
             //Report data
             div(class='button-container first-button-container')
 
@@ -24,16 +53,16 @@ block content
                 input(type='text' id='transect_nos' name='transect_nos')
 
                 label(for='slope') Slope
-                input(type='int' id='slope' name='slope')
+                input(type='number' id='slope' name='slope' min=0 max=90 step=1)
 
                 label(for='aspect') Aspect
                 input(type='text' id='aspect' name='aspect')
 
                 label(for='elevation_min') Elevation Min
-                input(type='int' id='elevation_min' name='elevation_min')
+                input(type='number' id='elevation_min' name='elevation_min' min=0 step=1)
 
                 label(for='elevation_max') Elevation Max
-                input(type='int' id='elevation_max' name='elevation_max')
+                input(type='number' id='elevation_max' name='elevation_max' min=0 step=1)
 
                 label(for='forest') Forest
                 select(id='forest' name='forest')
@@ -68,22 +97,22 @@ block content
 
 
             //Coverage Summary data
-            div(class='button-container first-button-container')
+            div(class='button-container')
 
                 h2 Coverage Summary Data
 
             //Biomass Summary data
-            div(class='button-container first-button-container')
+            div(class='button-container')
 
                 h2 Biomass Summary Data
 
             //Soil Summary data
-            div(class='button-container first-button-container')
+            div(class='button-container')
 
                 h2 Soil Summary Data
-                //TODO: change ints to numbers with min of 0
                 //TODO: update css to align inputs instead of floating (i.e. 4 per container or something)
                 p(class='metric-label') Soil:
+
                 label(for='surf_texture') Surface Texture
                 input(type='text' id='surf_texture' name='surf_texture')
 
@@ -112,6 +141,7 @@ block content
                     input(type='text' id='soil_remarks' name='soil_remarks')
 
                 p(class='metric-label') Erosion Pattern:
+
                 label(for='avg_surf_loss') Average Surface Loss
                     input(type='number' id='avg_surf_loss' name='avg_surf_loss' step=0.01 min=0)
 
@@ -128,17 +158,18 @@ block content
                     input(type='text' id='erosion_remarks' name='erosion_remarks')
 
                 p(class='metric-label') Inherent Erosion Hazard:
-                label(for='detach') Detachability
-                    input(type='int' id='detach' name='detach')
 
-                label(for='rock_coverage') Rock Coverage
-                    input(type='int' id='rock_coverage' name='rock_coverage')
+                label(for='detach') Detachability
+                    input(type='number ' id='detach' name='detach' min=0 step=1)
+
+                label(for='rock_coverage') Rock Coverage %
+                    input(type='number' id='rock_coverage' name='rock_coverage' min=0 step=1 max=100)
 
                 label(for='adj_detach') Adjusted Detachability Rating
                     input(type='number' id='adj_detach' name='adj_detach' step=0.01 min=0)
 
                 label(for='perm') Permeability
-                    input(type='int' id='perm' name='perm')
+                    input(type='number' id='perm' name='perm' min=0 step=1)
 
                 label(for='erod_index') Erodibility Index
                     input(type='number' id='erod_index' name='erod_index' step=0.01 min=0)
@@ -146,20 +177,30 @@ block content
                 label(for='erod_ind_class') Erodibility Index Class
                     input(type='text' id='erod_ind_class' name='erod_ind_class')
 
-                label(for='erod_slope') Slope
-                    input(type='int' id='erod_slope' name='erod_slope')
+                label(for='erod_slope') Slope %
+                    input(type='number' id='erod_slope' name='erod_slope' min=0 step=1 max=100)
 
                 label(for='erod_haz_class') Erosion Hazard Class
                     input(type='text' id='erod_haz_class' name='erod_haz_class')
 
                 p(class='metric-label') Soil Disturbance:
+
                 label(for='compaction') Compaction
-                    input(type='text' id='compaction' name='compaction')
+                select(id='compaction' name='compaction')
+                    option(value='none') None
+                    option(value='light') Light
+                    option(value='moderate') Moderate
+                    option(value='heavy') Heavy
 
                 label(for='displacement') Displacement
-                    input(type='text' id='displacement' name='displacement')
+                select(id='displacement' name='displacement')
+                    option(value='none') None
+                    option(value='light') Light
+                    option(value='moderate') Moderate
+                    option(value='heavy') Heavy
 
                 p(class='metric-label') Cover Dispersion:
+
                 label(for='cov_disp') Cover Dispersion
                 select(id='cov_disp' name='cov_disp')
                     option(value='uniform') Uniform
@@ -168,7 +209,7 @@ block content
                     option(value='highly_variable') Highly Variable
 
                 label(for='potential_prod') Potential Product
-                    input(type='int' id='potential_prod' name='potential_prod')
+                    input(type='number' id='potential_prod' name='potential_prod')
 
                 label(for='sust_reasons') Suitability Reasons
                     input(type='text' id='sust_reasons' name='sust_reasons')
@@ -176,13 +217,19 @@ block content
 
 
 
+            //Transect  1 data
+            div(class='button-container')
 
+                if transect1
+                    h2 Transect 1 Data
+                    +transect(1)
+                if transect2
+                    h2 Transect 2 Data
+                    +transect(2)
+                if transect3
+                    h2 Transect 3 Data
+                    +transect(3)
 
-
-            //Transect data
-            div(class='button-container first-button-container')
-
-                h2 Transect Data
 
             //Plot data
             div(class='button-container first-button-container')

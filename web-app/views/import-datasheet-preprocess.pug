@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    div(class='header')
+        h1=title
+    div(class='body')
+        form(action='/import-datasheet-preprocess' method='post')
+
+            div(class='button-container first-button-container')
+
+                P(class='metric-label') How many distinct species of biomass on summary page?
+                input(type='number' name='num_species' min=0 step=1)
+
+                P(class='metric-label') Does your sheet have data for...
+
+                P(class='metric-label') Transect 1
+                label(for='transect1_yes') Yes
+                input(type='radio' name='include_tran_1' id='transect1_yes' value='true')
+                label(for='transect1_no') No
+                input(type='radio' name='include_tran_1' id='transect1_no' value='false')
+
+                P(class='metric-label') Transect 2
+                label(for='transect2_yes') Yes
+                input(type='radio' name='include_tran_2' id='transect2_yes' value='true')
+                label(for='transect2_no') No
+                input(type='radio' name='include_tran_2' id='transect2_no' value='false')
+
+                P(class='metric-label') Transect 3
+                label(for='transect3_yes') Yes
+                input(type='radio' name='include_tran_3' id='transect3_yes' value='true')
+                label(for='transect3_no') No
+                input(type='radio' name='include_tran_3' id='transect3_no' value='false')
+
+            button(type='submit' value='submit') Continue

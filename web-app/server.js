@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const logger = require('./modules/logger');
+const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 const pool = new Pool({
     user: 'user',
@@ -16,11 +17,15 @@ const pool = new Pool({
 // ----------------------- Constants ----------------------- //
 const PORT = 8081;
 const HOST = '0.0.0.0';
+//const HOST = '127.0.0.1';
+//const PORT = 3000;
 
 // ----------------------- App Configuration ----------------------- //
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // ----------------------- Routes ----------------------- //
 
@@ -67,9 +72,23 @@ app.post('/full-report', (req, res) => {
 
 
 //Importing datasheets
-app.get('/import-datasheet', (req, res) => {
-    res.render('import-datasheet', {title: 'Import Datasheet'});
+app.get('/import-datasheet-preprocess', (req, res) => {
+    res.render('import-datasheet-preprocess', {title: 'Import Datasheet Preprocessing'});
 });
+
+app.post('/import-datasheet-preprocess', (req, res) => {
+    if (req.body['include_tran_1'] === 'true') {
+        let transect1 = true;
+    }  else {
+        let transect1= false;
+    }
+
+    let transect1 = req.body['include_tran_1'] === 'true' ? true : false;
+    let transect2 = req.body['include_tran_2'] === 'true' ? true : false;
+    let transect3 = req.body['include_tran_3'] === 'true' ? true : false;
+    res.render('import-datasheet', {title: 'Import Datasheet', transect1, transect2, transect3});
+});
+
 
 app.post('/import-datasheet', (req, res) => {
     logger.log.debug('import datasheet posted');
@@ -77,6 +96,8 @@ app.post('/import-datasheet', (req, res) => {
     // TODO: store results in CSV (Peter)
     res.render('results', {title: 'Datasheet processed'});
 });
+
+
 
 
 //EX running query on PostGres DB
