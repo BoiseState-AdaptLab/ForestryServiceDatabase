@@ -1,73 +1,97 @@
-SELECT *
-WHERE report.date >= Convert(datetime, '1968-07-06');
+--returns all of the summaries that we have--
+SELECT report.*, biomass_summary.*, cover_summary.*
+FROM report
+INNER JOIN biomass_summary
+ON (report.r_id = biomass_summary.r_id)
+INNER JOIN cover_summary
+ON (report.r_id = cover_summary.r_id);
 
--- return veg summary --
-SELECT * FROM vegetation_summary
-WHERE vegetation.type = 'GRASS';
+--returns the summary page based on specific parameter--
+SELECT 
+report.*, biomass_summary.*, cover_summary.*
+from report INNER JOIN biomass_summary
+ON (report.r_id = biomass_summary.r_id)
+INNER JOIN cover_summary
+ON (report.r_id = cover_summary.r_id)
+WHERE report.writeup_no = 'A-13';
 
-SELECT * FROM vegetation_summary
-WHERE vegetation.species = 'AGSPI';
 
-SELECT * FROM vegetation_summary
-WHERE vegetation.type = 'GRASS'
-AND vegetation.species = 'BRTE';
+SELECT 
+report.*, biomass_summary.*, cover_summary.*
+from report INNER JOIN biomass_summary
+ON (report.r_id = biomass_summary.r_id)
+INNER JOIN cover_summary
+ON (report.r_id = cover_summary.r_id)
+WHERE report.photo_no = 'NBV-6-701';
 
-SELECT * FROM vegetation_summary
-WHERE vegetation.green_weight > 5;
+SELECT 
+report.*, biomass_summary.*, cover_summary.*
+from report INNER JOIN biomass_summary
+ON (report.r_id = biomass_summary.r_id)
+INNER JOIN cover_summary
+ON (report.r_id = cover_summary.r_id)
+WHERE report.examiner = 'H Hess';
 
-SELECT * FROM vegetation_summary
-WHERE report.date = 1968-07-06;
+--returns transect pages based on specific parameters w/out cover section--
+SELECT
+report.date,
+transect.transect_no, transect.location,
+plot.plot_number,
+biomass.type, biomass.species, biomass.green_weight
+FROM report
+INNER JOIN transect
+ON (report.r_id = transect.r_id)
+INNER JOIN plot
+ON (transect.t_id = plot.t_id)
+INNER JOIN biomass
+ON (plot.p_id = biomass.p_id)
+WHERE biomass.species = 'AGSPI';
 
--- return veg AND biomass summary --
-SELECT * FROM vegetation_summary, biomass_summary
-WHERE vegetation.type = 'GRASS';
+SELECT
+report.date,
+transect.transect_no, transect.location,
+plot.plot_number,
+biomass.type, biomass.species, biomass.green_weight
+FROM report
+INNER JOIN transect
+ON (report.r_id = transect.r_id)
+INNER JOIN plot
+ON (transect.t_id = plot.t_id)
+INNER JOIN biomass
+ON (plot.p_id = biomass.p_id)
+WHERE report.date = '1972-07-06';
 
-SELECT * FROM vegetation_summary, biomass_summary
-WHERE vegetation.species = 'AGSPI';
+--transect page w/cover section--
+SELECT
+report.date,
+transect.transect_no, transect.location,
+plot.plot_number,
+biomass.type, biomass.species, biomass.green_weight,
+cover.type, cover.value
+FROM report
+INNER JOIN transect
+ON (report.r_id = transect.r_id)
+INNER JOIN plot
+ON (transect.t_id = plot.t_id)
+INNER JOIN biomass
+ON (plot.p_id = biomass.p_id)
+INNER JOIN cover
+ON (plot.p_id = cover.p_id)
+WHERE biomass.species = 'AGSPI';
 
-SELECT * FROM vegetation_summary, biomass_summary
-WHERE vegetation.type = 'GRASS'
-AND vegetation.species = 'BRTE';
-
-SELECT * FROM vegetation_summary, biomass_summary
-WHERE vegetation.green_weight > 5;
-
-SELECT * FROM vegetation_summary, biomass_summary
-WHERE report.date = 1968-07-06;
-
---return soil summary-
-SELECT * FROM soil_summary
-WHERE vegetation.type = 'GRASS';
-
-SELECT * FROM soil_summary
-WHERE vegetation.surf_text_thick > 35;
-
-SELECT * FROM soil_summary
-WHERE vegetation.species = 'AGSPI';
-
-SELECT * FROM soil_summary
-WHERE vegetation.type = 'GRASS'
-AND vegetation.surf_text_thick > 35;
-
-SELECT * FROM soil_summary
-WHERE vegetation.soil_condition > 35;
-
---return summaries and metadata--
-SELECT * FROM vegetation_summary, biomass_summaries, metadata
-WHERE vegetation.type = 'GRASS';
-
-SELECT * FROM vegetation_summary, biomass_summaries, metadata
-WHERE vegetation.species = 'AGSPI';
-
-SELECT * FROM vegetation_summary, biomass_summaries, metadata
-WHERE vegetation.type = 'GRASS'
-AND vegetation.species = 'BRTE';
-
-SELECT * FROM vegetation_summary, biomass_summaries, metadata
-WHERE vegetation.green_weight > 5;
-
-SELECT * FROM vegetation_summary, biomass_summaries, metadata
-WHERE report.date = 1968-07-06;
-
-SELECT * FROM vegetation_summary, biomass_summaries, metadata
-WHERE vegetation.soil_condition > 35;
+SELECT
+report.date,
+transect.transect_no, transect.location,
+plot.plot_number,
+biomass.type, biomass.species, biomass.green_weight,
+cover.type, cover.value
+FROM report
+INNER JOIN transect
+ON (report.r_id = transect.r_id)
+INNER JOIN plot
+ON (transect.t_id = plot.t_id)
+INNER JOIN biomass
+ON (plot.p_id = biomass.p_id)
+INNER JOIN cover
+ON (plot.p_id = cover.p_id)
+WHERE report.date = '1972-07-06';
