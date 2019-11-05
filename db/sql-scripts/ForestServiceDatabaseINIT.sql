@@ -1,3 +1,10 @@
+-- DROP DATABASE IF EXISTS ForestServiceDB;
+-- CREATE DATABASE ForestServiceDB;
+
+
+-- use ForestServiceDB;
+
+
 CREATE TABLE report (
   r_id int NOT NULL PRIMARY KEY,
   writeup_no varchar(255),
@@ -66,7 +73,7 @@ REFERENCES transect(t_id);
 
 
 CREATE TABLE biomass (
-  v_id int NOT NULL PRIMARY KEY,
+  b_id int NOT NULL PRIMARY KEY,
   p_id int NOT NULL,
   type varchar(255),
   species varchar(255),
@@ -81,7 +88,7 @@ REFERENCES plot(p_id);
 
 
 CREATE TABLE biomass_summary (
-  v_id int NOT NULL PRIMARY KEY,
+  b_id int NOT NULL PRIMARY KEY,
   r_id int NOT NULL,
   species varchar(255),
   trans1 int,
@@ -104,7 +111,7 @@ REFERENCES report(r_id);
 
 
 CREATE TABLE cover (
-  b_id int NOT NULL PRIMARY KEY,
+  c_id int NOT NULL PRIMARY KEY,
   p_id int NOT NULL,
   type varchar(255),
   value int 
@@ -118,7 +125,7 @@ REFERENCES plot(p_id);
 
 
 CREATE TABLE cover_summary (
-  b_id int NOT NULL PRIMARY KEY,
+  c_id int NOT NULL PRIMARY KEY,
   r_id int NOT NULL,
   type varchar(255),
   total int,
