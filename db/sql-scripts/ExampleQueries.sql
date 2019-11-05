@@ -30,7 +30,9 @@ from report INNER JOIN biomass_summary
 ON (report.r_id = biomass_summary.r_id)
 INNER JOIN cover_summary
 ON (report.r_id = cover_summary.r_id)
-WHERE report.examiner = 'H Hess';
+WHERE report.examiner = 'H Hess'
+AND report.date > '1971-07-06'
+AND report.date < '1973-07-06';
 
 --returns transect pages based on specific parameters w/out cover section--
 SELECT
@@ -59,9 +61,12 @@ INNER JOIN plot
 ON (transect.t_id = plot.t_id)
 INNER JOIN biomass
 ON (plot.p_id = biomass.p_id)
-WHERE report.date = '1972-07-06';
+WHERE biomass.species = 'AGSPI'
+AND report.date > '1971-07-06'
+AND report.date < '1973-07-06';
 
---transect page w/cover section--
+--transect page w/cover section. Need to rerun with real data.--
+--these tables only hold date from report table. We can return just a report table seperately--
 SELECT
 report.date,
 transect.transect_no, transect.location,
@@ -94,4 +99,7 @@ INNER JOIN biomass
 ON (plot.p_id = biomass.p_id)
 INNER JOIN cover
 ON (plot.p_id = cover.p_id)
-WHERE report.date = '1972-07-06';
+WHERE biomass.species='AGSPI'
+AND report.date > '1971-07-06'
+AND report.date < '1973-07-06'; 
+
