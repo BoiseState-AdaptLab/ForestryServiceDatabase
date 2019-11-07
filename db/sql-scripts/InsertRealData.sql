@@ -128,7 +128,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(3, 1, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(4, 1, ' Bare Ground', 90);
+VALUES(4, 1, 'Bare Ground', 90);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(5, 1, 'Rock/Pav (Nat)', NULL);
@@ -189,7 +189,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(13, 2, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(14, 2, ' Bare Ground', 40);
+VALUES(14, 2, 'Bare Ground', 40);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(15, 2, 'Rock/Pav (Nat)', NULL);
@@ -250,7 +250,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(23, 3, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(24, 3, ' Bare Ground', 60);
+VALUES(24, 3, 'Bare Ground', 60);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(25, 3, 'Rock/Pav (Nat)', NULL);
@@ -311,7 +311,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(33, 4, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(34, 4, ' Bare Ground', 70);
+VALUES(34, 4, 'Bare Ground', 70);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(35, 4, 'Rock/Pav (Nat)', NULL);
@@ -372,7 +372,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(43, 5, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(44, 5, ' Bare Ground', 10);
+VALUES(44, 5, 'Bare Ground', 10);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(45, 5, 'Rock/Pav (Nat)', NULL);
@@ -433,7 +433,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(53, 6, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(54, 6, ' Bare Ground', 80);
+VALUES(54, 6, 'Bare Ground', 80);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(55, 6, 'Rock/Pav (Nat)', NULL);
@@ -494,7 +494,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(63, 7, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(64, 7, ' Bare Ground', 90);
+VALUES(64, 7, 'Bare Ground', 90);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(65, 7, 'Rock/Pav (Nat)', NULL);
@@ -555,7 +555,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(73, 8, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(74, 8, ' Bare Ground', 10);
+VALUES(74, 8, 'Bare Ground', 10);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(75, 8, 'Rock/Pav (Nat)', NULL);
@@ -616,7 +616,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(83, 9, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(84, 9, ' Bare Ground', 15);
+VALUES(84, 9, 'Bare Ground', 15);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(85, 9, 'Rock/Pav (Nat)', NULL);
@@ -677,7 +677,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(93, 10, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(94, 10, ' Bare Ground', 10);
+VALUES(94, 10, 'Bare Ground', 10);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(95, 10, 'Rock/Pav (Nat)', NULL);
@@ -742,7 +742,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(103, 11, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(104, 11, ' Bare Ground', 80);
+VALUES(104, 11, 'Bare Ground', 80);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(105, 11, 'Rock/Pav (Nat)', NULL);
@@ -803,7 +803,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(113, 12, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(114, 12, ' Bare Ground', 70);
+VALUES(114, 12, 'Bare Ground', 70);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(115, 12, 'Rock/Pav (Nat)', NULL);
@@ -864,7 +864,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(123, 13, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(124, 13, ' Bare Ground', 10);
+VALUES(124, 13, 'Bare Ground', 10);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(125, 13, 'Rock/Pav (Nat)', NULL);
@@ -925,7 +925,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(133, 14, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(134, 14, ' Bare Ground', 70);
+VALUES(134, 14, 'Bare Ground', 70);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(135, 14, 'Rock/Pav (Nat)', NULL);
@@ -986,7 +986,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(143, 15, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(144, 15, ' Bare Ground', 90);
+VALUES(144, 15, 'Bare Ground', 90);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(145, 15, 'Rock/Pav (Nat)', NULL);
@@ -1047,7 +1047,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(153, 16, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(154, 16, ' Bare Ground', 85);
+VALUES(154, 16, 'Bare Ground', 85);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(155, 16, 'Rock/Pav (Nat)', NULL);
@@ -1108,7 +1108,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(163, 17, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(164, 17, ' Bare Ground', 15);
+VALUES(164, 17, 'Bare Ground', 15);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(165, 17, 'Rock/Pav (Nat)', NULL);
@@ -1169,7 +1169,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(173, 18, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(174, 18, ' Bare Ground', 90);
+VALUES(174, 18, 'Bare Ground', 90);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(175, 18, 'Rock/Pav (Nat)', NULL);
@@ -1230,7 +1230,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(183, 19, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(184, 19, ' Bare Ground', 65);
+VALUES(184, 19, 'Bare Ground', 65);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(185, 19, 'Rock/Pav (Nat)', NULL);
@@ -1291,7 +1291,7 @@ INSERT INTO cover(c_id, p_id, type, value)
 VALUES(193, 20, 'Crown Cover (Herb)', NULL);
 
 INSERT INTO cover(c_id, p_id, type, value)
-VALUES(194, 20, ' Bare Ground', 80);
+VALUES(194, 20, 'Bare Ground', 80);
 
 INSERT INTO cover(c_id, p_id, type, value)
 VALUES(195, 20, 'Rock/Pav (Nat)', NULL);
@@ -1315,44 +1315,674 @@ VALUES(200, 20, 'Pellet Groups', NULL);
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
 VALUES (3, 1, 3, 'West of Sprout Creek', 7000, 35, '5', 'W');
 
-
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (21, 3, 1);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(182, 21, 'Grass', 'AGSPI', 4);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(183, 21, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(184, 21, 'Grass', 'BRMA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(185, 21, 'Forb', 'ANNUAL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(186, 21, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(187, 21, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(188, 21, 'Browse', 'ARTR', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(189, 21, 'Browse', 'SYMPTH', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(190, 21, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(191, 21, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(192, 21, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(201, 21, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(202, 21, 'Overstory (Shrub)', NULL);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(203, 21, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(204, 21, 'Bare Ground', 65);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(205, 21, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(206, 21, 'Rock/Pav (Unnat)', 5);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(207, 21, 'Veg/Litter', 30);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(208, 21, 'Soil Disturbance', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(209, 21, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(210, 21, 'Pellet Groups', NULL);
 
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (22, 3, 2);
 
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(193, 22, 'Grass', 'AGSPI', 20);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(194, 22, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(195, 22, 'Grass', 'BRMA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(196, 22, 'Forb', 'ANNUAL', 4);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(197, 22, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(198, 22, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(199, 22, 'Browse', 'ARTR', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(200, 22, 'Browse', 'SYMPTH', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(201, 22, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(202, 22, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(203, 22, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(211, 22, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(212, 22, 'Overstory (Shrub)', NULL);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(213, 22, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(214, 22, 'Bare Ground', 30);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(215, 22, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(216, 22, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(217, 22, 'Veg/Litter', 70);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(218, 22, 'Soil Disturbance', 10);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(219, 22, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(220, 22, 'Pellet Groups', NULL);
+
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (23, 3, 3);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(204, 23, 'Grass', 'AGSPI', 6);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(205, 23, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(206, 23, 'Grass', 'BRMA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(207, 23, 'Forb', 'ANNUAL', 2);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(208, 23, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(209, 23, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(210, 23, 'Browse', 'ARTR', 40);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(211, 23, 'Browse', 'SYMPTH', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(212, 23, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(213, 23, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(214, 23, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(221, 23, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(222, 23, 'Overstory (Shrub)', 40);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(223, 23, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(224, 23, 'Bare Ground', 30);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(225, 23, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(226, 23, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(227, 23, 'Veg/Litter', 70);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(228, 23, 'Soil Disturbance', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(229, 23, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(230, 23, 'Pellet Groups', NULL);
 
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (24, 3, 4);
 
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(215, 24, 'Grass', 'AGSPI', 4);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(216, 24, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(217, 24, 'Grass', 'BRMA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(218, 24, 'Forb', 'ANNUAL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(219, 24, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(220, 24, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(221, 24, 'Browse', 'ARTR', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(222, 24, 'Browse', 'SYMPTH', 5);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(223, 24, 'Browse', 'CHUIL', 4);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(224, 24, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(225, 24, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(231, 24, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(232, 24, 'Overstory (Shrub)', 5);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(233, 24, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(234, 24, 'Bare Ground', 30);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(235, 24, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(236, 24, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(237, 24, 'Veg/Litter', 70);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(238, 24, 'Soil Disturbance', 5);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(239, 24, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(240, 24, 'Pellet Groups', NULL);
+
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (25, 3, 5);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(226, 25, 'Grass', 'AGSPI', 3);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(227, 25, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(228, 25, 'Grass', 'BRMA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(229, 25, 'Forb', 'ANNUAL', 1);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(230, 25, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(231, 25, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(232, 25, 'Browse', 'ARTR', 12);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(233, 25, 'Browse', 'SYMPTH', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(234, 25, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(235, 25, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(236, 25, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(241, 25, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(242, 25, 'Overstory (Shrub)', 10);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(243, 25, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(244, 25, 'Bare Ground', 25);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(245, 25, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(246, 25, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(247, 25, 'Veg/Litter', 75);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(248, 25, 'Soil Disturbance', 10);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(249, 25, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(250, 25, 'Pellet Groups', NULL);
 
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (26, 3, 6);
 
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(237, 26, 'Grass', 'AGSPI', 2);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(238, 26, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(239, 26, 'Grass', 'BRMA', 3);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(240, 26, 'Forb', 'ANNUAL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(241, 26, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(242, 26, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(243, 26, 'Browse', 'ARTR', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(244, 26, 'Browse', 'SYMPTH', 8);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(245, 26, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(246, 26, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(247, 26, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(251, 26, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(252, 26, 'Overstory (Shrub)', NULL);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(253, 26, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(254, 26, 'Bare Ground', 30);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(255, 26, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(256, 26, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(257, 26, 'Veg/Litter', 70);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(258, 26, 'Soil Disturbance', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(259, 26, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(260, 26, 'Pellet Groups', NULL);
+
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (27, 3, 7);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(248, 27, 'Grass', 'AGSPI', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(249, 27, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(250, 27, 'Grass', 'BRMA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(251, 27, 'Forb', 'ANNUAL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(252, 27, 'Forb', 'BASA', 16);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(253, 27, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(254, 27, 'Browse', 'ARTR', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(255, 27, 'Browse', 'SYMPTH', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(256, 27, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(257, 27, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(258, 27, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(261, 27, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(262, 27, 'Overstory (Shrub)', NULL);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(263, 27, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(264, 27, 'Bare Ground', 80);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(265, 27, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(266, 27, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(267, 27, 'Veg/Litter', 20);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(268, 27, 'Soil Disturbance', 5);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(269, 27, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(270, 27, 'Pellet Groups', NULL);
 
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (28, 3, 8);
 
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(259, 28, 'Grass', 'AGSPI', 4);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(260, 28, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(261, 28, 'Grass', 'BRMA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(262, 28, 'Forb', 'ANNUAL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(263, 28, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(264, 28, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(265, 28, 'Browse', 'ARTR', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(266, 28, 'Browse', 'SYMPTH', 5);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(267, 28, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(268, 28, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(269, 28, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(271, 28, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(272, 28, 'Overstory (Shrub)', 5);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(273, 28, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(274, 28, 'Bare Ground', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(275, 28, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(276, 28, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(277, 28, 'Veg/Litter', 100);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(278, 28, 'Soil Disturbance', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(279, 28, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(280, 28, 'Pellet Groups', NULL);
+
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (29, 3, 9);
 
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(270, 29, 'Grass', 'AGSPI', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(271, 29, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(272, 29, 'Grass', 'BRMA', 8);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(273, 29, 'Forb', 'ANNUAL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(274, 29, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(275, 29, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(276, 29, 'Browse', 'ARTR', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(277, 29, 'Browse', 'SYMPTH', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(278, 29, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(279, 29, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(280, 29, 'Browse', 'PRUF', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(281, 29, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(282, 29, 'Overstory (Shrub)', NULL);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(283, 29, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(284, 29, 'Bare Ground', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(285, 29, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(286, 29, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(287, 29, 'Veg/Litter', 100);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(288, 29, 'Soil Disturbance', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(289, 29, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(290, 29, 'Pellet Groups', NULL);
+
+
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (30, 3, 10);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(281, 30, 'Grass', 'AGSPI', 2);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(282, 30, 'Grass', 'BRTE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(283, 30, 'Grass', 'BRMA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(284, 30, 'Forb', 'ANNUAL', 2);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(285, 30, 'Forb', 'BASA', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(286, 30, 'Forb', 'PHACE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(287, 30, 'Browse', 'ARTR', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(288, 30, 'Browse', 'SYMPTH', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(289, 30, 'Browse', 'CHUIL', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(290, 30, 'Browse', 'CEUE', NULL);
+
+INSERT INTO biomass(b_id, p_id, type, species, green_weight)
+VALUES(291, 30, 'Browse', 'PRUF', 7);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(291, 30, 'Overstory (Trees)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(292, 30, 'Overstory (Shrub)', NULL);
+ 
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(293, 30, 'Crown Cover (Herb)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(294, 30, 'Bare Ground', 20);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(295, 30, 'Rock/Pav (Nat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(296, 30, 'Rock/Pav (Unnat)', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(297, 30, 'Veg/Litter', 80);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(298, 30, 'Soil Disturbance', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(299, 30, 'Droppings', NULL);
+
+INSERT INTO cover(c_id, p_id, type, value)
+VALUES(300, 30, 'Pellet Groups', NULL);
 
 
 INSERT INTO soil_summary(s_id, r_id, surface_texture, surf_text_thick, surf_text_ph,
