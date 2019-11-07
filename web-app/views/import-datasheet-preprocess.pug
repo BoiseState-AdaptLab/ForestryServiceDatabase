@@ -6,29 +6,58 @@ block content
     div(class='body')
         form(action='/import-datasheet-preprocess' method='post')
 
-            div(class='button-container first-button-container')
+            //Summary Page
+            div(class='button-container first-button-container last-button-container')
 
                 P(class='metric-label') How many distinct species of biomass on summary page?
-                input(type='number' name='num_species' min=0 step=1)
+                input(type='number' name='num_species' min=0 step=1 required)
 
-                P(class='metric-label') Does your sheet have data for...
+            P(class='metric-label') Does your sheet have data for...
+
+            //Transect 1
+            div(class='button-container first-button-container')
 
                 P(class='metric-label') Transect 1
+
                 label(for='transect1_yes') Yes
-                input(type='radio' name='include_tran_1' id='transect1_yes' value='true')
+                input(type='radio' name='include_tran_1' id='transect1_yes' value='true' required)
+
                 label(for='transect1_no') No
-                input(type='radio' name='include_tran_1' id='transect1_no' value='false')
+                input(type='radio' name='include_tran_1' id='transect1_no' value='false' required)
+
+                div
+                label(for='transect1_species') If so, how many distinct species for transect 1?
+                input(type='number' id='transect1_species' name='transect1_species' min=0 step=1)
+
+            //Transect 2
+            div(class='button-container')
 
                 P(class='metric-label') Transect 2
+
                 label(for='transect2_yes') Yes
-                input(type='radio' name='include_tran_2' id='transect2_yes' value='true')
+                input(type='radio' name='include_tran_2' id='transect2_yes' value='true' required)
+
                 label(for='transect2_no') No
-                input(type='radio' name='include_tran_2' id='transect2_no' value='false')
+                input(type='radio' name='include_tran_2' id='transect2_no' value='false' required)
+
+                div
+                label(for='transect2_species') If so, how many distinct species for transect 2?
+                input(type='number' id='transect2_species' name='transect2_species' min=0 step=1)
+
+
+            //Transect 3
+            div(class='button-container last-button-container')
 
                 P(class='metric-label') Transect 3
+
                 label(for='transect3_yes') Yes
-                input(type='radio' name='include_tran_3' id='transect3_yes' value='true')
+                input(type='radio' name='include_tran_3' id='transect3_yes' value='true' required)
+
                 label(for='transect3_no') No
-                input(type='radio' name='include_tran_3' id='transect3_no' value='false')
+                input(type='radio' name='include_tran_3' id='transect3_no' value='false' required)
+
+                div
+                label(for='transect3_species') If so, how many distinct species for transect 3?
+                input(type='number' id='transect3_species' name='transect3_species' min=0 step=1)
 
             button(type='submit' value='submit') Continue

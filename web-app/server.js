@@ -83,10 +83,16 @@ app.post('/import-datasheet-preprocess', (req, res) => {
         let transect1= false;
     }
 
-    let transect1 = req.body['include_tran_1'] === 'true' ? true : false;
-    let transect2 = req.body['include_tran_2'] === 'true' ? true : false;
-    let transect3 = req.body['include_tran_3'] === 'true' ? true : false;
-    res.render('import-datasheet', {title: 'Import Datasheet', transect1, transect2, transect3});
+    // Retrieving info from form to be passed to next form
+    let transect1 = req.body['include_tran_1'] === 'true';
+    let transect2 = req.body['include_tran_2'] === 'true';
+    let transect3 = req.body['include_tran_3'] === 'true';
+    let numSpeciesSummary = req.body['num_species'];
+    let numSpeciesT1 = req.body['transect1_species'];
+    let numSpeciesT2 = req.body['transect2_species'];
+    let numSpeciesT3 = req.body['transect3_species'];
+
+    res.render('import-datasheet', {title: 'Import Datasheet', transect1, transect2, transect3, numSpeciesSummary, numSpeciesT1, numSpeciesT2, numSpeciesT3});
 });
 
 

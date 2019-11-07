@@ -3,7 +3,7 @@
 
 a:link, a:visited {
     text-decoration: none;
-    color: #742328;
+    color: #C6A15B;
 }
 
 a:hover {
@@ -23,7 +23,7 @@ ol {
 /* --------------------------------------- Nav Bar --------------------------------------------------------- */
 
 .banner {
-    background-color: #2D1F45;
+    background-color: #1E441E;
     height: 125px;
 }
 
@@ -41,7 +41,7 @@ ol {
 }
 
 .nav-bar li{
-    border-right: 2px solid #4D1A20;
+    border-right: 2px solid #C6A15B;
     padding: 0 10px;
 }
 
@@ -61,7 +61,7 @@ body {
     background-color: #0A100D;
     font-weight: 700;
     font-family: 'Inconsolata', serif;
-    color: #e5c687;
+    color: #C6A15B;
     font-size: 15px;
     text-align: center;
     width: 100%;
@@ -106,8 +106,7 @@ button:hover {
 }
 
 .header {
-    color: #D17A22;
-
+    color: #7B3E19;
     font-weight: 700;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -140,7 +139,13 @@ ul li {
     font-size: 20px;
     text-space: 3px;
     margin-bottom: 0;
-    color: #813068;
+    color: #1E441E;
+}
+
+.report-segment {
+    background-color: #C6A15B;
+    color: #1E441E;
+    letter-spacing: 6px;
 }
 
 /* --------------------------------------- Forms  --------------------------------------------------------- */
