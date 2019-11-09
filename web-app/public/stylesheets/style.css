@@ -7,7 +7,7 @@ a:link, a:visited {
 }
 
 a:hover {
-    color: #D33F49 !important;
+    color: #F4743B !important;
 }
 
 li {
@@ -23,7 +23,7 @@ ol {
 /* --------------------------------------- Nav Bar --------------------------------------------------------- */
 
 .banner {
-    background-color: #1E441E;
+    background-color: #315C2B;
     height: 125px;
 }
 
@@ -139,29 +139,44 @@ ul li {
     font-size: 20px;
     text-space: 3px;
     margin-bottom: 0;
-    color: #1E441E;
+    color: #315C2B;
 }
 
 .report-segment {
     background-color: #C6A15B;
-    color: #1E441E;
+    color: #315C2B;
+    letter-spacing: 6px;
+}
+
+.report-sub-segment {
+    background-color: #315C2B;
+    color: #C6A15B;
     letter-spacing: 6px;
 }
 
 /* --------------------------------------- Forms  --------------------------------------------------------- */
 
+.flex-container-inline {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+.flex-container-inline > input[type=number] {
+    width:75px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.small-input {
+    width:75px;
+}
 
 input[type=checkbox] {
     position: relative;
 }
-
-input[type=text], input[type=number], input[type=email], input[type=password], select {
-    border: 2px solid #7B3E19;
-    border-radius: 4px;
-    padding:10px;
-    margin:20px 10px;
-}
-
 
 .submit-button {
     padding-left: 0;
@@ -169,20 +184,16 @@ input[type=text], input[type=number], input[type=email], input[type=password], s
 }
 
 /* Style all input fields */
-select {
-    padding: 8px;
-    box-sizing: border-box;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    box-shadow: none;
-}
-
-input {
+input,select {
     display: inline-block;
     text-align: left;
-    padding: 12px;
-    margin:10px;
-    border: 1px solid #7B3E19;
-    border-radius: 4px;
     box-sizing: border-box;
+    border: 2px solid #7B3E19;
+    border-radius: 4px;
+    padding:10px;
+    margin:10px;
+}
+
+label {
+    line-height: 50px;
 }

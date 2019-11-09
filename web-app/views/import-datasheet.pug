@@ -2,121 +2,157 @@ extends layout
 
 mixin transect(transect_no)
 
-    //TODO: maybe don't show this and just keep as behind the scenes field
-    label(for='transect_no') Transect Number
-    input(type='number' id='transect_no' name='transect_no' min=1 max=3 step=1 value=transect_no readonly)
+    div(class='flex-container button-container')
+        label(for='transect_no') Transect Number
+            input(type='number' id='transect_no' name='transect_no' min=1 max=3 step=1 value=transect_no readonly)
 
-    -var dyn_name = "location_" + transect_no;
-    label(for=dyn_name) Location
-    input(type='text' id=dyn_name name=dyn_name)
+        - var dyn_name = "type_des_" + transect_no;
+        label(for=dyn_name) Type Designation
+            input(type='text' id=dyn_name name=dyn_name)
 
-    - dyn_name = "elevation_" + transect_no;
-    label(for=dyn_name) Elevation
-    input(type='number' id=dyn_name name=dyn_name min=0 step=1)
+        - dyn_name = "slope_" + transect_no;
+        label(for=dyn_name) Slope
+            input(type='number' id=dyn_name name=dyn_name)
 
-    - dyn_name = "slope_" + transect_no;
-    label(for=dyn_name) Slope
-    input(type='number' id=dyn_name name=dyn_name)
+        - dyn_name = "aspect_" + transect_no;
+        label(for=dyn_name) Aspect
+            input(type='text' id=dyn_name name=dyn_name)
 
-    - dyn_name = "type_des_" + transect_no;
-    label(for=dyn_name) Type Designation
-    input(type='text' id=dyn_name name=dyn_name)
+    div(class='flex-container button-container')
+        - dyn_name = "location_" + transect_no;
+        label(class='large-text' for=dyn_name) Location
+            input(type='text' id=dyn_name name=dyn_name)
 
-    - dyn_name = "aspect_" + transect_no;
-    label(for=dyn_name) Aspect
-    input(type='text' id=dyn_name name=dyn_name)
+        - dyn_name = "elevation_" + transect_no;
+        label(for=dyn_name) Elevation
+            input(type='number' id=dyn_name name=dyn_name min=0 step=1)
 
 mixin biomass_row(transect_no, species_no)
 
-    - var dyn_name = transect_no + '_' + species_no + '_name';
-    label(for=dyn_name) Species #{species_no} Name
-    input(type='text' id=dyn_name name=dyn_name)
+    div(class='report-sub-segment button-container')
+        p Species #{species_no}
 
-    - dyn_name = transect_no + '_' + species_no + '_type';
-    label(for=dyn_name) Species #{species_no} Type
-    select(id=dyn_name name=dyn_name)
-        option(value='grass') Grass
-        option(value='forbs') Forbs
-        option(value='browse') Browse
+    div(class='flex-container button-container')
+        - var dyn_name = transect_no + '_' + species_no + '_name';
+        label(for=dyn_name) Name
+            input(type='text' id=dyn_name name=dyn_name)
 
-    div
-    - var i = 1;
-    while i <= 10
-        - dyn_name = transect_no + '_' + species_no + '_' + i + '_gw';
-        input(type='number' name=dyn_name min=0 step=1)
-        - i = i + 1;
+        - dyn_name = transect_no + '_' + species_no + '_type';
+        label(for=dyn_name) Type
+            select(id=dyn_name name=dyn_name)
+                option(value='grass') Grass
+                option(value='forbs') Forbs
+                option(value='browse') Browse
+
+    div(class='flex-container button-container')
+        - var i = 1;
+        while i <= 10
+            - dyn_name = transect_no + '_' + species_no + '_' + i + '_gw';
+            label(for=dyn_name) Plot #{i}
+                input(class='small-input' type='number' name=dyn_name min=0 step=1)
+            - i = i + 1;
 
 mixin coverage_row(transect_no, metric_name, metric_name_pretty)
-    div
-    // label the first one
-    - var dyn_name = metric_name + '_' + transect_no + '_' + 1;
-    label(for=dyn_name) #{metric_name_pretty}
-    input(type='number' id=dyn_name name=dyn_name min=0 step=1 max=100)
 
-    - var i = 2;
-    while i <= 10
-        - dyn_name = metric_name + '_' + transect_no + '_' + i;
-        input(type='number' name=dyn_name min=0 step=1 max=100)
-        - i = i + 1;
+    div(class='report-sub-segment button-container')
+        p #{metric_name_pretty}
+
+    div(class='flex-container button-container')
+        - var i = 1;
+        while i <= 10
+            - var dyn_name = metric_name + '_' + transect_no + '_' + i;
+            label(for=dyn_name) Plot #{i}
+                input(type='number' name=dyn_name min=0 step=1 max=100)
+            - i = i + 1;
 
 mixin biomass_row_summary(row_number)
 
-    div
-    -var dyn_name = "species_" + row_number;
-    label(for=dyn_name) Species #{row_number}
-    input(type='text' id=dyn_name name=dyn_name)
+    div(class='report-sub-segment button-container')
+        p Species #{row_number}
 
-    -dyn_name = 't1_val_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+    div(class='button-container flex-container')
+        -var dyn_name = "species_name_" + row_number;
+        label(for=dyn_name) Name
+            input(type='text' id=dyn_name name=dyn_name)
 
-    -dyn_name = 't2_val_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+        - dyn_name = "species_type_"
+        label(for=dyn_name) Type
+            select(id=dyn_name name=dyn_name)
+                option(value='grass') Grass
+                option(value='forbes') Forbs
+                option(value='browse') Browse
 
-    -dyn_name = 't3_val_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+    div(class='button-container flex-container')
+        -dyn_name = 't1_val_' + row_number;
+        label(for=dyn_name) T1
+            input(type='number' name=dyn_name min=0 step=1)
 
-    -dyn_name = 't1_val_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+        -dyn_name = 't2_val_' + row_number;
+        label(for=dyn_name) T2
+            input(type='number' name=dyn_name min=0 step=1)
 
-    -dyn_name = 'total_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+        -dyn_name = 't3_val_' + row_number;
+        label(for=dyn_name) T3
+            input(type='number' name=dyn_name min=0 step=1)
 
-    -dyn_name = 'dry_weight_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+        -dyn_name = 'tot_' + row_number;
+        label(for=dyn_name) Total
+            input(type='number' name=dyn_name min=0 step=1)
 
-    -dyn_name = 'prod_dry_weight_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+        -dyn_name = 'avg_' + row_number;
+        label(for=dyn_name) Average
+            input(type='number' name=dyn_name min=0 step=1)
 
-    -dyn_name = 'composition' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+    div(class='button-container flex-container')
+        -dyn_name = 'dry_weight_' + row_number;
+        label(for=dyn_name) Dry Weight
+            input(type='number' name=dyn_name min=0 step=1)
 
-    -dyn_name = 'd_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+        -dyn_name = 'prod_dry_weight_' + row_number;
+        label(for=dyn_name) P. Dry Weight
+            input(type='number' name=dyn_name min=0 step=1)
 
-    -dyn_name = 'i_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+        -dyn_name = 'composition' + row_number;
+        label(for=dyn_name) Composition
+            input(type='number' name=dyn_name min=0 step=1)
 
-    -dyn_name = 'l_' + row_number;
-    input(type='number' name=dyn_name min=0 step=1)
+        -dyn_name = 'd_' + row_number;
+        label(for=dyn_name) D
+            input(type='number' name=dyn_name min=0 step=1)
+
+        -dyn_name = 'i_' + row_number;
+        label(for=dyn_name) I
+            input(type='number' name=dyn_name min=0 step=1)
+
+        -dyn_name = 'l_' + row_number;
+        label(for=dyn_name) L
+            input(type='number' name=dyn_name min=0 step=1)
 
 mixin coverage_row_summary(metric_name, metric_name_pretty)
 
-    div
-    -var dyn_name = metric_name + '_t1';
-    label(for=dyn_name) #{metric_name_pretty}
-    input(type='number' id=dyn_name name=dyn_name min=0 step=1 max=100)
+        div(class='report-sub-segment button-container')
+            p #{metric_name_pretty}
 
-    - dyn_name = metric_name + '_t2';
-    input(type='number' name=dyn_name min=0 step=1 max=100)
+        div(class='flex-container')
+            -var dyn_name = metric_name + '_t1';
+            label(for=dyn_name) T1
+                input(type='number' id=dyn_name name=dyn_name min=0 step=1 max=100)
 
-    - dyn_name = metric_name + '_t3';
-    input(type='number' name=dyn_name min=0 step=1 max=100)
+            - dyn_name = metric_name + '_t2';
+            label(for=dyn_name) T2
+                input(type='number' id=dyn_name name=dyn_name min=0 step=1 max=100)
 
-    - dyn_name = metric_name + '_tot';
-    input(type='number' name=dyn_name min=0 step=1 max=100)
+            - dyn_name = metric_name + '_t3';
+            label(for=dyn_name) T3
+                input(type='number' id=dyn_name name=dyn_name min=0 step=1 max=100)
 
-    - dyn_name = metric_name + '_avg';
-    input(type='number' name=dyn_name min=0 step=1 max=100)
+            - dyn_name = metric_name + '_tot';
+            label(for=dyn_name) Total
+                input(type='number' id=dyn_name name=dyn_name min=0 step=1 max=100)
+
+            - dyn_name = metric_name + '_avg';
+            label(for=dyn_name) Average
+                input(type='number' id=dyn_name name=dyn_name min=0 step=1 max=100)
 
 block variables
     script.
@@ -142,143 +178,137 @@ block content
             div(class='report-segment button-container first-button-container')
                 h2 Report Data
 
-            div(class='button-container')
-
+            div(class='button-container flex-container')
                 label(for='writeup_no') Writeup Number
-                input(type='text' id='writeup_no' name='writeup_no')
+                    input(type='text' id='writeup_no' name='writeup_no')
 
                 label(for='photo_no') Photo Number
-                input(type='text' id='photo_no' name='photo_no')
+                    input(type='text' id='photo_no' name='photo_no')
 
-                div
-
+            div(class='button-container flex-container')
                 label(for='forest') Forest
-                select(id='forest' name='forest')
-                    option(value='sawtooth') Sawtooth
-                    //add more options as necessary
+                    select(id='forest' name='forest')
+                        option(value='sawtooth') Sawtooth
 
                 label(for='ranger_dist') Ranger District
-                select(id='ranger_dist' name='ranger_dist')
-                    option(value='sawtooth') Sawtooth
-                    //add more options as necessary
+                    select(id='ranger_dist' name='ranger_dist')
+                        option(value='d5') D-5
 
                 label(for='allotment') Allotment
-                input(type='text' id='allotment' name='allotment')
+                    input(type='text' id='allotment' name='allotment')
 
                 label(for='examiner') Examiner
-                input(type='text' id='examiner' name='examiner')
+                    input(type='text' id='examiner' name='examiner')
 
                 label(for='date') Date
-                input(type='date' id='date' name='date')
+                    input(type='date' id='date' name='date')
 
-                div
-
+            div(class='button-container flex-container')
                 label(for='transect_nos') Transect Numbers
-                input(type='text' id='transect_nos' name='transect_nos')
+                    input(type='text' id='transect_nos' name='transect_nos')
 
                 //TODO: add plot size and plot interval to sql report table
                 label(for='plot_size') Plot Size
-                input(type='number' id='plot_size' name='plot_size' min=0 step=0.1)
+                    input(type='number' id='plot_size' name='plot_size' min=0 step=0.1)
 
                 label(for='plot_interval') Plot Interval
-                input(type='number' id='plot_interval' name='plot_interval' min=0 step=0.1)
+                    input(type='number' id='plot_interval' name='plot_interval' min=0 step=0.1)
 
                 label(for='type_des') Type Designation
-                input(type='text' id='type_des' name='type_des')
+                    input(type='text' id='type_des' name='type_des')
 
-                label(for='type_des_trend') Type Designation Trend
-                select(id='type_des_trend' name='type_des_trend')
-                    option(value='rising') Rising
-                    option(value='falling') Falling
-                    option(value='stable') Stable
+                label(for='type_des_trend') Trend
+                    select(id='type_des_trend' name='type_des_trend')
+                        option(value='rising') Rising
+                        option(value='falling') Falling
+                        option(value='stable') Stable
 
+            div(class='button-container flex-container')
                 label(for='livestock') Livestock Type
-                select(id='livestock' name='livestock')
-                    option(value='sheep') Sheep
-                    option(value='cows') Cows
-                    //add more options as necessary
+                    select(id='livestock' name='livestock')
+                        option(value='sheep') Sheep
+                        option(value='cows') Cows
 
                 label(for='slope') Slope
-                input(type='number' id='slope' name='slope' min=0 max=90 step=1)
+                    input(type='number' id='slope' name='slope' min=0 max=90 step=1)
 
                 label(for='aspect') Aspect
-                input(type='text' id='aspect' name='aspect')
+                    input(type='text' id='aspect' name='aspect')
 
-                div
-
+            div(class='button-container flex-container')
                 label(for='location') Location
-                input(type='text' id='location' name='location')
+                    input(type='text' id='location' name='location')
 
                 label(for='elevation_min') Elevation Min
-                input(type='number' id='elevation_min' name='elevation_min' min=0 step=1)
+                    input(type='number' id='elevation_min' name='elevation_min' min=0 step=1)
 
                 label(for='elevation_max') Elevation Max
-                input(type='number' id='elevation_max' name='elevation_max' min=0 step=1)
+                    input(type='number' id='elevation_max' name='elevation_max' min=0 step=1)
 
-                div
-
+            div(class='button-container flex-container')
                 label(for='grass_tot') Total Grass
-                input(type='number' id='grass_tot' name='grass_tot' min=0 step=1)
+                    input(type='number' id='grass_tot' name='grass_tot' min=0 step=1)
 
                 label(for='forbes_tot') Total Forbes
-                input(type='number' id='forbes_tot' name='forbes_tot' min=0 step=1)
+                    input(type='number' id='forbes_tot' name='forbes_tot' min=0 step=1)
 
                 label(for='browse_tot') Total Browse
-                input(type='number' id='browse_tot' name='browse_tot' min=0 step=1)
+                    input(type='number' id='browse_tot' name='browse_tot' min=0 step=1)
 
                 label(for='desireable_sum') Desireable Sum
-                input(type='number' id='desireable_sum' name='desireable_sum' min=0 step=1)
+                    input(type='number' id='desireable_sum' name='desireable_sum' min=0 step=1)
 
                 label(for='intermediate_sum') Intermediate Sum
-                input(type='number' id='intermediate_sum' name='intermediate_sum' min=0 step=1)
+                    input(type='number' id='intermediate_sum' name='intermediate_sum' min=0 step=1)
 
                 label(for='l_desireable_sum') Least Desireable Sum
-                input(type='number' id='l_desireable_sum' name='l_desireable_sum' min=0 step=1)
+                    input(type='number' id='l_desireable_sum' name='l_desireable_sum' min=0 step=1)
 
-                div
-
+            div(class='button-container flex-container')
                 //TODO: three fields below not in sql init script
                 label(for='desireable_perc') Desireable Percentage
-                input(type='number' id='desireable_perc' name='desireable_perc' min=0 step=1 max=100)
+                    input(type='number' id='desireable_perc' name='desireable_perc' min=0 step=1 max=100)
 
                 label(for='intermediate_perc') Intermediate Percentage
-                input(type='number' id='intermediate_perc' name='intermediate_perc' min=0 step=1)
+                    input(type='number' id='intermediate_perc' name='intermediate_perc' min=0 step=1)
 
                 label(for='l_desireable_perc') Least Desireable Percentage
-                input(type='number' id='l_desireable_perc' name='l_desireable_perc' min=0 step=1)
+                    input(type='number' id='l_desireable_perc' name='l_desireable_perc' min=0 step=1)
 
-                div
-                p(class='metric-label') Condition Rating:
-
+            div(class='report-sub-segment button-container')
+                p Condition Rating:
+            div(class='button-container flex-container')
                 label(for='composition') Composition Rating
-                input(type='number' id='composition' name='composition' min=0 step=1)
+                    input(type='number' id='composition' name='composition' min=0 step=1)
 
                 label(for='production') Production Rating
-                input(type='number' id='production' name='production' min=0 step=1)
+                    input(type='number' id='production' name='production' min=0 step=1)
 
                 label(for='forage_condition') Forage Condition Rating
-                input(type='number' id='forage_condition' name='forage_condition' min=0 step=1)
+                    input(type='number' id='forage_condition' name='forage_condition' min=0 step=1)
 
                 label(for='ground_cover') Ground Cover Index
-                input(type='number' id='ground_cover' name='ground_cover' min=0 step=1)
+                    input(type='number' id='ground_cover' name='ground_cover' min=0 step=1)
 
+            div(class='button-container flex-container')
                 label(for='erosion') Current Erosion Index
-                input(type='number' id='erosion' name='erosion' min=0 step=1)
+                    input(type='number' id='erosion' name='erosion' min=0 step=1)
 
                 label(for='soil_condition') Soil Condition Rating
-                input(type='number' id='soil_condition' name='soil_condition' min=0 step=1)
+                    input(type='number' id='soil_condition' name='soil_condition' min=0 step=1)
 
                 label(for='browse_condition') Browse Condition
-                input(type='text' id='browse_condition')
+                    input(type='text' id='browse_condition')
 
                 label(for='apparent_trend') Apparent Trend
-                select(id='apparent_trend' name='apparent_trend')
-                    option(value='rising') Rising
-                    option(value='falling') Falling
-                    option(value='stable') Stable
+                    select(id='apparent_trend' name='apparent_trend')
+                        option(value='rising') Rising
+                        option(value='falling') Falling
+                        option(value='stable') Stable
 
+            div(class='button-container flex-container')
                 label(for='additional_notes') Any Additional Notes?
-                input(type='text' id='additional_notes' name='additional_notes')
+                    input(type='text' id='additional_notes' name='additional_notes')
 
 
             // ----------------------- Coverage Summary Data ----------------------- //
@@ -320,19 +350,17 @@ block content
             div(class='report-segment button-container')
                 h2 Soil Summary Data
 
-            div(class='button-container')
-
-                //TODO: update css to align inputs instead of floating (i.e. 4 per container or something)
-                p(class='metric-label') Soil:
-
+            div(class='report-sub-segment button-container')
+                p Soil
+            div(class='flex-container button-container')
                 label(for='surf_texture') Surface Texture
-                input(type='text' id='surf_texture' name='surf_texture')
+                    input(type='text' id='surf_texture' name='surf_texture')
 
                 label(for='surf_thick') Surface Texture Thickness
-                input(type='number' id='surf_thick' name='surf_thick')
+                    input(type='number' id='surf_thick' name='surf_thick' min=0 step=1)
 
                 label(for='surf_ph') Surface Texture pH
-                input(type='number' id='surf_ph' name='surf_ph' step=0.1 min=0 max=14)
+                    input(type='number' id='surf_ph' name='surf_ph' step=0.1 min=0 max=14)
 
                 label(for='subsoil_texture') Subsoil Texture
                     input(type='text' id='subsoil_texture' name='subsoil_texture')
@@ -343,6 +371,7 @@ block content
                 label(for='subsoil_ph') Subsoil Texture pH
                     input(type='number' id='subsoil_ph' name='subsoil_ph' step=0.1 min=0 max=14)
 
+            div(class='flex-container button-container')
                 label(for='substrat_mat') Substratum Material
                     input(type='text' id='substrat_mat' name='substrat_mat')
 
@@ -352,8 +381,10 @@ block content
                 label(for='soil_remarks') Soil Remarks
                     input(type='text' id='soil_remarks' name='soil_remarks')
 
-                p(class='metric-label') Erosion Pattern:
+            div(class='report-sub-segment button-container')
+                p Erosion Pattern
 
+            div(class='flex-container button-container')
                 label(for='avg_surf_loss') Average Surface Loss
                     input(type='number' id='avg_surf_loss' name='avg_surf_loss' step=0.01 min=0)
 
@@ -369,8 +400,10 @@ block content
                 label(for='erosion_remarks') Erosion Remarks
                     input(type='text' id='erosion_remarks' name='erosion_remarks')
 
-                p(class='metric-label') Inherent Erosion Hazard:
+            div(class='report-sub-segment button-container')
+                p Inherent Erosion Hazard
 
+            div(class='flex-container button-container')
                 label(for='detach') Detachability
                     input(type='number ' id='detach' name='detach' min=0 step=1)
 
@@ -383,6 +416,7 @@ block content
                 label(for='perm') Permeability
                     input(type='number' id='perm' name='perm' min=0 step=1)
 
+            div(class='flex-container button-container')
                 label(for='erod_index') Erodibility Index
                     input(type='number' id='erod_index' name='erod_index' step=0.01 min=0)
 
@@ -395,30 +429,34 @@ block content
                 label(for='erod_haz_class') Erosion Hazard Class
                     input(type='text' id='erod_haz_class' name='erod_haz_class')
 
-                p(class='metric-label') Soil Disturbance:
+            div(class='report-sub-segment button-container')
+                p Soil Disturbance
 
+            div(class='flex-container button-container')
                 label(for='compaction') Compaction
-                select(id='compaction' name='compaction')
-                    option(value='none') None
-                    option(value='light') Light
-                    option(value='moderate') Moderate
-                    option(value='heavy') Heavy
+                    select(id='compaction' name='compaction')
+                        option(value='none') None
+                        option(value='light') Light
+                        option(value='moderate') Moderate
+                        option(value='heavy') Heavy
 
                 label(for='displacement') Displacement
-                select(id='displacement' name='displacement')
-                    option(value='none') None
-                    option(value='light') Light
-                    option(value='moderate') Moderate
-                    option(value='heavy') Heavy
+                    select(id='displacement' name='displacement')
+                        option(value='none') None
+                        option(value='light') Light
+                        option(value='moderate') Moderate
+                        option(value='heavy') Heavy
 
-                p(class='metric-label') Cover Dispersion:
+            div(class='report-sub-segment button-container')
+                p Cover Dispersion
 
+            div(class='flex-container button-container')
                 label(for='cov_disp') Cover Dispersion
-                select(id='cov_disp' name='cov_disp')
-                    option(value='uniform') Uniform
-                    option(value='fairly_uniform') Fairly Uniform
-                    option(value='variable') Variable
-                    option(value='highly_variable') Highly Variable
+                    select(id='cov_disp' name='cov_disp')
+                        option(value='uniform') Uniform
+                        option(value='fairly_uniform') Fairly Uniform
+                        option(value='variable') Variable
+                        option(value='highly_variable') Highly Variable
 
                 label(for='potential_prod') Potential Product
                     input(type='number' id='potential_prod' name='potential_prod')
@@ -431,18 +469,18 @@ block content
             if transect1
 
                 div(class='report-segment button-container')
-                    h2 Transect 1 Data
+                    h2 Transect 1 - Biomass Data
 
                 div(class='button-container')
-
                     +transect(1)
                     -var i = 1;
                     while i <= numSpeciesT1
-                        div
-                        p(class='metric-label') Species #{i}
                         +biomass_row(1,i)
                         -i=i+1;
 
+                div(class='report-segment button-container')
+                    h2 Transect 1 - Cover Data
+                div(class='button-container')
                     +coverage_row(1, 'overstory_trees', 'Overstory (Trees)')
                     +coverage_row(1, 'overstory_shrubs', 'Overstory (Shrubs)')
                     +coverage_row(1, 'crown_cover', 'Crown Cover (Herb.)')
