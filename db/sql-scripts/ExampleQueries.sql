@@ -103,3 +103,24 @@ WHERE biomass.species='AGSPI'
 AND report.date > '1971-07-06'
 AND report.date < '1973-07-06'; 
 
+--Only want to look at transect one--
+--Did we want to do this?--
+select
+report.r_id,
+transect.*, 
+plot.plot_number,
+cover.type, cover.value,
+biomass.type, biomass.species, biomass.green_weight
+FROM report
+INNER JOIN transect
+ON (report.r_id = transect.r_id)
+INNER JOIN plot
+ON (transect.t_id = plot.t_id)
+INNER JOIN biomass
+ON (plot.p_id = biomass.p_id)
+INNER JOIN cover
+ON (plot.p_id = cover.p_id)
+WHERE transect.transect_no = 1
+AND cover.type='Forbs';
+
+
