@@ -49,7 +49,7 @@ CREATE TABLE transect (
   elevation int,
   slope int,
   type_designation varchar(255),
-  aspect char
+  aspect varchar(10)
 );
 
 
