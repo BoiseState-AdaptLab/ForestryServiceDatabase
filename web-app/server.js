@@ -105,17 +105,29 @@ app.post('/import-datasheet', (req, res) => {
 
 
 
+const fastcsv = require("fast-csv");
+const fs = require("fs");
+const ws = fs.createWriteStream("bezkoder_mysql_fastcsv.csv");
 
 //EX running query on PostGres DB
-app.get('/data', function (req, res) {
+app.get('/data', function (req, response) {
 
   pool.connect()
       .then(client => {
-        return client.query("SELECT * FROM forests")
+        return client.query("SELECT * FROM cover")
             .then(res => {
-              client.release();
+              //client.release();
               console.log(res.rows[0]);
-              
+                const jsonData = JSON.parse(JSON.stringify(res.rows));
+                console.log("jsonData", jsonData);
+
+                fastcsv
+                    .write(jsonData, { headers: true })
+                    .on("finish", function() {
+                        console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
+                    })
+                    .pipe(ws);
+              response.send(ws);
             })
             .catch(e => {
               client.release();

@@ -4,12 +4,12 @@
 -- USE ForestServiceDB; 
 
 
-INSERT INTO report (r_id, writeup_no, photo_no, examiner, transect_no, slope, aspect, 
+INSERT INTO report (r_id, writeup_no, photo_no, examiner, transect_no, slope, aspect,
 elevation_min, elevation_max, forest, ranger_district, allotment, location, livestock, 
 type_designation, type_des_trend, date, total_grass, total_forb, total_browse, desirable, 
 intermediate, least_desirable, composition, production, forage_condition, ground_cover, erosion, 
 soil_condition, browse_condition, trend, notes)
-VALUES (1, 'A-13', 'ESH-3-195', 'D Asleft', '1-3, 2-3, 3-3', 43, 's-w-w', 
+VALUES (111, 'A-13', 'ESH-3-195', 'D Asleft', '1-3, 2-3, 3-3', 43, 's-w-w',
 6800, 7000, 'Sawtooth', 'D-5', 'Blue Ridge', 'East and West of sprout creek', 'sheep',
 'S5', 's5/s5', '1972-07-06', 189, 36, 253, 58,
 23, 19, 36, 19, 55, 17, 38, 
@@ -17,75 +17,75 @@ VALUES (1, 'A-13', 'ESH-3-195', 'D Asleft', '1-3, 2-3, 3-3', 43, 's-w-w',
 
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(1, 1, 'AGSPI', 49, 75, 45, 169, 592, 164, 34, 30, 4, NULL);
+VALUES(1, 111, 'AGSPI', 49, 75, 45, 169, 592, 164, 34, 30, 4, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(2, 1, 'BRTE', 3, NULL, NULL, 30, 12, 4, 1, NULL, NULL, 1);
+VALUES(2, 111, 'BRTE', 3, NULL, NULL, 30, 12, 4, 1, NULL, NULL, 1);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(3, 1, 'ELCI', 1, NULL, NULL, 10, 4, 1, NULL, NULL, NULL, NULL);
+VALUES(3, 111, 'ELCI', 1, NULL, NULL, 10, 4, 1, NULL, NULL, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(4, 1, 'BRMA', NULL, 6, 11, 170, 60, 20, 4, 4, NULL, NULL);
+VALUES(4, 111, 'BRMA', NULL, 6, 11, 170, 60, 20, 4, 4, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(5, 1, 'BASA', 7, 5, 16, 280, 70, 23, 5, 5, NULL, NULL);
+VALUES(5, 111, 'BASA', 7, 5, 16, 280, 70, 23, 5, 5, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(6, 1, 'ANNUAL', 2, 2, 9, 130, 39, 13, 3, NULL, NULL, 3);
+VALUES(6, 111, 'ANNUAL', 2, 2, 9, 130, 39, 13, 3, NULL, NULL, 3);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(7, 1, 'PHACE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+VALUES(7, 111, 'PHACE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(8, 1, 'SYMPTH', 26, 26, 18, 700, 280, 93, 19, 10, 9, NULL);
+VALUES(8, 111, 'SYMPTH', 26, 26, 18, 700, 280, 93, 19, 10, 9, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(9, 1, 'ARTR', 27, 12, 52, 910, 364, 121, 25, NULL, 10, 15);
+VALUES(9, 111, 'ARTR', 27, 12, 52, 910, 364, 121, 25, NULL, 10, 15);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(10, 1, 'PRUI', 13, 3, 7, 230, 92, 31, 7, 7, NULL, NULL);
+VALUES(10, 111, 'PRUI', 13, 3, 7, 230, 92, 31, 7, 7, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(11, 1, 'CHUIL', NULL, 2, 4, 60, 24, 8, 2, 2, NULL, NULL);
+VALUES(11, 111, 'CHUIL', NULL, 2, 4, 60, 24, 8, 2, 2, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(12, 1, 'CEUE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+VALUES(12, 111, 'CEUE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(1, 1, 'Overstory (Trees)', NULL, NULL);
+VALUES(1, 111, 'Overstory (Trees)', NULL, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(2, 1, 'Overstory (Shrub)', 11, 4);
+VALUES(2, 111, 'Overstory (Shrub)', 11, 4);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(3, 1, 'Crown Cover (Herb)', NULL, NULL);
+VALUES(3, 111, 'Crown Cover (Herb)', NULL, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(4, 1, 'Bare Ground', 144, 48);
+VALUES(4, 111, 'Bare Ground', 144, 48);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(5, 1, 'Rock/Pav (Nat)', NULL, NULL);
+VALUES(5, 111, 'Rock/Pav (Nat)', NULL, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(6, 1, 'Rock/Pav (Unnat)', 3, 1);
+VALUES(6, 111, 'Rock/Pav (Unnat)', 3, 1);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(7, 1, 'Veg/Litter', 154, 51);
+VALUES(7, 111, 'Veg/Litter', 154, 51);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(8, 1, 'Soil Disturbance', 9, 3);
+VALUES(8, 111, 'Soil Disturbance', 9, 3);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(9, 1, 'Droppings', NULL, NULL);
+VALUES(9, 111, 'Droppings', NULL, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(10, 1, 'Pellet Groups', NULL, NULL);
+VALUES(10, 111, 'Pellet Groups', NULL, NULL);
 
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (1, 1, 1, 'Mountain Brush type west of Sprout Creek', 6800, 45, 'S5', 'S');
+VALUES (1, 111, 1, 'Mountain Brush type west of Sprout Creek', 6800, 45, 'S5', 'S');
 
 
 INSERT INTO plot(p_id, t_id, plot_number)
@@ -699,7 +699,7 @@ VALUES(100, 10, 'Pellet Groups', NULL);
 
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (2, 1, 2, 'East of Sprout Creek near source', 6900, 45, 'S5', 'W');
+VALUES (2, 111, 2, 'East of Sprout Creek near source', 6900, 45, 'S5', 'W');
 
 
 INSERT INTO plot(p_id, t_id, plot_number)
@@ -1313,7 +1313,7 @@ VALUES(200, 20, 'Pellet Groups', NULL);
 
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (3, 1, 3, 'West of Sprout Creek', 7000, 35, '5', 'W');
+VALUES (3, 111, 3, 'West of Sprout Creek', 7000, 35, '5', 'W');
 
 INSERT INTO plot(p_id, t_id, plot_number)
 VALUES (21, 3, 1);
@@ -1991,7 +1991,7 @@ general_remarks, avg_surface_loss, loss_over_area, gullies_length, gullies_depth
 erosion_remarks, detachability, rock_coverage, adj_detachability, permeability,
 erod_index, erod_index_class, slope, eros_haz_class, compaction,
 displacement, cover_dispersion, potential_product, suit_reasons)
-VALUES(1, 1, 'Gravely sandy loom', 10, 6.0,
+VALUES(1, 111, 'Gravely sandy loom', 10, 6.0,
        'Gravely loam', 10, 6.0, 'Granitic', NULL,
        'soil is fairly stable', 1.5, 0.5, NULL, NULL,
        'no marked erosion', 6, 5, 5.7, 5,

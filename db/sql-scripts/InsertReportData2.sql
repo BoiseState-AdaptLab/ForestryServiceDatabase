@@ -2,12 +2,12 @@
 -- USE ForestServiceDB; 
 
 
-INSERT INTO report (r_id, writeup_no, photo_no, examiner, transect_no, slope, aspect, 
+INSERT INTO report (r_id, writeup_no, photo_no, examiner, transect_no, slope, aspect,
 elevation_min, elevation_max, forest, ranger_district, allotment, location, livestock, 
 type_designation, type_des_trend, date, total_grass, total_forb, total_browse, desirable, 
 intermediate, least_desirable, composition, production, forage_condition, ground_cover, erosion, 
 soil_condition, browse_condition, trend, notes)
-VALUES (2, 'S-10', 'EGT-6-106', 'Sutton', '1-1', 10, 'NW', 
+VALUES (112, 'S-10', 'EGT-6-106', 'Sutton', '1-1', 10, 'NW',
 NULL, NULL, 'Sawtooth', 'Fairfield', 'Boardman Cr', 'Bench at the head of the canyon', 'goats, sheep',
 'S3', '61/64', '1966-08-18', 43, 94, 10, 38,
 47, 15, 27, 34, 61, 18, 46, 
@@ -15,66 +15,66 @@ NULL, NULL, 'Sawtooth', 'Fairfield', 'Boardman Cr', 'Bench at the head of the ca
 
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(13, 2, 'Melz', 14, NULL, NULL, 14, 70, NULL, NULL, NULL, 1, NULL);
+VALUES(13, 112, 'Melz', 14, NULL, NULL, 14, 70, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(14, 2, 'Sihy', 3, NULL, NULL, 3, 15, NULL, NULL, NULL, 1, NULL);
+VALUES(14, 112, 'Sihy', 3, NULL, NULL, 3, 15, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(15, 2, 'Stoc', 26, NULL, NULL, 26, 156, NULL, NULL, 1, NULL, NULL);
+VALUES(15, 112, 'Stoc', 26, NULL, NULL, 26, 156, NULL, NULL, 1, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(16, 2, 'Lupz', 68, NULL, NULL, 68, 184, NULL, NULL, NULL, NULL, NULL);
+VALUES(16, 112, 'Lupz', 68, NULL, NULL, 68, 184, NULL, NULL, NULL, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(17, 2, 'Astz', 8, NULL, NULL, 8, 24, NULL, NULL, NULL, 1, NULL);
+VALUES(17, 112, 'Astz', 8, NULL, NULL, 8, 24, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(18, 2, 'Penz', 10, NULL, NULL, 10, 30, NULL, NULL, 1, NULL, NULL);
+VALUES(18, 112, 'Penz', 10, NULL, NULL, 10, 30, NULL, NULL, 1, NULL, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(19, 2, 'Linw', 2, NULL, NULL, 2, 6, NULL, NULL, NULL, 1, NULL);
+VALUES(19, 112, 'Linw', 112, NULL, NULL, 112, 6, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(20, 2, 'Eriz', 6, NULL, NULL, 6, 18, NULL, NULL, NULL, 1, NULL);
+VALUES(20, 112, 'Eriz', 6, NULL, NULL, 6, 18, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO biomass_summary(b_id, r_id, species, trans1, trans2, trans3, total, dry_weight, prod_dry_weight, composition, desirability_D, desirability_I, desirability_L)
-VALUES(21, 2, 'Hafr', 10, NULL, NULL, 10, 50, NULL, NULL, NULL, 1, NULL);
+VALUES(21, 112, 'Hafr', 10, NULL, NULL, 10, 50, NULL, NULL, NULL, 1, NULL);
 
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(11, 2, 'Overstory (Trees)', NULL, NULL);
+VALUES(11, 112, 'Overstory (Trees)', NULL, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(12, 2, 'Overstory (Shrub)', NULL, NULL);
+VALUES(12, 112, 'Overstory (Shrub)', NULL, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(13, 2, 'Crown Cover (Herb)', 7, NULL);
+VALUES(13, 112, 'Crown Cover (Herb)', 7, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(14, 2, 'Bare Ground', 35, NULL);
+VALUES(14, 112, 'Bare Ground', 35, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(15, 2, 'Rock/Pav (Nat)', 1, NULL);
+VALUES(15, 112, 'Rock/Pav (Nat)', 1, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(16, 2, 'Rock/Pav (Unnat)', 10, NULL);
+VALUES(16, 112, 'Rock/Pav (Unnat)', 10, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(17, 2, 'Veg/Litter', 54, NULL);
+VALUES(17, 112, 'Veg/Litter', 54, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(18, 2, 'Soil Disturbance', NULL, NULL);
+VALUES(18, 112, 'Soil Disturbance', NULL, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(19, 2, 'Droppings', NULL, NULL);
+VALUES(19, 112, 'Droppings', NULL, NULL);
 
 INSERT INTO cover_summary(c_id, r_id, type, total, average)
-VALUES(20, 2, 'Pellet Groups', NULL, NULL);
+VALUES(20, 112, 'Pellet Groups', NULL, NULL);
 
 
 INSERT INTO transect(t_id, r_id, transect_no, location, elevation, slope, type_designation, aspect)
-VALUES (4, 2, 1, 'Bench at the head of the canyon', NULL, 10, 'S3', 'NW');
+VALUES (4, 112, 1, 'Bench at the head of the canyon', NULL, 10, 'S3', 'NW');
 
 
 INSERT INTO plot(p_id, t_id, plot_number)
@@ -693,7 +693,7 @@ general_remarks, avg_surface_loss, loss_over_area, gullies_length, gullies_depth
 erosion_remarks, detachability, rock_coverage, adj_detachability, permeability,
 erod_index, erod_index_class, slope, eros_haz_class, compaction,
 displacement, cover_dispersion, potential_product, suit_reasons)
-VALUES(2, 2, 'Sandy to gravel', 12, 5.7,
+VALUES(2, 112, 'Sandy to gravel', 12, 5.7,
        'Gravel', 12, 5.5, 'Granitic soil', '12-14',
        'none', NULL, NULL, NULL, NULL,
        'no soil erosion', 7, 50, 3.5, 4,
