@@ -122,6 +122,7 @@ app.get('/data', function (req, res) {
               console.log(e.stack);
             })
       }).finally(() => pool.end());
+
   // pool.query("SELECT NOW()", (err, res) => {
   //   console.log(err, res);
   //   pool.end();
