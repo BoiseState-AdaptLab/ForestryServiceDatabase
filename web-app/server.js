@@ -103,6 +103,24 @@ app.post('/import-datasheet', (req, res) => {
     res.render('results', {title: 'Datasheet processed'});
 });
 
+//EX running query on PostGres DB
+app.get('/example', function (req, response) {
+
+  pool.connect()
+      .then(client => {
+        return client.query("SELECT * FROM cover")
+            .then(res => {
+              console.log(res.rows[0]);
+                const jsonData = JSON.parse(JSON.stringify(res.rows));
+                console.log("jsonData", jsonData);
+              response.send(res.rows);
+            })
+            .catch(e => {
+              client.release();
+              console.log(e.stack);
+            })
+      }).finally(() => pool.end());	
+});
 
 
 const fastcsv = require("fast-csv");
@@ -120,26 +138,21 @@ app.get('/data', function (req, response) {
               console.log(res.rows[0]);
                 const jsonData = JSON.parse(JSON.stringify(res.rows));
                 console.log("jsonData", jsonData);
-                var csv = json2csv({ data: jsonData});
-				var path = "./data-export.csv";
-                fastcsv
-                    .writeToPath(path, jsonData, { headers: true })
-                    .on("finish", function() {
-                        console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
-                    })
-                    .pipe(ws);
-              response.download("data-export.csv", "data-export.csv");
+                //var csv = json2csv({ data: jsonData});
+				//var path = "./data-export.csv";
+               // fastcsv
+              //      .writeToPath(path, jsonData, { headers: true })
+              //      .on("finish", function() {
+              //          console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
+              //      })
+                    //.pipe(ws);
+              response.send(res.rows);
             })
             .catch(e => {
               client.release();
               console.log(e.stack);
             })
       }).finally(() => pool.end());	
-
-  // pool.query("SELECT NOW()", (err, res) => {
-  //   console.log(err, res);
-  //   pool.end();
-  // });
 });
 
 const json2csv = require('json2csv').parse;
