@@ -15,10 +15,10 @@ const pool = new Pool({
     port: '5432'});
 
 // ----------------------- Constants ----------------------- //
-const PORT = 8081;
-const HOST = '0.0.0.0';
-//const HOST = '127.0.0.1';
-//const PORT = 3000;
+//const PORT = 8081;
+//const HOST = '0.0.0.0';
+const HOST = '127.0.0.1';
+const PORT = 3000;
 
 // ----------------------- App Configuration ----------------------- //
 app.set('views', path.join(__dirname, 'views'));

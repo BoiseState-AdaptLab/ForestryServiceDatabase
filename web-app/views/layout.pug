@@ -5,7 +5,7 @@ block variables
 html
     head
         title=title
-        link(rel='icon' type='image/png' href='../images/favicon-32x32.png' sizes='32X32')
+        link(rel='icon' type='image/png' href='../images/favicon_32x32.ico' sizes='16X16')
         link(rel='stylesheet', href="https://fonts.googleapis.com/css?family=Exo+2|Orbitron|Inconsolata|Josefin+Sans|Ubuntu&display=swap")
         link(rel='stylesheet', href='/stylesheets/style.css')
         meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -14,12 +14,12 @@ html
                 div(class='banner')
                     div(class='logo')
                         a(href='/')
-                            img(class='logo' src='../images/buster.jpg')
+                            img(class='logo' src='../images/usfslogo.png')
                     ol(class='nav-bar')
                         li
                             a(href='/report-summary') Report Summary
                         li
-                            a(href='/transect') Transect
+                            a(href='/report-transects') Transect
                         li(id='nav-bar-end')
                             a(href='/import-datasheet-preprocess') Import datasheet
             block content
