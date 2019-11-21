@@ -103,6 +103,24 @@ app.post('/import-datasheet', (req, res) => {
     res.render('results', {title: 'Datasheet processed'});
 });
 
+//EX running query on PostGres DB
+app.get('/example', function (req, response) {
+
+  pool.connect()
+      .then(client => {
+        return client.query("SELECT * FROM cover")
+            .then(res => {
+              console.log(res.rows[0]);
+                const jsonData = JSON.parse(JSON.stringify(res.rows));
+                console.log("jsonData", jsonData);
+              response.send(res.rows);
+            })
+            .catch(e => {
+              client.release();
+              console.log(e.stack);
+            })
+      }).finally(() => pool.end());	
+});
 
 
 const fastcsv = require("fast-csv");
@@ -120,26 +138,58 @@ app.get('/data', function (req, response) {
               console.log(res.rows[0]);
                 const jsonData = JSON.parse(JSON.stringify(res.rows));
                 console.log("jsonData", jsonData);
-
-                fastcsv
-                    .write(jsonData, { headers: true })
-                    .on("finish", function() {
-                        console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
-                    })
-                    .pipe(ws);
-              response.send(ws);
+                //var csv = json2csv({ data: jsonData});
+				//var path = "./data-export.csv";
+               // fastcsv
+              //      .writeToPath(path, jsonData, { headers: true })
+              //      .on("finish", function() {
+              //          console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
+              //      })
+                    //.pipe(ws);
+              response.send(res.rows);
             })
             .catch(e => {
               client.release();
               console.log(e.stack);
             })
-      }).finally(() => pool.end());
+      }).finally(() => pool.end());	
+});
+
+const json2csv = require('json2csv').parse;
+
+//EX running query on PostGres DB
+app.get('/datacsv', function (req, response) {
+
+  pool.connect()
+      .then(client => {
+        return client.query("SELECT * FROM cover")
+            .then(res => {
+              //client.release();
+              console.log(res.rows[0]);
+                  var fields = ['lead', 'salutation', 'fname','lname','title','email','mobile','rating','address','city','state','zcode','company','industry','empSize','lsource'];
+                const jsonData = JSON.parse(JSON.stringify(res.rows));
+                console.log("jsonData", jsonData);
+                  var csv = json2csv({ data: jsonData, fields: fields });
+                  var path='./'+Date.now()+'.csv'; 
+                   fs.writeFile(path, csv, function(err,data) {
+                    if (err) {throw err;}
+                    else{ 
+                      response.download(path); // This is what you need
+                    }
+                }); 
+            })
+            .catch(e => {
+              client.release();
+              console.log(e.stack);
+            })
+      }).finally(() => pool.end());	
 
   // pool.query("SELECT NOW()", (err, res) => {
   //   console.log(err, res);
   //   pool.end();
   // });
 });
+
 
 app.listen(PORT,HOST, () => {
     logger.log.info(`Server running at http://${HOST}:${PORT}`);
