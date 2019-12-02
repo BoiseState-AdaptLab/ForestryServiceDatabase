@@ -6,3 +6,30 @@ block content
     div(class='header')
         h1=title
     div(class='body')
+        form(action='/report-transects' method='post')
+
+            //Metadata filters
+            div(class='button-container first-button-container flex-container')
+                p(class='metric-label') Include Soil Data?
+                label(for='soil-yes') Yes
+                    input(type='radio' name='include-soil' id='soil-yes' value='true')
+                label(for='soil-no') No
+                    input(type='radio' name='include-soil' id='soil-no' value='false')
+
+                p(class='metric-label') Include Meta Data?
+                label(for='soil-yes') Yes
+                    input(type='radio' name='include-meta' id='meta-yes' value='true')
+                label(for='soil-no') No
+                    input(type='radio' name='include-meta' id='meta-no' value='false')
+
+                p(class='metric-label') Include Biomass Data?
+                label(for='biomass-yes') Yes
+                    input(type='radio' name='include-biomass' id='biomass-yes' value='true')
+                label(for='biomass-no') No
+                    input(type='radio' name='include-biomass' id='biomass-no' value='false')
+
+                p(class='metric-label') Include Vegetation Data?
+                label(for='veg-yes') Yes
+                    input(type='radio' name='include-veg' id='veg-yes' value='true')
+                label(for='veg-no') No
+                    input(type='radio' name='include-veg' id='veg-no' value='false')

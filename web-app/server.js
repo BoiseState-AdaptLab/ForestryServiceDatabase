@@ -29,32 +29,34 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // ----------------------- Routes ----------------------- //
 
-//Homepage
+//Home page
 app.get('/', (req, res) => {
     res.render('index', {title: 'Forest Service Database'});
 });
 
-// Report summary
+// Report Summary Query Page
 app.get('/report-summary', (req, res) => {
     res.render('report-summary', {title: 'Report Summary Query Builder'});
 });
 
+// TODO: Handles query execution on database and returning the results in CSV format
 app.post('/report-summary', (req, res) => {
     logger.log.debug('report summary query posted');
-    //TODO: handle query parameters run query on database (Brenna and Seema)
-    // TODO: store results in CSV (Peter)
+    //TODO: handle query parameters run query on database
+    // TODO: store results in CSV
     res.render('results', {title: 'Report Summary Data Retrieved'});
 });
 
-// Transect
+// Transect Query Page
 app.get('/report-transects', (req, res) => {
     res.render('index', {title: 'Transect Query Builder'});
 });
 
+// TODO: Handles query execution on database and returning the results in CSV format
 app.post('/report-transects', (req, res) => {
     logger.log.debug('transect query posted');
-    //TODO: handle query parameters run query on database (Brenna and Seema)
-    // TODO: store results in CSV (Peter)
+    //TODO: handle query parameters run query on database
+    // TODO: store results in CSV
     res.render('results', {title: 'Transect Data Retrieved'});
 });
 
@@ -77,11 +79,6 @@ app.get('/import-datasheet-preprocess', (req, res) => {
 });
 
 app.post('/import-datasheet-preprocess', (req, res) => {
-    if (req.body['include_tran_1'] === 'true') {
-        let transect1 = true;
-    }  else {
-        let transect1= false;
-    }
 
     // Retrieving info from form to be passed to next form
     let transect1 = req.body['include_tran_1'] === 'true';
@@ -92,14 +89,15 @@ app.post('/import-datasheet-preprocess', (req, res) => {
     let numSpeciesT2 = req.body['transect2_species'];
     let numSpeciesT3 = req.body['transect3_species'];
 
+    // Passing variables to the view to determine the forms structure
     res.render('import-datasheet', {title: 'Import Datasheet', transect1, transect2, transect3, numSpeciesSummary, numSpeciesT1, numSpeciesT2, numSpeciesT3});
 });
 
-
 app.post('/import-datasheet', (req, res) => {
     logger.log.debug('import datasheet posted');
-    //TODO: handle query parameters run query on database (Brenna and Seema)
-    // TODO: store results in CSV (Peter)
+    //TODO: handle query parameters run query on database
+    // TODO: store results in CSV
+    console.log(req.body);
     res.render('results', {title: 'Datasheet processed'});
 });
 
