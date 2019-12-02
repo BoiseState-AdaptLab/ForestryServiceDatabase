@@ -101,24 +101,36 @@ app.post('/import-datasheet', (req, res) => {
     res.render('results', {title: 'Datasheet processed'});
 });
 
+//********THIS IS THE EXAMPLE
 //EX running query on PostGres DB
-app.get('/example', function (req, response) {
+//EX running query on PostGres DB
+app.get('/info', function (req, response) {
 
-  pool.connect()
-      .then(client => {
-        return client.query("SELECT * FROM cover")
-            .then(res => {
-              console.log(res.rows[0]);
-                const jsonData = JSON.parse(JSON.stringify(res.rows));
-                console.log("jsonData", jsonData);
-              response.send(res.rows);
-            })
-            .catch(e => {
-              client.release();
-              console.log(e.stack);
-            })
-      }).finally(() => pool.end());	
-});
+    pool.connect()
+        .then(client => {
+          return client.query("SELECT * FROM cover")
+              .then(res => {
+                //client.release();
+                console.log(res.rows[0]);
+                  const jsonData = JSON.parse(JSON.stringify(res.rows));
+                  console.log("jsonData", jsonData);
+                  //var csv = json2csv({ data: jsonData});
+                  //var path = "./data-export.csv";
+                 // fastcsv
+                //      .writeToPath(path, jsonData, { headers: true })
+                //      .on("finish", function() {
+                //          console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
+                //      })
+                      //.pipe(ws);
+                response.send(res.rows);
+              })
+              .catch(e => {
+                client.release();
+                console.log(e.stack);
+              })
+        })	
+  });
+//********THIS IS THE EXAMPLE
 
 
 const fastcsv = require("fast-csv");
@@ -150,17 +162,17 @@ app.get('/data', function (req, response) {
               client.release();
               console.log(e.stack);
             })
-      }).finally(() => pool.end());	
+      })	
 });
 
 const json2csv = require('json2csv').parse;
 
 //EX running query on PostGres DB
-app.get('/datacsv', function (req, response) {
+app.get('/reportcsv', function (req, response) {
 
   pool.connect()
       .then(client => {
-        return client.query("SELECT * FROM cover")
+        return client.query("SELECT * FROM report")
             .then(res => {
               //client.release();
               console.log(res.rows[0]);
@@ -180,7 +192,7 @@ app.get('/datacsv', function (req, response) {
               client.release();
               console.log(e.stack);
             })
-      }).finally(() => pool.end());	
+      })	
 
   // pool.query("SELECT NOW()", (err, res) => {
   //   console.log(err, res);
