@@ -133,6 +133,40 @@ app.get('/info', function (req, response) {
 //********THIS IS THE EXAMPLE
 
 
+app.get('/genericReport', function (req, response) {
+
+  pool.connect()
+      .then(client => {
+        return client.query(`SELECT report.*, biomass_summary.*, cover_summary.*
+        FROM report
+        INNER JOIN biomass_summary
+        ON (report.r_id = biomass_summary.r_id)
+        INNER JOIN cover_summary
+        ON (report.r_id = cover_summary.r_id);`)
+            .then(res => {
+              //client.release();
+              console.log(res.rows[0]);
+                const jsonData = JSON.parse(JSON.stringify(res.rows));
+                console.log("jsonData", jsonData);
+                //var csv = json2csv({ data: jsonData});
+                //var path = "./data-export.csv";
+               // fastcsv
+              //      .writeToPath(path, jsonData, { headers: true })
+              //      .on("finish", function() {
+              //          console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
+              //      })
+                    //.pipe(ws);
+              response.send(res.rows);
+            })
+            .catch(e => {
+              client.release();
+              console.log(e.stack);
+            })
+      })	
+});
+//********THIS IS THE EXAMPLE
+
+
 const fastcsv = require("fast-csv");
 const fs = require("fs");
 const ws = fs.createWriteStream("bezkoder_mysql_fastcsv.csv");
