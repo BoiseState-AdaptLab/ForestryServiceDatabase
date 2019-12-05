@@ -6,7 +6,7 @@
 
 
 CREATE TABLE report (
-  r_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  r_id int NOT NULL PRIMARY KEY SERIAL,
   writeup_no varchar(255),
   photo_no varchar(255),
   examiner varchar(255),
@@ -42,7 +42,7 @@ CREATE TABLE report (
 
 
 CREATE TABLE transect (
-  t_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  t_id int NOT NULL PRIMARY KEY SERIAL,
   r_id int NOT NULL,
   transect_no int,
   location varchar(255),
@@ -60,7 +60,7 @@ REFERENCES report(r_id);
 
 
 CREATE TABLE plot (
-  p_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  p_id int NOT NULL PRIMARY KEY SERIAL,
   t_id int NOT NULL,
   plot_number int 
 );
@@ -73,7 +73,7 @@ REFERENCES transect(t_id);
 
 
 CREATE TABLE biomass (
-  b_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  b_id int NOT NULL PRIMARY KEY SERIAL,
   p_id int NOT NULL,
   type varchar(255),
   species varchar(255),
@@ -88,7 +88,7 @@ REFERENCES plot(p_id);
 
 
 CREATE TABLE biomass_summary (
-  b_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  b_id int NOT NULL PRIMARY KEY SERIAL,
   r_id int NOT NULL,
   species varchar(255),
   trans1 int,
@@ -111,7 +111,7 @@ REFERENCES report(r_id);
 
 
 CREATE TABLE cover (
-  c_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  c_id int NOT NULL PRIMARY KEY SERIAL,
   p_id int NOT NULL,
   type varchar(255),
   value int 
@@ -125,7 +125,7 @@ REFERENCES plot(p_id);
 
 
 CREATE TABLE cover_summary (
-  c_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  c_id int NOT NULL PRIMARY KEY SERIAL,
   r_id int NOT NULL,
   type varchar(255),
   total int,
@@ -140,7 +140,7 @@ REFERENCES report(r_id);
 
 
 CREATE TABLE soil_summary (
-  s_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  s_id int NOT NULL PRIMARY KEY SERIAL,
   r_id int NOT NULL,
   surface_texture varchar(255),
   surf_text_thick int,
