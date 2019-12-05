@@ -6,6 +6,16 @@ const app = express();
 const path = require('path');
 const logger = require('./modules/logger');
 const bodyParser = require('body-parser');
+
+// ----------------------- Swagger docs ----------------------- //
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// ----------------------- DB Pool ----------------------- //
+
 const { Pool } = require('pg');
 const pool = new Pool({
     user: 'user',
@@ -29,34 +39,32 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // ----------------------- Routes ----------------------- //
 
-//Home page
+//Homepage
 app.get('/', (req, res) => {
     res.render('index', {title: 'Forest Service Database'});
 });
 
-// Report Summary Query Page
+// Report summary
 app.get('/report-summary', (req, res) => {
     res.render('report-summary', {title: 'Report Summary Query Builder'});
 });
 
-// TODO: Handles query execution on database and returning the results in CSV format
 app.post('/report-summary', (req, res) => {
     logger.log.debug('report summary query posted');
-    //TODO: handle query parameters run query on database
-    // TODO: store results in CSV
+    //TODO: handle query parameters run query on database (Brenna and Seema)
+    // TODO: store results in CSV (Peter)
     res.render('results', {title: 'Report Summary Data Retrieved'});
 });
 
-// Transect Query Page
+// Transect
 app.get('/report-transects', (req, res) => {
     res.render('index', {title: 'Transect Query Builder'});
 });
 
-// TODO: Handles query execution on database and returning the results in CSV format
 app.post('/report-transects', (req, res) => {
     logger.log.debug('transect query posted');
-    //TODO: handle query parameters run query on database
-    // TODO: store results in CSV
+    //TODO: handle query parameters run query on database (Brenna and Seema)
+    // TODO: store results in CSV (Peter)
     res.render('results', {title: 'Transect Data Retrieved'});
 });
 
@@ -79,6 +87,11 @@ app.get('/import-datasheet-preprocess', (req, res) => {
 });
 
 app.post('/import-datasheet-preprocess', (req, res) => {
+    if (req.body['include_tran_1'] === 'true') {
+        let transect1 = true;
+    }  else {
+        let transect1= false;
+    }
 
     // Retrieving info from form to be passed to next form
     let transect1 = req.body['include_tran_1'] === 'true';
@@ -89,82 +102,35 @@ app.post('/import-datasheet-preprocess', (req, res) => {
     let numSpeciesT2 = req.body['transect2_species'];
     let numSpeciesT3 = req.body['transect3_species'];
 
-    // Passing variables to the view to determine the forms structure
     res.render('import-datasheet', {title: 'Import Datasheet', transect1, transect2, transect3, numSpeciesSummary, numSpeciesT1, numSpeciesT2, numSpeciesT3});
 });
 
+
 app.post('/import-datasheet', (req, res) => {
     logger.log.debug('import datasheet posted');
-    //TODO: handle query parameters run query on database
-    // TODO: store results in CSV
-    console.log(req.body);
+    //TODO: handle query parameters run query on database (Brenna and Seema)
+    // TODO: store results in CSV (Peter)
     res.render('results', {title: 'Datasheet processed'});
 });
 
-//********THIS IS THE EXAMPLE
 //EX running query on PostGres DB
-//EX running query on PostGres DB
-app.get('/info', function (req, response) {
-
-    pool.connect()
-        .then(client => {
-          return client.query("SELECT * FROM cover")
-              .then(res => {
-                //client.release();
-                console.log(res.rows[0]);
-                  const jsonData = JSON.parse(JSON.stringify(res.rows));
-                  console.log("jsonData", jsonData);
-                  //var csv = json2csv({ data: jsonData});
-                  //var path = "./data-export.csv";
-                 // fastcsv
-                //      .writeToPath(path, jsonData, { headers: true })
-                //      .on("finish", function() {
-                //          console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
-                //      })
-                      //.pipe(ws);
-                response.send(res.rows);
-              })
-              .catch(e => {
-                client.release();
-                console.log(e.stack);
-              })
-        })	
-  });
-//********THIS IS THE EXAMPLE
-
-
-app.get('/genericReport', function (req, response) {
+app.get('/example', function (req, response) {
 
   pool.connect()
       .then(client => {
-        return client.query(`SELECT report.*, biomass_summary.*, cover_summary.*
-        FROM report
-        INNER JOIN biomass_summary
-        ON (report.r_id = biomass_summary.r_id)
-        INNER JOIN cover_summary
-        ON (report.r_id = cover_summary.r_id);`)
+        return client.query("SELECT * FROM cover")
             .then(res => {
-              //client.release();
               console.log(res.rows[0]);
                 const jsonData = JSON.parse(JSON.stringify(res.rows));
                 console.log("jsonData", jsonData);
-                //var csv = json2csv({ data: jsonData});
-                //var path = "./data-export.csv";
-               // fastcsv
-              //      .writeToPath(path, jsonData, { headers: true })
-              //      .on("finish", function() {
-              //          console.log("Write to bezkoder_mysql_fastcsv.csv successfully!");
-              //      })
-                    //.pipe(ws);
               response.send(res.rows);
             })
             .catch(e => {
               client.release();
               console.log(e.stack);
             })
-      })	
+      }).finally(() => pool.end());	
 });
-//********THIS IS THE EXAMPLE
 
 
 const fastcsv = require("fast-csv");
@@ -196,17 +162,17 @@ app.get('/data', function (req, response) {
               client.release();
               console.log(e.stack);
             })
-      })	
+      }).finally(() => pool.end());	
 });
 
 const json2csv = require('json2csv').parse;
 
 //EX running query on PostGres DB
-app.get('/reportcsv', function (req, response) {
+app.get('/datacsv', function (req, response) {
 
   pool.connect()
       .then(client => {
-        return client.query("SELECT * FROM report")
+        return client.query("SELECT * FROM cover")
             .then(res => {
               //client.release();
               console.log(res.rows[0]);
@@ -226,7 +192,7 @@ app.get('/reportcsv', function (req, response) {
               client.release();
               console.log(e.stack);
             })
-      })	
+      }).finally(() => pool.end());	
 
   // pool.query("SELECT NOW()", (err, res) => {
   //   console.log(err, res);
