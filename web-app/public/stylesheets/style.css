@@ -20,6 +20,13 @@ ol {
     text-align: center;
 }
 
+ul li {
+    display: block;
+    text-align: left;
+    color: #e5c687;
+}
+
+
 /* --------------------------------------- Nav Bar --------------------------------------------------------- */
 
 .banner {
@@ -65,8 +72,6 @@ body {
     font-size: 15px;
     text-align: center;
     width: 100%;
-    min-height: 100%;
-    height: 100%;
 }
 
 button {
@@ -91,17 +96,17 @@ button:hover {
     color: #D17A22;
 }
 
-.button-container {
+.bordered-container {
     border: 2.5px solid #7B3E19;
     border-left: 5px solid #7B3E19;
     border-right: 5px solid #7B3E19;
 }
 
-.first-button-container {
+.first-bordered-container {
     border-top: 5px solid #7B3E19;
 }
 
-.last-button-container {
+.last-bordered-container {
     border-bottom: 5px solid #7B3E19;
 }
 
@@ -129,13 +134,7 @@ button:hover {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-ul li {
-    display: block;
-    text-align: left;
-    color: #e5c687;
-}
-
-.metric-label {
+.bold-label {
     font-size: 20px;
     text-space: 3px;
     margin-bottom: 0;
@@ -159,10 +158,6 @@ ul li {
 .flex-container-inline {
     display: inline-flex;
     justify-content: space-evenly;
-}
-
-.flex-container-inline > input[type=number] {
-    width:75px;
 }
 
 .flex-container {

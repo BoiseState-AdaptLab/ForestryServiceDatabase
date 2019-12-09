@@ -2,7 +2,7 @@ extends layout
 
 mixin transect(transect_no)
 
-    div(class='flex-container button-container')
+    div(class='flex-container bordered-container')
         label(for='transect_no') Transect Number
             input(type='number' id='transect_no' name='transect_no' min=1 max=3 step=1 value=transect_no readonly)
 
@@ -18,7 +18,7 @@ mixin transect(transect_no)
         label(for=dyn_name) Aspect
             input(type='text' id=dyn_name name=dyn_name)
 
-    div(class='flex-container button-container')
+    div(class='flex-container bordered-container')
         - dyn_name = "location_" + transect_no;
         label(class='large-text' for=dyn_name) Location
             input(type='text' id=dyn_name name=dyn_name)
@@ -29,10 +29,10 @@ mixin transect(transect_no)
 
 mixin biomass_row(transect_no, species_no)
 
-    div(class='report-sub-segment button-container')
+    div(class='report-sub-segment bordered-container')
         p Species #{species_no}
 
-    div(class='flex-container button-container')
+    div(class='flex-container bordered-container')
         - var dyn_name = transect_no + '_' + species_no + '_name';
         label(for=dyn_name) Name
             input(type='text' id=dyn_name name=dyn_name)
@@ -44,7 +44,7 @@ mixin biomass_row(transect_no, species_no)
                 option(value='forbs') Forbs
                 option(value='browse') Browse
 
-    div(class='flex-container button-container')
+    div(class='flex-container bordered-container')
         - var i = 1;
         while i <= 10
             - dyn_name = transect_no + '_' + species_no + '_' + i + '_gw';
@@ -54,10 +54,10 @@ mixin biomass_row(transect_no, species_no)
 
 mixin coverage_row(transect_no, metric_name, metric_name_pretty)
 
-    div(class='report-sub-segment button-container')
+    div(class='report-sub-segment bordered-container')
         p #{metric_name_pretty}
 
-    div(class='flex-container button-container')
+    div(class='flex-container bordered-container')
         - var i = 1;
         while i <= 10
             - var dyn_name = metric_name + '_' + transect_no + '_' + i;
@@ -67,10 +67,10 @@ mixin coverage_row(transect_no, metric_name, metric_name_pretty)
 
 mixin biomass_row_summary(row_number)
 
-    div(class='report-sub-segment button-container')
+    div(class='report-sub-segment bordered-container')
         p Species #{row_number}
 
-    div(class='button-container flex-container')
+    div(class='bordered-container flex-container')
         -var dyn_name = "species_name_" + row_number;
         label(for=dyn_name) Name
             input(type='text' id=dyn_name name=dyn_name)
@@ -82,7 +82,7 @@ mixin biomass_row_summary(row_number)
                 option(value='forbes') Forbs
                 option(value='browse') Browse
 
-    div(class='button-container flex-container')
+    div(class='bordered-container flex-container')
         -dyn_name = 't1_val_' + row_number;
         label(for=dyn_name) T1
             input(type='number' name=dyn_name min=0 step=1)
@@ -103,7 +103,7 @@ mixin biomass_row_summary(row_number)
         label(for=dyn_name) Average
             input(type='number' name=dyn_name min=0 step=1)
 
-    div(class='button-container flex-container')
+    div(class='bordered-container flex-container')
         -dyn_name = 'dry_weight_' + row_number;
         label(for=dyn_name) Dry Weight
             input(type='number' name=dyn_name min=0 step=1)
@@ -130,7 +130,7 @@ mixin biomass_row_summary(row_number)
 
 mixin coverage_row_summary(metric_name, metric_name_pretty)
 
-        div(class='report-sub-segment button-container')
+        div(class='report-sub-segment bordered-container')
             p #{metric_name_pretty}
 
         div(class='flex-container')
@@ -174,17 +174,17 @@ block content
 
             // ----------------------- Report Data ----------------------- //
 
-            div(class='report-segment button-container first-button-container')
+            div(class='report-segment bordered-container first-bordered-container')
                 h2 Report Data
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='writeup_no') Writeup Number
                     input(type='text' id='writeup_no' name='writeup_no')
 
                 label(for='photo_no') Photo Number
                     input(type='text' id='photo_no' name='photo_no')
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='forest') Forest
                     select(id='forest' name='forest')
                         option(value='sawtooth') Sawtooth
@@ -202,7 +202,7 @@ block content
                 label(for='date') Date
                     input(type='date' id='date' name='date')
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='transect_nos') Transect Numbers
                     input(type='text' id='transect_nos' name='transect_nos')
 
@@ -215,7 +215,7 @@ block content
                         option(value='falling') Falling
                         option(value='stable') Stable
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='livestock') Livestock Type
                     select(id='livestock' name='livestock')
                         option(value='sheep') Sheep
@@ -227,7 +227,7 @@ block content
                 label(for='aspect') Aspect
                     input(type='text' id='aspect' name='aspect')
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='location') Location
                     input(type='text' id='location' name='location')
 
@@ -237,7 +237,7 @@ block content
                 label(for='elevation_max') Elevation Max
                     input(type='number' id='elevation_max' name='elevation_max' min=0 step=1)
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='grass_tot') Total Grass
                     input(type='number' id='grass_tot' name='grass_tot' min=0 step=1)
 
@@ -257,7 +257,7 @@ block content
                 label(for='l_desirable_sum') Least Desireable Sum
                     input(type='number' id='l_desirable_sum' name='l_desirable_sum' min=0 step=1)
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='desirable_perc') Desirable Percentage
                     input(type='number' id='desirable_perc' name='desirable_perc' min=0 step=1 max=100)
 
@@ -267,9 +267,9 @@ block content
                 label(for='l_desirable_perc') Least Desirable Percentage
                     input(type='number' id='l_desirable_perc' name='l_desirable_perc' min=0 step=1)
 
-            div(class='report-sub-segment button-container')
+            div(class='report-sub-segment bordered-container')
                 p Condition Rating:
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='composition') Composition Rating
                     input(type='number' id='composition' name='composition' min=0 step=1)
 
@@ -282,7 +282,7 @@ block content
                 label(for='ground_cover') Ground Cover Index
                     input(type='number' id='ground_cover' name='ground_cover' min=0 step=1)
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='erosion') Current Erosion Index
                     input(type='number' id='erosion' name='erosion' min=0 step=1)
 
@@ -298,17 +298,17 @@ block content
                         option(value='falling') Falling
                         option(value='stable') Stable
 
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='additional_notes') Any Additional Notes?
                     input(type='text' id='additional_notes' name='additional_notes')
 
 
             // ----------------------- Coverage Summary Data ----------------------- //
 
-            div(class='report-segment button-container')
+            div(class='report-segment bordered-container')
                 h2 Coverage Summary Data
 
-            div(class='button-container')
+            div(class='bordered-container')
 
                 //TODO: add css to straighten out the columns of fields
 
@@ -326,10 +326,10 @@ block content
 
             // ----------------------- Biomass Summary Data ----------------------- //
 
-            div(class='report-segment button-container')
+            div(class='report-segment bordered-container')
                 h2 Biomass Summary Data
 
-            div(class='button-container')
+            div(class='bordered-container')
 
                 - var i = 1;
                 while i <= numSpeciesSummary
@@ -339,12 +339,12 @@ block content
 
             // ----------------------- Soil Summary Data ----------------------- //
 
-            div(class='report-segment button-container')
+            div(class='report-segment bordered-container')
                 h2 Soil Summary Data
 
-            div(class='report-sub-segment button-container')
+            div(class='report-sub-segment bordered-container')
                 p Soil
-            div(class='flex-container button-container')
+            div(class='flex-container bordered-container')
                 label(for='surf_texture') Surface Texture
                     input(type='text' id='surf_texture' name='surf_texture')
 
@@ -363,7 +363,7 @@ block content
                 label(for='subsoil_ph') Subsoil Texture pH
                     input(type='number' id='subsoil_ph' name='subsoil_ph' step=0.1 min=0 max=14)
 
-            div(class='flex-container button-container')
+            div(class='flex-container bordered-container')
                 label(for='substrat_mat') Substratum Material
                     input(type='text' id='substrat_mat' name='substrat_mat')
 
@@ -373,10 +373,10 @@ block content
                 label(for='soil_remarks') Soil Remarks
                     input(type='text' id='soil_remarks' name='soil_remarks')
 
-            div(class='report-sub-segment button-container')
+            div(class='report-sub-segment bordered-container')
                 p Erosion Pattern
 
-            div(class='flex-container button-container')
+            div(class='flex-container bordered-container')
                 label(for='avg_surf_loss') Average Surface Loss
                     input(type='number' id='avg_surf_loss' name='avg_surf_loss' step=0.01 min=0)
 
@@ -392,10 +392,10 @@ block content
                 label(for='erosion_remarks') Erosion Remarks
                     input(type='text' id='erosion_remarks' name='erosion_remarks')
 
-            div(class='report-sub-segment button-container')
+            div(class='report-sub-segment bordered-container')
                 p Inherent Erosion Hazard
 
-            div(class='flex-container button-container')
+            div(class='flex-container bordered-container')
                 label(for='detach') Detachability
                     input(type='number ' id='detach' name='detach' min=0 step=1)
 
@@ -408,7 +408,7 @@ block content
                 label(for='perm') Permeability
                     input(type='number' id='perm' name='perm' min=0 step=1)
 
-            div(class='flex-container button-container')
+            div(class='flex-container bordered-container')
                 label(for='erod_index') Erodibility Index
                     input(type='number' id='erod_index' name='erod_index' step=0.01 min=0)
 
@@ -421,10 +421,10 @@ block content
                 label(for='erod_haz_class') Erosion Hazard Class
                     input(type='text' id='erod_haz_class' name='erod_haz_class')
 
-            div(class='report-sub-segment button-container')
+            div(class='report-sub-segment bordered-container')
                 p Soil Disturbance
 
-            div(class='flex-container button-container')
+            div(class='flex-container bordered-container')
                 label(for='compaction') Compaction
                     select(id='compaction' name='compaction')
                         option(value='none') None
@@ -439,10 +439,10 @@ block content
                         option(value='moderate') Moderate
                         option(value='heavy') Heavy
 
-            div(class='report-sub-segment button-container')
+            div(class='report-sub-segment bordered-container')
                 p Cover Dispersion
 
-            div(class='flex-container button-container')
+            div(class='flex-container bordered-container')
                 label(for='cov_disp') Cover Dispersion
                     select(id='cov_disp' name='cov_disp')
                         option(value='uniform') Uniform
@@ -460,19 +460,19 @@ block content
             // ----------------------- Transect Data ----------------------- //
             if transect1
 
-                div(class='report-segment button-container')
+                div(class='report-segment bordered-container')
                     h2 Transect 1 - Biomass Data
 
-                div(class='button-container')
+                div(class='bordered-container')
                     +transect(1)
                     -var i = 1;
                     while i <= numSpeciesT1
                         +biomass_row(1,i)
                         -i=i+1;
 
-                div(class='report-segment button-container')
+                div(class='report-segment bordered-container')
                     h2 Transect 1 - Cover Data
-                div(class='button-container')
+                div(class='bordered-container')
                     +coverage_row(1, 'overstory_trees', 'Overstory (Trees)')
                     +coverage_row(1, 'overstory_shrubs', 'Overstory (Shrubs)')
                     +coverage_row(1, 'crown_cover', 'Crown Cover (Herb.)')
@@ -486,16 +486,16 @@ block content
 
             if transect2
 
-                div(class='report-segment button-container')
+                div(class='report-segment bordered-container')
                     h2 Transect 2 Data
 
-                div(class='button-container')
+                div(class='bordered-container')
 
                     +transect(2)
                     -var i = 1;
                     while i <= numSpeciesT2
                         div
-                        p(class='metric-label') Species #{i}
+                        p(class='bold-label') Species #{i}
                         +biomass_row(2, i)
                         -i=i+1;
 
@@ -512,16 +512,16 @@ block content
 
             if transect3
 
-                div(class='report-segment button-container')
+                div(class='report-segment bordered-container')
                     h2 Transect 3 Data
 
-                div(class='button-container')
+                div(class='bordered-container')
 
                     +transect(3)
                     -var i = 1;
                     while i <= numSpeciesT3
                         div
-                        p(class='metric-label') Species #{i}
+                        p(class='bold-label') Species #{i}
                         +biomass_row(3, i)
                         -i=i+1;
 

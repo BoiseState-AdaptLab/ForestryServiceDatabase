@@ -7,17 +7,17 @@ block content
         form(action='/import-datasheet-preprocess' method='post')
 
             //Summary Page
-            div(class='button-container first-button-container last-button-container')
+            div(class='bordered-container first-bordered-container last-bordered-container')
 
-                P(class='metric-label') How many distinct species of biomass on summary page? *
+                P(class='bold-label') How many distinct species of biomass on summary page? *
                 input(type='number' name='num_species' min=0 step=1 required)
 
-            P(class='metric-label') Does your sheet have data for...
+            P(class='bold-label') Does your sheet have data for...
 
             //Transect 1
-            div(class='button-container first-button-container')
+            div(class='bordered-container first-bordered-container')
 
-                P(class='metric-label') Transect 1 *
+                P(class='bold-label') Transect 1 *
 
                 label(for='transect1_yes') Yes
                 input(type='radio' name='include_tran_1' id='transect1_yes' value='true' required)
@@ -30,9 +30,9 @@ block content
                 input(type='number' id='transect1_species' name='transect1_species' min=0 step=1)
 
             //Transect 2
-            div(class='button-container')
+            div(class='bordered-container')
 
-                P(class='metric-label') Transect 2 *
+                P(class='bold-label') Transect 2 *
 
                 label(for='transect2_yes') Yes
                 input(type='radio' name='include_tran_2' id='transect2_yes' value='true' required)
@@ -46,9 +46,9 @@ block content
 
 
             //Transect 3
-            div(class='button-container last-button-container')
+            div(class='bordered-container last-bordered-container')
 
-                P(class='metric-label') Transect 3 *
+                P(class='bold-label') Transect 3 *
 
                 label(for='transect3_yes') Yes
                 input(type='radio' name='include_tran_3' id='transect3_yes' value='true' required)

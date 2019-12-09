@@ -7,68 +7,85 @@ block content
         form(action='/report-summary' method='post')
 
             //Metadata filters
-            div(class='button-container first-button-container flex-container')
-                p(class='metric-label') Include Soil Data?
+            div(class='bordered-container first-bordered-container flex-container')
+                p(class='bold-label') Include Soil Data?
                 label(for='soil-yes') Yes
                     input(type='radio' name='include-soil' id='soil-yes' value='true')
                 label(for='soil-no') No
                     input(type='radio' name='include-soil' id='soil-no' value='false')
 
-                p(class='metric-label') Include Meta Data?
+                p(class='bold-label') Include Meta Data?
                 label(for='soil-yes') Yes
                     input(type='radio' name='include-meta' id='meta-yes' value='true')
                 label(for='soil-no') No
                     input(type='radio' name='include-meta' id='meta-no' value='false')
 
-                p(class='metric-label') Include Biomass Data?
+                p(class='bold-label') Include Biomass Data?
                 label(for='biomass-yes') Yes
                     input(type='radio' name='include-biomass' id='biomass-yes' value='true')
                 label(for='biomass-no') No
                     input(type='radio' name='include-biomass' id='biomass-no' value='false')
 
-                p(class='metric-label') Include Vegetation Data?
+                p(class='bold-label') Include Vegetation Data?
                 label(for='veg-yes') Yes
                     input(type='radio' name='include-veg' id='veg-yes' value='true')
                 label(for='veg-no') No
                     input(type='radio' name='include-veg' id='veg-no' value='false')
 
             //Report Filters
-            div(class='button-container flex-container')
+            div(class='bordered-container flex-container')
                 label(for='forest') Forest
-                    input(type='text' id='forest' name='forest')
-                label(for='r_dist') Ranger District
-                    input(type='text' id='r_dist' name='r_dist')
+                    select(id='forest' name='forest')
+                        option(value='sawtooth') Sawtooth
+
+                label(for='ranger_dist') Ranger District
+                    select(id='ranger_dist' name='ranger_dist')
+                        option(value='d5') D-5
+
                 label(for='allotment') Allotment
                     input(type='text' id='allotment' name='allotment')
+
                 label(for='location') Location
                     input(type='text' id='location' name='location')
-            div(class='button-container flex-container')
+
+            div(class='bordered-container flex-container')
                 label(for='livestock') Livestock Type
                     select(id='livestock' name='livestock')
                         option(value='sheep') Sheep
                         option(value='cows') Cows
+
                 label(for='writeup') Writeup No.
                     input(type='text' id='writeup' name='writeup')
+
                 label(for='photo') Photo No.
                     input(type='text' id='photo' name='photo')
+
                 label(for='examiner') Examiner
                     input(type='text' id='examiner' name='examiner')
-            div(class='button-container flex-container')
+
+            div(class='bordered-container flex-container')
                 label(for='elevation_min') Elevation Min
                     input(type='int' id='elevation_min' name='elevation_min')
+
                 label(for='elevation_max') Elevation Max
                     input(type='int' id='elevation_max' name='elevation_max')
+
                 label(for='s_date') Start Date
                     input(type='text' id='s_date' name='s_date')
+
                 label(for='e_date') End Date
                     input(type='text' id='e_date' name='e_date')
-            div(class='button-container last-button-container flex-container')
+
+            div(class='bordered-container last-bordered-container flex-container')
                 label(for='slope') Slope
                     input(type='int' id='slope' name='slope')
+
                 label(for='aspect') Aspect
                     input(type='int' id='aspect' name='aspect')
+
                 label(for='type_des') Type Designation
                     input(type='text' id='type_des' name='type_des')
+
                 label(for='type_des_trend') Type Designation Trend
                     select(id='type_des_trend' name='type_des_trend')
                         option(value='rising') Rising
