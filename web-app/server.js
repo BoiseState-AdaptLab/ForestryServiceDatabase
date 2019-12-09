@@ -16,7 +16,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // ----------------------- DB Pool ----------------------- //
 
-const { Pool } = require('pg');
+const { Pool, Client } = require('pg');
 const pool = new Pool({
     user: 'user',
     host: 'postgres',
@@ -51,8 +51,8 @@ app.get('/report-summary', (req, res) => {
 
 app.post('/report-summary', (req, res) => {
     logger.log.debug('report summary query posted');
-    //TODO: handle query parameters run query on database (Brenna and Seema)
-    // TODO: store results in CSV (Peter)
+    //TODO: handle query parameters run query on database
+    // TODO: store results in CSV
     res.render('results', {title: 'Report Summary Data Retrieved'});
 });
 
@@ -63,8 +63,8 @@ app.get('/report-transects', (req, res) => {
 
 app.post('/report-transects', (req, res) => {
     logger.log.debug('transect query posted');
-    //TODO: handle query parameters run query on database (Brenna and Seema)
-    // TODO: store results in CSV (Peter)
+    //TODO: handle query parameters run query on database
+    // TODO: store results in CSV
     res.render('results', {title: 'Transect Data Retrieved'});
 });
 
@@ -75,8 +75,8 @@ app.get('/full-report', (req, res) => {
 
 app.post('/full-report', (req, res) => {
     logger.log.debug('full report query posted');
-    //TODO: handle query parameters run query on database (Brenna and Seema)
-    // TODO: store results in CSV (Peter)
+    //TODO: handle query parameters run query on database
+    // TODO: store results in CSV
     res.render('results', {title: 'Full Report Data Retrieved'});
 });
 
@@ -108,8 +108,54 @@ app.post('/import-datasheet-preprocess', (req, res) => {
 
 app.post('/import-datasheet', (req, res) => {
     logger.log.debug('import datasheet posted');
-    //TODO: handle query parameters run query on database (Brenna and Seema)
-    // TODO: store results in CSV (Peter)
+
+    var b = req.body;
+
+    const query = {
+        text:'INSERT INTO report (writeup_no, photo_no, examiner, transect_no, slope, aspect, ' +
+            'elevation_min, elevation_max, forest, ranger_district, allotment, location, livestock, ' +
+            'type_designation, type_des_trend, date, total_grass, total_forb, total_browse, desirable, ' +
+            'intermediate, least_desirable, composition, production, forage_condition, ground_cover, erosion, ' +
+            'soil_condition, browse_condition, trend, notes)' +
+            'VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18 ,$19, $20, ' +
+            '$21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31)',
+
+        values: [b['writeup_no'], b['photo_no'], b['examiner'], b['transect_nos'], b['slope'], b['aspect'],
+            b['elevation_min'], b['elevation_max'], b['forest'], b['ranger_dist'], b['allotment'], b['location'],
+            b['livestock'], b['type_des'], b['type_des_trend'], b['date'], b['grass_tot'], b['forbes_tot'], b['browse_tot'],
+            b['desireable_sum'], b['intermediate_sum'], b['l_desireable_sum'], b['composition'],
+            b['production'], b['forage_condition'], b['ground_cover'], b['erosion'], b['soil_condition'],
+            b['browse_condition'], b['apparent_trend'], b['additional_notes']]
+            //add to table first b['desireable_perc'], b['intermediate_perc'], b['l_desireable_perc'],
+
+    };
+
+    pool.connect()
+        .then(client => {
+            return client.query(query)
+                .then(res => {
+                    console.log(res.rows[0]);
+                    const jsonData = JSON.parse(JSON.stringify(res.rows));
+                    console.log("jsonData", jsonData);
+                })
+                .catch(e => {
+                    client.release();
+                    console.log(e.stack);
+                })
+        }).finally(() => pool.end());
+
+
+    // var q2 = "SELECT * from report";
+    // client.query(q2, (err, res) => {
+    //     if (err) {
+    //         console.log(err.stack);
+    //     } else {
+    //         console.log(res.rows);
+    //         console.log('we are selecting the reports! Hopefully our new one is in the db');
+    //     }
+    // });
+
+    // TODO: store results in CSV
     res.render('results', {title: 'Datasheet processed'});
 });
 

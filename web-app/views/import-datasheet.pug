@@ -171,7 +171,6 @@ block content
 
     div(class='body')
         form(action='/import-datasheet' method='post')
-            //TODO: enforce required fields
 
             // ----------------------- Report Data ----------------------- //
 
@@ -248,25 +247,25 @@ block content
                 label(for='browse_tot') Total Browse
                     input(type='number' id='browse_tot' name='browse_tot' min=0 step=1)
 
-                label(for='desireable_sum') Desireable Sum
-                    input(type='number' id='desireable_sum' name='desireable_sum' min=0 step=1)
+                //TODO: these three fields below not in sql schema
+                label(for='desirable_sum') Desireable Sum
+                    input(type='number' id='desirable_sum' name='desirable_sum' min=0 step=1)
 
                 label(for='intermediate_sum') Intermediate Sum
                     input(type='number' id='intermediate_sum' name='intermediate_sum' min=0 step=1)
 
-                label(for='l_desireable_sum') Least Desireable Sum
-                    input(type='number' id='l_desireable_sum' name='l_desireable_sum' min=0 step=1)
+                label(for='l_desirable_sum') Least Desireable Sum
+                    input(type='number' id='l_desirable_sum' name='l_desirable_sum' min=0 step=1)
 
             div(class='button-container flex-container')
-                //TODO: three fields below not in sql init script
-                label(for='desireable_perc') Desireable Percentage
-                    input(type='number' id='desireable_perc' name='desireable_perc' min=0 step=1 max=100)
+                label(for='desirable_perc') Desirable Percentage
+                    input(type='number' id='desirable_perc' name='desirable_perc' min=0 step=1 max=100)
 
                 label(for='intermediate_perc') Intermediate Percentage
                     input(type='number' id='intermediate_perc' name='intermediate_perc' min=0 step=1)
 
-                label(for='l_desireable_perc') Least Desireable Percentage
-                    input(type='number' id='l_desireable_perc' name='l_desireable_perc' min=0 step=1)
+                label(for='l_desirable_perc') Least Desirable Percentage
+                    input(type='number' id='l_desirable_perc' name='l_desirable_perc' min=0 step=1)
 
             div(class='report-sub-segment button-container')
                 p Condition Rating:
@@ -291,7 +290,7 @@ block content
                     input(type='number' id='soil_condition' name='soil_condition' min=0 step=1)
 
                 label(for='browse_condition') Browse Condition
-                    input(type='text' id='browse_condition')
+                    input(type='text' name='browse_condition' id='browse_condition')
 
                 label(for='apparent_trend') Apparent Trend
                     select(id='apparent_trend' name='apparent_trend')
