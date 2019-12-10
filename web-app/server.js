@@ -142,18 +142,22 @@ app.post('/import-datasheet', (req, res) => {
                     client.release();
                     console.log(e.stack);
                 })
-        }).finally(() => pool.end());
+        });
 
-
-    // var q2 = "SELECT * from report";
-    // client.query(q2, (err, res) => {
-    //     if (err) {
-    //         console.log(err.stack);
-    //     } else {
-    //         console.log(res.rows);
-    //         console.log('we are selecting the reports! Hopefully our new one is in the db');
-    //     }
-    // });
+    // pool.connect()
+    //     .then(client => {
+    //         return client.query("SELECT * from report")
+    //             .then(res => {
+    //                 console.log(res.rows[0]);
+    //                 const jsonData = JSON.parse(JSON.stringify(res.rows));
+    //                 console.log("jsonData", jsonData);
+    //                 res.json(res.rows);
+    //             })
+    //             .catch(e => {
+    //                 client.release();
+    //                 console.log(e.stack);
+    //             })
+    //     }).finally(() => pool.end());
 
     // TODO: store results in CSV
     res.render('results', {title: 'Datasheet processed'});
@@ -188,7 +192,7 @@ app.get('/data', function (req, response) {
 
   pool.connect()
       .then(client => {
-        return client.query("SELECT * FROM cover")
+        return client.query("SELECT * FROM report")
             .then(res => {
               //client.release();
               console.log(res.rows[0]);
@@ -207,8 +211,8 @@ app.get('/data', function (req, response) {
             .catch(e => {
               client.release();
               console.log(e.stack);
-            })
-      }).finally(() => pool.end());	
+            });
+      });
 });
 
 const json2csv = require('json2csv').parse;
