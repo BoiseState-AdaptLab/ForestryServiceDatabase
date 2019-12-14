@@ -1,3 +1,7 @@
+-- Initialization script for the Forest Service Database
+-- There is a database diagram located in the parent folder 
+-- that displays the layout of the tables 
+
 -- DROP DATABASE IF EXISTS ForestServiceDB;
 -- CREATE DATABASE ForestServiceDB;
 
