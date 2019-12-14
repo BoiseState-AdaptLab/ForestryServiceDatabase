@@ -25,8 +25,12 @@ const pool = new Pool({
     port: '5432'});
 
 // ----------------------- Constants ----------------------- //
+
+//Use when building the app through Docker
 const PORT = 8081;
 const HOST = '0.0.0.0';
+
+//For dev in IDE (just testing UI changes when database isn't required)
 //const HOST = '127.0.0.1';
 //const PORT = 3000;
 
@@ -51,7 +55,7 @@ app.get('/report-summary', (req, res) => {
 
 app.post('/report-summary', (req, res) => {
     logger.log.debug('report summary query posted');
-    //TODO: handle query parameters run query on database
+    // TODO: handle query parameters run query on database
     // TODO: store results in CSV
     res.render('results', {title: 'Report Summary Data Retrieved'});
 });
@@ -63,7 +67,7 @@ app.get('/report-transects', (req, res) => {
 
 app.post('/report-transects', (req, res) => {
     logger.log.debug('transect query posted');
-    //TODO: handle query parameters run query on database
+    // TODO: handle query parameters run query on database
     // TODO: store results in CSV
     res.render('results', {title: 'Transect Data Retrieved'});
 });
@@ -75,17 +79,23 @@ app.get('/full-report', (req, res) => {
 
 app.post('/full-report', (req, res) => {
     logger.log.debug('full report query posted');
-    //TODO: handle query parameters run query on database
+    // TODO: handle query parameters run query on database
     // TODO: store results in CSV
     res.render('results', {title: 'Full Report Data Retrieved'});
 });
 
 
 //Importing datasheets
+
+//TODO: currently only inserting the needed for the 'report' table into the database. All the other data from the insert datasheet form
+// needs to be inserted into their respective tables. Consider using the 'RETURNING' sql keyword when executing insert statements in order to get
+// foreign keys wherever necessary.
 app.get('/import-datasheet-preprocess', (req, res) => {
     res.render('import-datasheet-preprocess', {title: 'Import Datasheet Preprocessing'});
 });
 
+// Preprocess step: Get info from user regarding which transect reports have data and how many species are listed on each transect form
+// and the summary form in order to know how many rows for data entry to include in the form.
 app.post('/import-datasheet-preprocess', (req, res) => {
     if (req.body['include_tran_1'] === 'true') {
         let transect1 = true;
@@ -93,7 +103,7 @@ app.post('/import-datasheet-preprocess', (req, res) => {
         let transect1= false;
     }
 
-    // Retrieving info from form to be passed to next form
+    // Retrieving info from the submitted form to be passed to next form
     let transect1 = req.body['include_tran_1'] === 'true';
     let transect2 = req.body['include_tran_2'] === 'true';
     let transect3 = req.body['include_tran_3'] === 'true';
@@ -105,7 +115,7 @@ app.post('/import-datasheet-preprocess', (req, res) => {
     res.render('import-datasheet', {title: 'Import Datasheet', transect1, transect2, transect3, numSpeciesSummary, numSpeciesT1, numSpeciesT2, numSpeciesT3});
 });
 
-
+//
 app.post('/import-datasheet', (req, res) => {
     logger.log.debug('import datasheet posted');
 
@@ -126,8 +136,6 @@ app.post('/import-datasheet', (req, res) => {
             b['desireable_sum'], b['intermediate_sum'], b['l_desireable_sum'], b['composition'],
             b['production'], b['forage_condition'], b['ground_cover'], b['erosion'], b['soil_condition'],
             b['browse_condition'], b['apparent_trend'], b['additional_notes']]
-            //add to table first b['desireable_perc'], b['intermediate_perc'], b['l_desireable_perc'],
-
     };
 
     pool.connect()
@@ -143,23 +151,6 @@ app.post('/import-datasheet', (req, res) => {
                     console.log(e.stack);
                 })
         });
-
-    // pool.connect()
-    //     .then(client => {
-    //         return client.query("SELECT * from report")
-    //             .then(res => {
-    //                 console.log(res.rows[0]);
-    //                 const jsonData = JSON.parse(JSON.stringify(res.rows));
-    //                 console.log("jsonData", jsonData);
-    //                 res.json(res.rows);
-    //             })
-    //             .catch(e => {
-    //                 client.release();
-    //                 console.log(e.stack);
-    //             })
-    //     }).finally(() => pool.end());
-
-    // TODO: store results in CSV
     res.render('results', {title: 'Datasheet processed'});
 });
 
