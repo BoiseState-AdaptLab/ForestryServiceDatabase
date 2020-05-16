@@ -27,3 +27,5 @@ Steps 4 through 6 are achieved by running 'deleteVertical.py' and 'deleteHorizon
 
 6. merge step 4 and step 5
 <img src="images/noLines.jpg" alt="alt text" width="350" height="450">
+
+#### The images directory contains additional images that show the result of other kinds of thresholding techniques. 
