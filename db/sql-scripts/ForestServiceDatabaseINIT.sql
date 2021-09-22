@@ -2,11 +2,14 @@
 -- There is a database diagram located in the parent folder 
 -- that displays the layout of the tables 
 
--- DROP DATABASE IF EXISTS ForestServiceDB;
--- CREATE DATABASE ForestServiceDB;
+DROP DATABASE IF EXISTS forestservicedb;
+CREATE DATABASE forestservicedb;
 
 
--- use ForestServiceDB;
+-- line 11 does not work with postgres
+-- thats why line 12 is used
+-- use forestservicedb;
+\c forestservicedb;
 
 
 CREATE TABLE report (
