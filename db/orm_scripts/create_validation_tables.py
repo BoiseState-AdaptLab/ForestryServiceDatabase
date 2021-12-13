@@ -66,6 +66,43 @@ ranger_dist = [
     }
 ]
 
+# class valid_report(Base):
+#     __tablename__ = "valid_report"
+#     id = Column("id", Integer, primary_key=True)
+#     writeup_no = Column('writeup_no', String, unique=True)
+#     photo_no = Column('photo_no', String, unique=True)
+#     examiner = Column('examiner', String, unique=True)
+#     transect_no = Column('transect_no', String, unique=True)
+#     slope = Column('slope', Integer, unique=True)
+#     aspect = Column('aspect', String, unique=True)
+#     elevation_min = Column('elevation_min', Integer, unique=True)
+#     elevation_max = Column('elevation_max', Integer, unique=True)
+#     forest = Column('forest', String, unique=True)
+#     ranger_district = Column('ranger_district', String, unique=True)
+#     allotment = Column('allotment', String, unique=True)
+#     location = Column('location', String, unique=True)
+#     livestock = Column('livestock', String, unique=True)
+#     type_designation = Column('type_designation', String, unique=True)
+#     type_des_trend = Column('type_des_trend', String, unique=True)
+#     date = Column('date', String, unique=True)
+#     total_grass = Column('total_grass', Integer, unique=True)
+#     total_forb = Column('total_forb', Integer, unique=True)
+#     total_browse = Column('total_browse', Integer, unique=True)
+#     desirable = Column('desirable', Integer, unique=True)
+#     intermediat = Column('intermediat', Integer, unique=True)
+#     least_desirable = Column('least_desirable', Integer, unique=True)
+#     composition = Column('composition', Integer, unique=True)
+#     production = Column('production', Integer, unique=True)
+#     forage_condition = Column('forage_condition', Integer, unique=True)
+#     ground_cover = Column('ground_cover', Integer, unique=True)
+#     erosion = Column('erosion', Integer, unique=True)
+#     soil_condition = Column('soil_condition', Integer, unique=True)
+#     browse_condition = Column('browse_condition', String, unique=True)
+#     trend = Column('trend', String, unique=True)
+#     notes = Column('notes', String, unique=True)
+
+Base.metadata.create_all(bind=engine)
+
 # new_forest = valid_forests(valid_forests="sawtooth")
 
 # session.add(new_forest)
