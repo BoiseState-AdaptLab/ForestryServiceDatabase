@@ -28,7 +28,11 @@ valid_ranger_dist = Base.classes.valid_ranger_dist
 
 
 # test if automap / reflection of the tables worked - it does
+<<<<<<< HEAD
 columns = [column.name for column in inspect(valid_allotment).c]
+=======
+columns = [column.name for column in inspect(report).c]
+>>>>>>> ac5cb3f76277aaa242d04720278e894c1753d4e5
 print (columns)
 
 # # another way of printing the columns

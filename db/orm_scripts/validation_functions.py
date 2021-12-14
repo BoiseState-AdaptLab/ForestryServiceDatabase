@@ -20,7 +20,11 @@ from sqlalchemy.sql import text
 # results = get_valid_opts(test)
 
 # print(results)
+<<<<<<< HEAD
 test = 'valid_ranger_dist'
+=======
+test = 'valid_rant'
+>>>>>>> ac5cb3f76277aaa242d04720278e894c1753d4e5
 
 # local_session = Session(bind=engine)
 # valid_opts = local_session.query(valid_allotment).all()

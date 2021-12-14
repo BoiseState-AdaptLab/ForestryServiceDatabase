@@ -66,6 +66,7 @@ ranger_dist = [
     }
 ]
 
+<<<<<<< HEAD
 # class valid_report(Base):
 #     __tablename__ = "valid_report"
 #     id = Column("id", Integer, primary_key=True)
@@ -103,6 +104,8 @@ ranger_dist = [
 
 Base.metadata.create_all(bind=engine)
 
+=======
+>>>>>>> ac5cb3f76277aaa242d04720278e894c1753d4e5
 # new_forest = valid_forests(valid_forests="sawtooth")
 
 # session.add(new_forest)
