@@ -1,41 +1,44 @@
-from create_validation_tables import engine, Session
+#
+# Author: Sandra Busch
+# Date: Fri 17 Dec 2021 08:11:52 AM MST
+# Description:
+# This code uses sqlalchemy to map all tables of 
+# the forestservice database into sqlalchemy after the 
+# ForestServiceDatabaseINIT.sql script and the 
+# create_validation_tables script have been run.
+# this is necessary in order to work with the 
+# database through python / sqlalchemy
+#
+from orm_scripts.create_validation_tables import engine, session, valid_allotment
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy import Table, column
 from sqlalchemy.inspection import inspect
 
 # reflects all tables of database using automap
+# so that the sql database can be interacted with 
+# using python sqlalchemy
+# it will map the database that is connected to the
+# engine, here use the imported engine from the
+# create_validation_tables script
+# if you wish to map a different database, you can use
+# the following code instead of importing the engine
+# connection_string = "postgresql://[username]:[password]@[IP]/[database_name]"
+# engine = create_engine(connection_string)
 Base = automap_base()
 Base.prepare(engine, reflect=True)
-# mapped classes can be created like below
+
+# mapped classes can be refered to like below
+# to create an object for each table if used in
+# a function for example
 report = Base.classes.report
 biomass = Base.classes.biomass
-biomass_summary = Base.classes.biomass_summary
-cover = Base.classes.cover
-cover_summary = Base.classes.cover_summary
-plot = Base.classes.plot
-soil_summary = Base.classes.soil_summary
-transect = Base.classes.transect
-valid_allotment = Base.classes.valid_allotment
-valid_forests = Base.classes.valid_forests
-valid_livestock = Base.classes.valid_livestock
-valid_ranger_dist = Base.classes.valid_ranger_dist
-
 
 # this method automaps tables one by one
-# needs to be used with Base imported from create_validaion_tables(?)
+# and not the whole database
 # class report(Base):
 #     __table__ = Table("report", Base.metadata, autoload=True, autoload_with=engine)
 
 
-# test if automap / reflection of the tables worked - it does
-<<<<<<< HEAD
+# can be used to test if automap / reflection of the tables worked
 columns = [column.name for column in inspect(valid_allotment).c]
-=======
-columns = [column.name for column in inspect(report).c]
->>>>>>> ac5cb3f76277aaa242d04720278e894c1753d4e5
 print (columns)
-
-# # another way of printing the columns
-# table = inspect(report)
-# for column in table.c:
-#     print (column.name)

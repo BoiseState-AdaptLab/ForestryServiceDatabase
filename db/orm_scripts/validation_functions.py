@@ -1,38 +1,25 @@
-#from sqlalchemy.orm import sessionmaker, relationship
-from create_validation_tables import engine,Session,valid_forests,valid_allotment,valid_livestock,valid_ranger_dist
+#
+# Author: Sandra Busch
+# Date: Fri 17 Dec 2021 08:11:52 AM MST
+# Description:
+# This script contains function(s) that can be used
+# to retrieve information about certain fields in the forest report
+# for which we have a finite set of valid inputs.
+# e.g. the "valid_forests" table contains "Sawtooth"
+#
+from sqlalchemy.orm import sessionmaker, relationship
+from orm_scripts.create_validation_tables import engine,Session,valid_forests,valid_allotment,valid_livestock,valid_ranger_dist
 from sqlalchemy.sql import text
 
-# test = 'valid_allotment'
-#Session = sessionmaker(bind=engine)
 
-
-# def get_valid_opts(str):
-#     input = str
-#     valid_opts = []
-#     local_session = Session(bind=engine)
-#     valids = local_session.query(text(input)).all()
-#     for v in valids:
-#         valid_opts.append(v.input)
-
-#     return valid_opts
-
-
-# results = get_valid_opts(test)
-
-# print(results)
-<<<<<<< HEAD
+# test input replaces user input (for testing only)
 test = 'valid_ranger_dist'
-=======
-test = 'valid_rant'
->>>>>>> ac5cb3f76277aaa242d04720278e894c1753d4e5
 
-# local_session = Session(bind=engine)
-# valid_opts = local_session.query(valid_allotment).all()
-
-# for v in valid_opts:
-#     print(v.valid_allotment)
-
-
+# function that takes in a string representing 
+# the table we would like to access
+# returns all contents of chosen table 
+# in a comma seperated list
+# returns None if table chosen does not exist
 def get_valids(str):
     valid_opts = []
     local_session = Session(bind=engine)
@@ -57,6 +44,9 @@ def get_valids(str):
 
     return valid_opts
 
+
+# prints the results of fuction get_valids() to console
+# for testing purposes
 results = get_valids(test)
 
 print(results)

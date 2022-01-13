@@ -1,3 +1,5 @@
+-- Author: unknown & Sandra Busch
+-- Date: Fri 17 Dec 2021 08:11:52 AM MST
 -- Initialization script for the Forest Service Database
 -- There is a database diagram located in the parent folder 
 -- that displays the layout of the tables 
@@ -6,13 +8,12 @@ DROP DATABASE IF EXISTS forestservicedb;
 CREATE DATABASE forestservicedb;
 
 
--- line 11 does not work with postgres
--- thats why line 12 is used
--- use forestservicedb;
 \c forestservicedb;
 create schema forestservice;
 set search_path to forestservice;
-
+-- in case the three lines of code above do not work with docker,
+-- try to use the single line below instead
+-- use forestservicedb;
 
 
 CREATE TABLE forestservice.report (
@@ -298,10 +299,15 @@ CREATE TABLE forestservice.valid_soil_summary (
 );
 
 
--- alternatively use CHECK CONSTRAINTS for type I fields:
--- Problem: how to return contraints thru a function?
--- https://www.databasejournal.com/features/mssql/article.php/3811831/Using-Check-Constraints-to-Validate-Data-in-SQL-Server.htm
+CREATE TABLE forestservice.validation (
+  r_id int NOT NULL,
+  column_name varchar(255),
+  validated boolean,
+  confidence float,
+  field_image varchar(255)
+);
 
-
-
-
+ALTER TABLE forestservice.validation
+ADD CONSTRAINT FK_parent_report_t
+FOREIGN KEY (r_id) 
+REFERENCES report(r_id); 
