@@ -8,12 +8,12 @@ DROP DATABASE IF EXISTS forestservicedb;
 CREATE DATABASE forestservicedb;
 
 
-\c forestservicedb;
-create schema forestservice;
-set search_path to forestservice;
+-- \c forestservicedb;
+-- create schema forestservice;
+-- set search_path to forestservice;
 -- in case the three lines of code above do not work with docker,
 -- try to use the single line below instead
--- use forestservicedb;
+use forestservicedb;
 
 
 CREATE TABLE forestservice.report (

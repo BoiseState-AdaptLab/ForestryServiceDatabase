@@ -1,4 +1,3 @@
-#
 # Author: Sandra Busch
 # Date: Fri 17 Dec 2021 08:11:52 AM MST
 # Description:
@@ -79,7 +78,7 @@ ranger_dist = [
     }
 ]
 
-# the code below inserts the defines values into the created tables
+# the code below inserts the defined values into the created tables
 
 new_forest = valid_forests(valid_forests="sawtooth")
 session.add(new_forest)
