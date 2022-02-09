@@ -24,6 +24,20 @@ Please, refer to the comments in the scripts as well as the database diagram loc
 
 <br>
 
+### Get Started
+This is a short giude to start the psql server and get connected to the Forest Service database. 
+
+* Login into Onyx with your account;
+* Download the source code of the latest psql version from [here](https://www.postgresql.org/ftp/source/);
+* Follow [this](https://www.endpointdev.com/blog/2013/06/installing-postgresql-without-root/) article to configure, compile and install psql;
+* The above article will guide you to connecting to the server. The command is ```[path to your psql executable] -U [your onyx username] postgres```
+* The above command will start the psql editor. You can now run your psql queries. 
+* If you want to interact with psql outside the editor, use redirection: ```[path to your psql executable] -U [your onyx username] postgres < [path to the sql file]```
+
+Reminder:
+- to start the server ```[path to pg_ctl executable] -D [path to data folder] start```
+- to stop the server ```[path to pg_ctl executable] -D [path to data folder] stop```
+
 #### **Step 1**
 
 Run the ForestServiceDatabaseINIT.sql script located in the sql-scripts dir.  
