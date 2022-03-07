@@ -1,14 +1,14 @@
-#
 # Author: Sandra Busch
 # Date: Fri 17 Dec 2021 08:11:52 AM MST
 # Description:
 # This script contains functions that can be used
 # to interact with the forestservicedb database and 
-# insert / update / deleta data.
+# insert / update / delete data.
 #
 from sqlalchemy import insert, update
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy import Table, column
+from config import DATABASE_URI
 from sqlalchemy import create_engine, Integer, String
 from sqlalchemy.orm import sessionmaker, relationship
 import os
@@ -19,8 +19,7 @@ import os
 # it is automatically mapping the psql database into sqlalchemy
 # and a report database object is created for further use
 Base = automap_base()
-connection_string = "postgresql://student:boisestate@localhost:5432/forestservicedb"
-engine = create_engine(connection_string)
+engine = create_engine(DATABASE_URI)
 Session = sessionmaker(bind=engine)
 session = Session()
 Base.prepare(engine, reflect=True)
