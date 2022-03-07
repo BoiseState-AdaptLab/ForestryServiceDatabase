@@ -1,4 +1,5 @@
-#
+# THIS CODE IS NOT COMPLETE AND DOES NOT WORK. 
+
 # Author: Sandra Busch
 # Date: Fri 17 Dec 2021 08:11:52 AM MST
 # Description:
@@ -9,7 +10,7 @@
 # if a column accepts only integers it returns INTEGER, but it also 
 # returns all the names of the columns in the table as well. 
 # I think this happens because I used the inspect function which might 
-# always return all the names of the columns from the table it inpects...
+# always return all the names of the columns from the table it inspects...
 
 from orm_scripts.map_all_tables import engine
 from sqlalchemy.inspection import inspect
