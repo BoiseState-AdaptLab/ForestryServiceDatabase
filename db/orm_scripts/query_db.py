@@ -1,6 +1,5 @@
 from create_validation_tables import Session, engine, TemplateTable, ValidForest, ValidAllotment, ValidLivestock, ValidRangerDist
 
-# local_session = Session(bind=engine)
 
 
 def get_valid_opts(field_name, local_session):
