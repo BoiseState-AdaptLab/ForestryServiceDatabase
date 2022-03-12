@@ -12,27 +12,28 @@ def get_valid_opts(field_name, local_session):
     '''
     valid_opts = []
 
-    if field_name == 'allotment':
+    if field_name == 'ALLOTMENT':
         valids = local_session.query(ValidAllotment).all()
         for valid in valids:
             valid_opts.append(valid.valid_strings)
 
-    elif field_name == 'forest':
+    elif field_name == 'FOREST':
         valids = local_session.query(ValidForest).all()
         for valid in valids:
             valid_opts.append(valid.valid_strings)
 
-    elif field_name == 'kind of livestock':
+    elif field_name == 'KIND OF LIVESTOCK':
         valids = local_session.query(ValidLivestock).all()
         for valid in valids:
             valid_opts.append(valid.valid_strings)
 
-    elif field_name == 'ranger district':
+    elif field_name == 'RANGER DISTRICT':
         valids = local_session.query(ValidRangerDist).all()
         for valid in valids:
             valid_opts.append(valid.valid_strings)
 
     else:
+        print("The field name is not valid.")
         return None
 
     return valid_opts

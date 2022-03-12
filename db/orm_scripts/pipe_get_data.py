@@ -6,6 +6,7 @@
 
 from collections import Counter
 from math import sqrt
+import re
 from config import DATABASE_URI
 from query_db import get_valid_opts
 from create_validation_tables import Session, engine, Base, ValidForest, ValidAllotment, ValidLivestock, ValidRangerDist
@@ -35,7 +36,7 @@ def cosdis(v1, v2):
 
 # the guesses list comes from the pipeline side
 # the valid options come from the database
-def get_most_similar_guess(ocr_guesses, field_name): 
+def get_most_similar_guess(ocr_guess, field_name): 
     '''
         This function will be called from the
         pipeline to receive the most similar
@@ -43,29 +44,29 @@ def get_most_similar_guess(ocr_guesses, field_name):
     '''
 
     field_valid_opts = get_valid_opts(field_name, local_session)
-
+    # print("Valid options:", field_valid_opts)
     best_match = [0, ]
 
-    for word in ocr_guesses:
-        for poss in field_valid_opts:
-            # nested for loop
-            print("trial ", word)
-            word = ''.join(word).lower()
+    word = ''.join(ocr_guess).lower()
+    word = re.sub(r"\s+", "", word)
+    # print("passed in", word)
 
-            va = word2vec(word)
-            vb = word2vec(poss)
-            
-            prob = cosdis(va, vb)
 
-            if prob > best_match[0]: # we probably found a match
-                best_match = [prob, word]
-            print("at this stage", best_match)
+    for poss in field_valid_opts:
+        # print(poss)
+        va = word2vec(word)
+        vb = word2vec(poss)
+        
+        prob = cosdis(va, vb)
+
+        if prob > best_match[0]: # we probably found a match
+            best_match = [prob, poss]
+        # print("at this stage", best_match)
 
 
     if best_match[0] == 0.0:
         return None 
-    else:
-        print(best_match[1])     
+     
  
     return best_match[1]
 
