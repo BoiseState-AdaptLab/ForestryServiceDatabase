@@ -8,32 +8,34 @@ DROP DATABASE IF EXISTS forestservicedb;
 CREATE DATABASE forestservicedb;
 
 
--- \c forestservicedb;
+\c forestservicedb;
 -- create schema forestservice;
 -- set search_path to forestservice;
 -- in case the three lines of code above do not work with docker,
 -- try to use the single line below instead
-use forestservicedb;
+-- use forestservicedb;
 
 
-CREATE TABLE forestservice.report (
+CREATE TABLE report (
   r_id SERIAL PRIMARY KEY,
   writeup_no varchar(255),
   photo_no varchar(255),
-  examiner varchar(255),
-  transect_no varchar(255),
-  slope int,
-  aspect varchar(255),
-  elevation_min int,
-  elevation_max int,
   forest varchar(255),
   ranger_district varchar(255),
   allotment varchar(255),
-  location varchar(255),
-  livestock varchar(255),
+  examiner varchar(255),
+  date varchar(255),
+  transect_no varchar(255),
+  plot_size varchar(255),
+  plot_iterval varchar(255),
   type_designation varchar(255),
+  livestock varchar(255),
+  slope varchar(255),
+  aspect varchar(255),
+  location varchar(255),
+  elevation varchar(255),
+  
   type_des_trend varchar(255),
-  date date,
   total_grass int,
   total_forb int,
   total_browse int,
@@ -52,7 +54,7 @@ CREATE TABLE forestservice.report (
 );
 
 
-CREATE TABLE forestservice.transect (
+CREATE TABLE transect (
   t_id SERIAL PRIMARY KEY,
   r_id int NOT NULL,
   transect_no int,
@@ -64,26 +66,26 @@ CREATE TABLE forestservice.transect (
 );
 
 
-ALTER TABLE forestservice.transect 
+ALTER TABLE transect 
 ADD CONSTRAINT FK_parent_report_t
 FOREIGN KEY (r_id) 
 REFERENCES report(r_id); 
 
 
-CREATE TABLE forestservice.plot (
+CREATE TABLE plot (
   p_id SERIAL PRIMARY KEY,
   t_id int NOT NULL,
   plot_number int 
 );
 
 
-ALTER TABLE forestservice.plot 
+ALTER TABLE plot 
 ADD CONSTRAINT FK_parent_transect_p
 FOREIGN KEY (t_id) 
 REFERENCES transect(t_id); 
 
 
-CREATE TABLE forestservice.biomass (
+CREATE TABLE biomass (
   b_id SERIAL PRIMARY KEY,
   p_id int NOT NULL,
   type varchar(255),
@@ -92,13 +94,13 @@ CREATE TABLE forestservice.biomass (
 );
 
 
-ALTER TABLE forestservice.biomass 
+ALTER TABLE biomass 
 ADD CONSTRAINT FK_parent_plot_b
 FOREIGN KEY (p_id) 
 REFERENCES plot(p_id); 
 
 
-CREATE TABLE forestservice.biomass_summary (
+CREATE TABLE biomass_summary (
   b_id SERIAL PRIMARY KEY,
   r_id int NOT NULL,
   species varchar(255),
@@ -115,13 +117,13 @@ CREATE TABLE forestservice.biomass_summary (
 );
 
 
-ALTER TABLE forestservice.biomass_summary 
+ALTER TABLE biomass_summary 
 ADD CONSTRAINT FK_parent_report_b
 FOREIGN KEY (r_id) 
 REFERENCES report(r_id); 
 
 
-CREATE TABLE forestservice.cover (
+CREATE TABLE cover (
   c_id SERIAL PRIMARY KEY,
   p_id int NOT NULL,
   type varchar(255),
@@ -129,13 +131,13 @@ CREATE TABLE forestservice.cover (
 );
 
 
-ALTER TABLE forestservice.cover 
+ALTER TABLE cover 
 ADD CONSTRAINT FK_parent_plot_c
 FOREIGN KEY (p_id) 
 REFERENCES plot(p_id); 
 
 
-CREATE TABLE forestservice.cover_summary (
+CREATE TABLE cover_summary (
   c_id SERIAL PRIMARY KEY,
   r_id int NOT NULL,
   type varchar(255),
@@ -144,13 +146,13 @@ CREATE TABLE forestservice.cover_summary (
 );
 
 
-ALTER TABLE forestservice.cover_summary 
+ALTER TABLE cover_summary 
 ADD CONSTRAINT FK_parent_report_c
 FOREIGN KEY (r_id) 
 REFERENCES report(r_id); 
 
 
-CREATE TABLE forestservice.soil_summary (
+CREATE TABLE soil_summary (
   s_id SERIAL PRIMARY KEY,
   r_id int NOT NULL,
   surface_texture varchar(255),
@@ -183,14 +185,14 @@ CREATE TABLE forestservice.soil_summary (
 );
 
 
-ALTER TABLE forestservice.soil_summary 
+ALTER TABLE soil_summary 
 ADD CONSTRAINT FK_parent_report_s
 FOREIGN KEY (r_id) 
 REFERENCES report(r_id); 
 
 
 -- create verification tables (type I fields are created separately)
-CREATE TABLE forestservice.valid_report (
+CREATE TABLE valid_report (
   writeup_no varchar(255),
   photo_no varchar(255),
   examiner varchar(255),
@@ -224,7 +226,7 @@ CREATE TABLE forestservice.valid_report (
   notes varchar(510)
 );
 
-CREATE TABLE forestservice.valid_transect (
+CREATE TABLE valid_transect (
   transect_no int,
   location varchar(255),
   elevation int,
@@ -233,17 +235,17 @@ CREATE TABLE forestservice.valid_transect (
   aspect varchar(10)
 );
 
-CREATE TABLE forestservice.valid_plot (
+CREATE TABLE valid_plot (
   plot_number int 
 );
 
-CREATE TABLE forestservice.valid_biomass (
+CREATE TABLE valid_biomass (
   type varchar(255),
   species varchar(255),
   green_weight int 
 );
 
-CREATE TABLE forestservice.valid_biomass_summary (
+CREATE TABLE valid_biomass_summary (
   species varchar(255),
   trans1 int,
   trans2 int,
@@ -257,18 +259,18 @@ CREATE TABLE forestservice.valid_biomass_summary (
   desirability_L int 
 );
 
-CREATE TABLE forestservice.valid_cover (
+CREATE TABLE valid_cover (
   type varchar(255),
   value int 
 );
 
-CREATE TABLE forestservice.valid_cover_summary (
+CREATE TABLE valid_cover_summary (
   type varchar(255),
   total int,
   average int
 );
 
-CREATE TABLE forestservice.valid_soil_summary (
+CREATE TABLE valid_soil_summary (
   surface_texture varchar(255),
   surf_text_thick int,
   surf_text_ph float,
@@ -299,7 +301,7 @@ CREATE TABLE forestservice.valid_soil_summary (
 );
 
 
-CREATE TABLE forestservice.validation (
+CREATE TABLE validation (
   r_id int NOT NULL,
   column_name varchar(255),
   validated boolean,
@@ -307,7 +309,7 @@ CREATE TABLE forestservice.validation (
   field_image varchar(255)
 );
 
-ALTER TABLE forestservice.validation
+ALTER TABLE validation
 ADD CONSTRAINT FK_parent_report_t
 FOREIGN KEY (r_id) 
 REFERENCES report(r_id); 
