@@ -27,7 +27,7 @@ CREATE TABLE report (
   date varchar(255),
   transect_no varchar(255),
   plot_size varchar(255),
-  plot_iterval varchar(255),
+  plot_interval varchar(255),
   type_designation varchar(255),
   livestock varchar(255),
   slope varchar(255),
