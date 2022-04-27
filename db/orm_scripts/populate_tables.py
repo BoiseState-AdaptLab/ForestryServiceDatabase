@@ -13,7 +13,17 @@ allotments = [
     },
     {
         "valid_allotment":"blueridge"
+    },
+    {
+        "valid_allotment":"lime creek"
+    },
+    {
+        "valid_allotment":"fisher-federal"
+    },
+    {
+        "valid_allotment":"greenhorn"
     }
+
 ]
 
 livestock = [
@@ -34,6 +44,12 @@ ranger_dist = [
     },
     {
         "valid_ranger_dist":"D5"
+    },
+    {
+        "valid_ranger_dist":"hailey"
+    },
+    {
+        "valid_ranger_dist":"ketchum"
     }
 ]
 
